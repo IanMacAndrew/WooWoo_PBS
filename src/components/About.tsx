@@ -1,58 +1,195 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useFocus } from '@/contexts/FocusContext'
 
+type ProcessStep = {
+  number: string
+  title: string
+  description: string
+}
+
+const railSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "All Aboard: Setting the Destination",
+    description: "A high level business professional pulls into your organisation and working with key leaders, usually driven by major shareholders, maps the journey to define outcomes and deliverables that will get your business where you want to go.",
+  },
+  {
+    number: "02",
+    title: "Laying the Tracks: The Roadmap",
+    description: "Each professional works with department heads and key managers to engineer a detailed plan of activities, actions and training to get the organization on track.",
+  },
+  {
+    number: "03",
+    title: "Full Steam Ahead: Project Launch",
+    description: "Organizational Leaders and project participants assemble for the kick-off whistle. Teams break out into dedicated carriages for detailed briefings and task assignments before we leave the station.",
+  },
+  {
+    number: "04",
+    title: "On the Main Line: Project Goes LIVE",
+    description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
+  },
+  {
+    number: "05",
+    title: "Signal Box Check-Ins",
+    description: "Bi-weekly briefings with key executives, officers and owners to check the signals — reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Pulling Into the Terminus",
+    description: "With every task delivered, we conduct a thorough end-of-line review with key executives and owners to achieve project sign-off and bring the engagement to a clean stop.",
+  },
+  {
+    number: "07",
+    title: "Return Journey: The Review",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture — and that organisational performance is still running like clockwork.",
+  }
+]
+
+const strategySteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Houston, We Have a Strategy",
+    description: "Our mission commander touches down with your leaders and shareholders to plot the coordinates — defining the outcomes and deliverables that will get your business to escape velocity.",
+  },
+  {
+    number: "02",
+    title: "Charting the Flight Plan",
+    description: "Each specialist works with department heads and key managers to engineer a detailed flight plan of activities, actions and training that keeps the mission on trajectory.",
+  },
+  {
+    number: "03",
+    title: "T-Minus: Launch Sequence",
+    description: "Leaders and crew assemble for countdown. Teams break out into mission pods for detailed briefings and task assignments before main engine start.",
+  },
+  {
+    number: "04",
+    title: "Orbital Insertion: Strategy Goes LIVE",
+    description: "Our experts ride in the capsule with you — guiding crews, delivering training and making sure every roadmap deliverable is firing on all thrusters across the organisation.",
+  },
+  {
+    number: "05",
+    title: "Mission Control Check-Ins",
+    description: "Bi-weekly telemetry with key executives, officers and owners — reviewing trajectory, flagging anomalies, and correcting course if anything drifts off orbit.",
+  },
+  {
+    number: "06",
+    title: "Touchdown: Sticking the Landing",
+    description: "With every task delivered, we conduct a thorough post-flight debrief with key executives and owners to achieve mission sign-off and a clean landing.",
+  },
+  {
+    number: "07",
+    title: "Return Trajectory: The Review",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are still in orbit — and that organisational performance hasn't drifted off course.",
+  }
+]
+
+const salesMarketingSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "All Aboard: Setting the Sales Destination",
+    description: "A senior Sales & Marketing professional pulls into your organisation and, working with commercial leaders, maps the journey to the revenue outcomes you actually want to hit.",
+  },
+  {
+    number: "02",
+    title: "Laying the Pipeline Tracks",
+    description: "Each professional works with sales and marketing managers to engineer a detailed plan of campaigns, funnels and training to get the pipeline on track.",
+  },
+  {
+    number: "03",
+    title: "Full Steam Ahead: Campaign Launch",
+    description: "Leaders and teams assemble for the kick-off whistle. Departments break out into dedicated carriages for briefings and territory assignments before we leave the station.",
+  },
+  {
+    number: "04",
+    title: "On the Main Line: The Sales Engine Goes LIVE",
+    description: "Our experts ride shotgun in the cab — guiding reps, delivering training and making sure every campaign and target is firing on all cylinders.",
+  },
+  {
+    number: "05",
+    title: "Signal Box Check-Ins: Pipeline Reviews",
+    description: "Bi-weekly briefings with sales and marketing leaders to check the signals — reviewing conversion, flagging blockers, and switching tracks if targets need refining.",
+  },
+  {
+    number: "06",
+    title: "Pulling Into the Revenue Terminus",
+    description: "With every campaign delivered, we conduct a thorough end-of-line review with leadership to achieve sign-off on results and bring the engagement to a clean stop.",
+  },
+  {
+    number: "07",
+    title: "Return Journey: The ROI Review",
+    description: "A six, 12 or 18 month return trip to make sure the revenue gains are firmly coupled to your organisation — and still running like clockwork.",
+  }
+]
+
+const hrdSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "All Aboard: Setting the People Destination",
+    description: "A senior HR Development professional pulls into your organisation and, working with leadership, maps the journey to the culture and capability outcomes you want to reach.",
+  },
+  {
+    number: "02",
+    title: "Laying the Tracks: The People Roadmap",
+    description: "Each professional works with department heads and people managers to engineer a detailed plan of development, training and change activity to get the organisation on track.",
+  },
+  {
+    number: "03",
+    title: "Full Steam Ahead: Programme Launch",
+    description: "Leaders and participants assemble for the kick-off whistle. Teams break out into dedicated carriages for briefings and role assignments before we leave the station.",
+  },
+  {
+    number: "04",
+    title: "On the Main Line: Change Goes LIVE",
+    description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every capability and culture deliverable is firing on all cylinders.",
+  },
+  {
+    number: "05",
+    title: "Signal Box Check-Ins: Culture Pulse Checks",
+    description: "Bi-weekly briefings with key executives and people leaders to check the signals — reviewing adoption, flagging resistance, and switching tracks if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Pulling Into the Terminus: Capability Sign-Off",
+    description: "With every module delivered, we conduct a thorough end-of-line review with leadership to achieve programme sign-off and bring the engagement to a clean stop.",
+  },
+  {
+    number: "07",
+    title: "Return Journey: The Retention Review",
+    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture — and still running like clockwork.",
+  }
+]
+
+const focusCopy = {
+  strategy: {
+    tagline: "Our strategic starship launches you into a paragon of corporate sublimity",
+    steps: strategySteps,
+    theme: 'space' as const,
+  },
+  'sales-marketing': {
+    tagline: "Our commercial power train pulls you into a paragon of revenue sublimity",
+    steps: salesMarketingSteps,
+    theme: 'rail' as const,
+  },
+  hrd: {
+    tagline: "Our people-first power train pulls you into a paragon of cultural sublimity",
+    steps: hrdSteps,
+    theme: 'rail' as const,
+  },
+} as const
 
 export function About() {
+  const { focus } = useFocus()
   const [activeFrame, setActiveFrame] = useState(-1)
   const [animationStarted, setAnimationStarted] = useState(false)
   const cycleRef = useRef<HTMLDivElement | null>(null)
   const [cycleInView, setCycleInView] = useState(false)
 
-  const processSteps = [
-    {
-      number: "01",
-      title: "All Aboard: Setting the Destination",
-      description: "A high level business professional pulls into your organisation and working with key leaders, usually driven by major shareholders, maps the journey to define outcomes and deliverables that will get your business where you want to go.",
-      color: "accent-blue"
-    },
-    {
-      number: "02",
-      title: "Laying the Tracks: The Roadmap",
-      description: "Each professional works with department heads and key managers to engineer a detailed plan of activities, actions and training to get the organization on track.",
-      color: "accent-emerald"
-    },
-    {
-      number: "03",
-      title: "Full Steam Ahead: Project Launch",
-      description: "Organizational Leaders and project participants assemble for the kick-off whistle. Teams break out into dedicated carriages for detailed briefings and task assignments before we leave the station.",
-      color: "accent-purple"
-    },
-    {
-      number: "04",
-      title: "On the Main Line: Project Goes LIVE",
-      description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
-      color: "accent-blue"
-    },
-    {
-      number: "05",
-      title: "Signal Box Check-Ins",
-      description: "Bi-weekly briefings with key executives, officers and owners to check the signals — reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
-      color: "accent-purple"
-    },
-    {
-      number: "06",
-      title: "Pulling Into the Terminus",
-      description: "With every task delivered, we conduct a thorough end-of-line review with key executives and owners to achieve project sign-off and bring the engagement to a clean stop.",
-      color: "accent-blue"
-    },
-    {
-      number: "07",
-      title: "Return Journey: The Review",
-      description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture — and that organisational performance is still running like clockwork.",
-      color: "accent-emerald"
-    }
-  ]
+  const active = focus && focus in focusCopy ? focusCopy[focus as keyof typeof focusCopy] : null
+  const processSteps = active ? active.steps : railSteps
+  const tagline = active ? active.tagline : "Our professional power train  pulls you into a paragon of corporate sublimity"
+  const isSpace = active?.theme === 'space'
 
   useEffect(() => {
     // Start film animation after a 3 second pause
@@ -65,7 +202,8 @@ export function About() {
         }, index * 2000 + 1000) // Ultra slow: Start after 24s, then every 72s
       })
     }, 3000) // 3 second pause after section loads
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus])
 
   useEffect(() => {
     const el = cycleRef.current
@@ -117,43 +255,66 @@ export function About() {
           </h2>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Our professional power train  pulls you into a paragon of corporate sublimity
+            {tagline}
           </p>
         </div>
 
         {/* Film Strip Container */}
         <div className="relative max-w-7xl mx-auto">
           
-          {/* Railway Track Background */}
+          {/* Railway Track / Starfield Background */}
           <div className="relative rounded-xl overflow-hidden"
                style={{ 
-                 background: 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)',
+                 background: isSpace
+                   ? 'linear-gradient(to bottom, #05040f 0%, #0b0a1f 20%, #1c0333 50%, #0b0a1f 80%, #05040f 100%)'
+                   : 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)',
                  boxShadow: '0 25px 50px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.05)' 
                }}>
             
-            {/* Railway Ties (sleepers) - scrolling */}
+            {/* Railway Ties (sleepers) / Starfield dots - scrolling */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <div className={`flex items-center h-full ${
                 animationStarted ? 'perforations-scroll-animation' : ''
-              }`} style={{ width: '200%', gap: '32px', paddingLeft: '16px' }}>
-                {[...Array(60)].map((_, i) => (
-                  <div key={`tie-${i}`} className="flex-shrink-0 w-12 h-full"
-                       style={{ 
-                         background: 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
-                         boxShadow: 'inset 0 0 8px rgba(0,0,0,0.5), 2px 0 4px rgba(0,0,0,0.4)',
-                         borderLeft: '1px solid rgba(0,0,0,0.4)',
-                         borderRight: '1px solid rgba(0,0,0,0.4)'
-                       }} />
+              }`} style={{ width: '200%', gap: isSpace ? '18px' : '32px', paddingLeft: '16px' }}>
+                {[...Array(isSpace ? 90 : 60)].map((_, i) => (
+                  isSpace ? (
+                    <div key={`star-${i}`} className="flex-shrink-0 rounded-full"
+                         style={{
+                           width: i % 3 === 0 ? '4px' : '2px',
+                           height: i % 3 === 0 ? '4px' : '2px',
+                           background: '#c79529',
+                           opacity: 0.25 + (i % 5) * 0.12,
+                           boxShadow: '0 0 6px rgba(199,149,41,0.6)',
+                         }} />
+                  ) : (
+                    <div key={`tie-${i}`} className="flex-shrink-0 w-12 h-full"
+                         style={{ 
+                           background: 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
+                           boxShadow: 'inset 0 0 8px rgba(0,0,0,0.5), 2px 0 4px rgba(0,0,0,0.4)',
+                           borderLeft: '1px solid rgba(0,0,0,0.4)',
+                           borderRight: '1px solid rgba(0,0,0,0.4)'
+                         }} />
+                  )
                 ))}
               </div>
             </div>
 
-            {/* Steel Rails - top and bottom (static) */}
+            {/* Steel Rails (rail theme) / Light streaks (space theme) - top and bottom (static) */}
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ top: '28%' }}>
-              <div className="h-1.5" style={{ background: 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />
+              <div className="h-1.5" style={{
+                background: isSpace
+                  ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+              }} />
             </div>
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ bottom: '28%' }}>
-              <div className="h-1.5" style={{ background: 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />
+              <div className="h-1.5" style={{
+                background: isSpace
+                  ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+              }} />
             </div>
 
             {/* Film Frames Container - Scrolling Animation */}
@@ -170,30 +331,43 @@ export function About() {
                   const index = idx % processSteps.length;
                   return (
                     <div key={`car-${idx}`} className="relative flex-shrink-0 w-80 h-52 flex items-center">
-                      {/* Couplers */}
-                      <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
-                      <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                      {/* Couplers (rail) / Thruster glow (space) */}
+                      {isSpace ? (
+                        <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full z-0"
+                             style={{ background: '#c79529', boxShadow: '0 0 10px 3px rgba(199,149,41,0.7)' }} />
+                      ) : (
+                        <>
+                          <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                          <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                        </>
+                      )}
                       
-                      {/* Bogies (wheel trucks) - top */}
-                      <div className="absolute top-0 left-8 right-8 flex justify-between px-4 z-10">
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
-                      </div>
-                      <div className="absolute bottom-0 left-8 right-8 flex justify-between px-4 z-10">
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
-                      </div>
+                      {/* Bogies (wheel trucks) - hidden in space theme */}
+                      {!isSpace && (
+                        <>
+                          <div className="absolute top-0 left-8 right-8 flex justify-between px-4 z-10">
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
+                          </div>
+                          <div className="absolute bottom-0 left-8 right-8 flex justify-between px-4 z-10">
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
+                          </div>
+                        </>
+                      )}
 
-                      {/* Car body (top-down view) */}
+                      {/* Car / Capsule body (top-down view) */}
                       <div
                         className={`relative mx-2 my-4 w-full h-44 ${
                           activeFrame >= index ? 'ring-2 ring-offset-2 ring-offset-transparent' : ''
                         }`}
                         style={{
                           background: `linear-gradient(180deg, ${bodyColor} 0%, ${bodyColor}dd 35%, ${bodyColor}aa 50%, ${bodyColor}dd 65%, ${bodyColor} 100%)`,
-                          borderRadius: '24px',
-                          border: '2px solid rgba(0,0,0,0.4)',
-                          boxShadow: '0 12px 24px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255,255,255,0.15), inset 0 -2px 8px rgba(0,0,0,0.3)',
+                          borderRadius: isSpace ? '9999px 9999px 24px 24px' : '24px',
+                          border: isSpace ? '2px solid rgba(199,149,41,0.5)' : '2px solid rgba(0,0,0,0.4)',
+                          boxShadow: isSpace
+                            ? '0 12px 24px rgba(0,0,0,0.6), 0 0 30px rgba(199,149,41,0.15), inset 0 2px 8px rgba(255,255,255,0.15)'
+                            : '0 12px 24px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255,255,255,0.15), inset 0 -2px 8px rgba(0,0,0,0.3)',
                           color: textColor,
                         }}
                       >
@@ -217,7 +391,7 @@ export function About() {
                           </p>
                         </div>
 
-                        {/* Rivets */}
+                        {/* Rivets / Portholes */}
                         <div className="absolute left-2 top-4 bottom-4 flex flex-col justify-between opacity-50">
                           {[...Array(4)].map((_, i) => (<div key={i} className="w-1 h-1 rounded-full" style={{ background: textColor }} />))}
                         </div>

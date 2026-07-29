@@ -6,14 +6,18 @@ import { Services } from './components/Services'
 import { Team } from './components/Team'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { FocusProfile } from './components/FocusProfile'
+import { FocusProvider } from './contexts/FocusContext'
 
 export default function App() {
   return (
+    <FocusProvider>
     <div className="min-h-screen bg-background text-foreground" style={{ overflow: 'visible' }}>
       <main className="relative" role="main" style={{ overflow: 'visible' }}>
         <section id="hero" aria-label="Hero section">
           <Hero />
         </section>
+        <FocusProfile />
         <section id="portfolio" aria-label="Portfolio section">
           <Portfolio />
         </section>
@@ -35,5 +39,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </FocusProvider>
   )
 }

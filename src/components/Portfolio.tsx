@@ -1,31 +1,39 @@
 'use client'
 
-import { Scale, Shield, Calculator, Users } from 'lucide-react'
+import { Radio, Presentation, CalendarRange, GraduationCap } from 'lucide-react'
 
-const services = [
+const formats = [
   {
-    icon: Scale,
-    title: 'Tenacious Effective Litigation',
-    text: 'Battle-tested litigators who pursue every angle with relentless rigor — protecting your position and securing outcomes that hold up in court.',
-    tagline: 'Because settling for "settled" isn\'t a strategy',
+    icon: Radio,
+    title: '1-2 Hour Online Briefing',
+    text: 'A free, focused introduction to Strategic Workplace AI — delivered remotely, tailored to your organisation or function.',
+    tagline: 'Free of charge \u00b7 online',
+    infoHref: '#',
+    bookHref: '#',
   },
   {
-    icon: Shield,
-    title: 'Comprehensive Professional Reinsurance',
-    text: 'Specialist reinsurance counsel and structuring expertise that spreads risk intelligently and keeps capital working where it matters most.',
-    tagline: 'Risk, redistributed with surgical intent',
+    icon: Presentation,
+    title: 'In-Depth AI Strategic Workshop',
+    text: 'Up to 7 hours, in person, going deep on implementing Strategic & Organisational AI tools for your specific role.',
+    tagline: 'Paid \u00b7 early bird pricing available',
+    infoHref: '#',
+    bookHref: '#',
   },
   {
-    icon: Calculator,
-    title: 'Complex Competent Accounting',
-    text: 'Senior accountants who untangle the most intricate financial puzzles — forensic detail, regulatory fluency, and clarity you can act on.',
-    tagline: 'Numbers that tell the truth, beautifully',
+    icon: CalendarRange,
+    title: 'Five-Weekend Masterclass',
+    text: 'Five consecutive weekends of hands-on AI transformation training — HRD Corp claimable, heavily discounted for groups.',
+    tagline: 'HRD Corp Claimable',
+    infoHref: '#',
+    bookHref: '#',
   },
   {
-    icon: Users,
-    title: 'Heroic Human Resources',
-    text: 'HR leaders who turn culture, compliance and people strategy into a real competitive edge — from policy design to delicate, high-stakes interventions.',
-    tagline: 'People problems, professionally solved',
+    icon: GraduationCap,
+    title: 'Five-Day Bootcamp',
+    text: 'Five consecutive weekdays of intensive AI transformation training — HRD Corp claimable, heavily discounted for groups.',
+    tagline: 'HRD Corp Claimable',
+    infoHref: '#',
+    bookHref: '#',
   },
 ]
 
@@ -45,7 +53,7 @@ export function Portfolio() {
               style={{ background: 'var(--brand-olive)' }}
             />
             <span className="text-sm font-semibold text-muted-foreground">
-              Some Magnificent Work
+              PBS Section 1
             </span>
             <div
               className="w-3 h-3 rounded-full animate-pulse"
@@ -54,17 +62,17 @@ export function Portfolio() {
           </div>
 
           <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8">
-            <span className="block mb-2">Professionals & their <br />Services</span>
+            <span className="block mb-2">Choose Your <br />Workshop Format</span>
           </h2>
 
           <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Some of the professional services, consulting & training delivered by our exceptional team.
+            Four ways to bring Strategic AI Transformation into your organisation.
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Formats Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {services.map(({ icon: Icon, title, text, tagline }) => (
+          {formats.map(({ icon: Icon, title, text, tagline, infoHref, bookHref }) => (
             <div
               key={title}
               className="rounded-2xl p-8 lg:p-10 gentle-animation hover:-translate-y-1"
@@ -82,12 +90,28 @@ export function Portfolio() {
                   <h3 className="text-2xl font-bold mb-4 leading-tight" style={{ color: '#1a1a1a' }}>
                     {title}
                   </h3>
-                  <p className="text-base leading-relaxed mb-6" style={{ color: '#4a4a4a' }}>
+                  <p className="text-base leading-relaxed mb-4" style={{ color: '#4a4a4a' }}>
                     {text}
                   </p>
-                  <p className="text-sm font-bold italic" style={{ color: '#1a1a1a' }}>
+                  <p className="text-sm font-bold italic mb-6" style={{ color: '#1a1a1a' }}>
                     {tagline}
                   </p>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={infoHref}
+                      className="text-xs font-semibold px-4 py-2 rounded-full border-2 gentle-animation hover:-translate-y-0.5"
+                      style={{ borderColor: '#1a1a1a', color: '#1a1a1a' }}
+                    >
+                      More Info
+                    </a>
+                    <a
+                      href={bookHref}
+                      className="text-xs font-semibold px-4 py-2 rounded-full gentle-animation hover:-translate-y-0.5"
+                      style={{ background: '#1a1a1a', color: '#fafafa' }}
+                    >
+                      Book
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
