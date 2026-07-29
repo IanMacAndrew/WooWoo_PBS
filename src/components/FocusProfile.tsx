@@ -1,7 +1,7 @@
 'use client'
 
 import { useFocus } from '@/contexts/FocusContext'
-import { Compass, TrendingUp, Users2, Scale3d } from 'lucide-react'
+import { Compass, TrendingUp, Users2, Gavel, Contact, Calculator, ShieldCheck } from 'lucide-react'
 
 const profiles = {
   strategy: {
@@ -16,19 +16,21 @@ const profiles = {
       'Prior strategy leadership at PwC, AWR Lloyd (Bangkok), Booz & Company (D\u00fcsseldorf & Bangkok), Hochtief Construction AG (Essen), and KPMG/BearingPoint',
       'MBA, London Business School (Corporate Finance) \u00b7 BA Economics & Political Science, University of Michigan',
     ],
+    note: 'Pending confirmation from David on name/alias and CV summary approval.',
     color: '#1c0333',
   },
   'sales-marketing': {
     eyebrow: 'Sales & Marketing Focus',
     icon: TrendingUp,
     name: 'Ian MacAndrew',
+    nameSuffix: '(Omar IS MacAndrew)',
     role: 'Sales, Marketing & Troubleshooting Operations Recovery Consultant',
     tagline: 'Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia.',
     bullets: [
       'Regional leadership across reinsurance, insuretech and outsourced BPO — including SYMBO Platform Holdings, Pana Harrison and HLAP Ltd.',
-      'Grew a jewellery retailer\u2019s revenue from RM 60 million to RM 200 million in 12 months, and scaled a BPO from US$300,000 to US$4,000,000 in under a year',
+      'Grew a jewellery retailer\u2019s revenue from RM 160 million to RM 200 million in under six months, adopting Isa Karim\u2019s amazing Strategic work',
       'Recovered Malaysia\u2019s first offshore outsourcing project and set up contact centres from 30 to 600+ seats across Asia',
-      'Career spans SITEL, Scicom, SRG Asia Pacific, BMRB (UK) and founding two consulting practices of his own',
+      'Over RM2 Billion in top line, bottom line or cost down opportunities added to organizations\u2019 revenue and still counting',
     ],
     color: '#c79529',
   },
@@ -43,17 +45,53 @@ const profiles = {
       'Specialist insight into the future of work, strategic thought, change management, and human capital development',
       'Brings critical, real-world leadership perspective to organisational HRD programmes',
     ],
+    note: 'Pending sign-off from Dr Sagan before this goes live.',
     color: '#0F52BA',
     link: 'https://www.michelesagan.com/',
   },
-  'law-crm': {
-    eyebrow: 'Law & CRM Focus',
-    icon: Scale3d,
+  law: {
+    eyebrow: 'Law Focus',
+    icon: Gavel,
+    name: 'Nad Segaram',
+    role: 'Partner, Shearn Delamore & Co. \u2014 General & Commercial Litigation',
+    tagline: 'Leading dispute resolution counsel advising on complex commercial and employment litigation across Malaysia and internationally.',
+    bullets: [
+      'Partner in the Dispute Resolution practice group at Shearn Delamore & Co., one of Malaysia\u2019s longest-established law firms',
+      'Co-author of "Employment & Industrial Relations Law in Malaysia"',
+      'Active in the International Bar Association (IBA) and the Inter-Pacific Bar Association (IPBA)',
+      'Based in Kuala Lumpur',
+    ],
+    note: 'Draft profile built from public sources \u2014 please confirm details with Nad before this goes live.',
+    color: '#764A34',
+  },
+  crm: {
+    eyebrow: 'CRM Focus',
+    icon: Contact,
     name: 'Coming Soon',
     role: 'Profile in progress',
-    tagline: 'This focus area is being built out — check back shortly for the full profile and services.',
+    tagline: 'This focus area is being built out \u2014 check back shortly for the full profile and services.',
     bullets: [],
-    color: '#764A34',
+    color: '#596A8B',
+  },
+  accounting: {
+    eyebrow: 'Accounting Focus',
+    icon: Calculator,
+    name: 'Colin Warner',
+    role: 'Profile in progress',
+    tagline: 'Full profile coming shortly \u2014 details still to be confirmed.',
+    bullets: [],
+    note: 'Awaiting confirmed bio details for Colin.',
+    color: '#0F7B6C',
+  },
+  reinsurance: {
+    eyebrow: 'Reinsurance Focus',
+    icon: ShieldCheck,
+    name: 'Coming Soon',
+    role: 'Something exciting is being reinsured as we speak',
+    tagline: 'Watch this space \u2014 a Reinsurance focus profile is on its way.',
+    bullets: [],
+    note: 'Awaiting confirmation from the Leader before this section is built out.',
+    color: '#AAFF00',
   },
 } as const
 
@@ -91,7 +129,14 @@ export function FocusProfile() {
                 <Icon className="w-8 h-8 text-white" strokeWidth={2} />
               </div>
               <div className="flex-1">
-                <h2 className="text-3xl sm:text-4xl font-black mb-1 text-foreground">{profile.name}</h2>
+                <h2 className="text-3xl sm:text-4xl font-black mb-1 text-foreground">
+                  {profile.name}
+                  {'nameSuffix' in profile && profile.nameSuffix && (
+                    <span className="text-base sm:text-lg font-medium text-muted-foreground ml-2">
+                      {profile.nameSuffix}
+                    </span>
+                  )}
+                </h2>
                 <p className="text-base sm:text-lg font-semibold mb-4" style={{ color: profile.color }}>
                   {profile.role}
                 </p>
@@ -119,8 +164,14 @@ export function FocusProfile() {
                     className="inline-block mt-6 text-sm font-semibold underline underline-offset-4"
                     style={{ color: profile.color }}
                   >
-                    More about Dr Sagan →
+                    More about Dr Sagan &rarr;
                   </a>
+                )}
+
+                {'note' in profile && profile.note && (
+                  <p className="mt-6 text-xs text-muted-foreground italic border-t border-border pt-4">
+                    {profile.note}
+                  </p>
                 )}
               </div>
             </div>

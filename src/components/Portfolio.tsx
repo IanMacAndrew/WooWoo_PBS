@@ -1,6 +1,16 @@
 'use client'
 
 import { Radio, Presentation, CalendarRange, GraduationCap } from 'lucide-react'
+import { useFocus } from '@/contexts/FocusContext'
+
+const subtitleByFocus: Record<string, string> = {
+  strategy: 'Four ways to bring Strategic AI Transformation into your organisation.',
+  'sales-marketing': 'Four ways to bring Strategic Sales & Marketing AI Transformation into your organisation.',
+  hrd: 'Four ways to bring Strategic HRD AI Transformation into your organisation.',
+  accounting: 'Four ways to bring Strategic Accounting AI Transformation into your organisation.',
+  law: 'Four ways to bring Strategic Law AI Transformation into your organisation (for Legal Firms and Corporations).',
+}
+const defaultSubtitle = 'Four ways to bring Strategic AI Transformation into your organisation.'
 
 const formats = [
   {
@@ -38,6 +48,8 @@ const formats = [
 ]
 
 export function Portfolio() {
+  const { focus } = useFocus()
+  const subtitle = (focus && subtitleByFocus[focus]) || defaultSubtitle
   return (
     <section
       id="portfolio"
@@ -53,7 +65,7 @@ export function Portfolio() {
               style={{ background: 'var(--brand-olive)' }}
             />
             <span className="text-sm font-semibold text-muted-foreground">
-              PBS Section 1
+              Ready to Rock?!
             </span>
             <div
               className="w-3 h-3 rounded-full animate-pulse"
@@ -66,7 +78,7 @@ export function Portfolio() {
           </h2>
 
           <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            Four ways to bring Strategic AI Transformation into your organisation.
+            {subtitle}
           </p>
         </div>
 

@@ -10,7 +10,10 @@ const workOptions: { label: string; value: Focus }[] = [
   { label: 'Strategy', value: 'strategy' },
   { label: 'Sales & Marketing', value: 'sales-marketing' },
   { label: 'HR Development', value: 'hrd' },
-  { label: 'Law & CRM', value: 'law-crm' },
+  { label: 'Law', value: 'law' },
+  { label: 'CRM', value: 'crm' },
+  { label: 'Accounting', value: 'accounting' },
+  { label: 'Reinsurance', value: 'reinsurance' },
 ]
 
 function goToFocusProfile() {

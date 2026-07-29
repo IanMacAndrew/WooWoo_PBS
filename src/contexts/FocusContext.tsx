@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, ReactNode } from 'react'
 
-export type Focus = 'strategy' | 'sales-marketing' | 'hrd' | 'law-crm' | null
+export type Focus = 'strategy' | 'sales-marketing' | 'hrd' | 'law' | 'crm' | 'accounting' | 'reinsurance' | null
 
 interface FocusContextValue {
   focus: Focus
