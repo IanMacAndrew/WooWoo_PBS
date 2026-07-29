@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useFocus } from '@/contexts/FocusContext'
+import { Sparkles, Unlock, Coins, Search, ShieldCheck, Rocket, TrainFront, type LucideIcon } from 'lucide-react'
 
 type ProcessStep = {
   number: string
@@ -126,38 +127,190 @@ const salesMarketingSteps: ProcessStep[] = [
 const hrdSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "All Aboard: Setting the People Destination",
-    description: "A senior HR Development professional pulls into your organisation and, working with leadership, maps the journey to the culture and capability outcomes you want to reach.",
+    title: "Egg to Appetite: Spotting the Need",
+    description: "A senior HR Development professional pulls into your organisation and, working with leadership, identifies exactly where culture and capability need to grow.",
   },
   {
     number: "02",
-    title: "Laying the Tracks: The People Roadmap",
-    description: "Each professional works with department heads and people managers to engineer a detailed plan of development, training and change activity to get the organisation on track.",
+    title: "The Caterpillar Years: Building the Diet",
+    description: "Each professional works with department heads and people managers to engineer a detailed plan of development, training and change activity to feed real growth.",
   },
   {
     number: "03",
-    title: "Full Steam Ahead: Programme Launch",
-    description: "Leaders and participants assemble for the kick-off whistle. Teams break out into dedicated carriages for briefings and role assignments before we leave the station.",
+    title: "First Bite: Programme Launch",
+    description: "Leaders and participants assemble for the kick-off. Teams break out for briefings and role assignments before the transformation truly begins.",
   },
   {
     number: "04",
-    title: "On the Main Line: Change Goes LIVE",
-    description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every capability and culture deliverable is firing on all cylinders.",
+    title: "Spinning the Cocoon: Change Goes LIVE",
+    description: "Our experts guide teams through the change, delivering training and making sure every capability and culture deliverable is quietly taking shape.",
   },
   {
     number: "05",
-    title: "Signal Box Check-Ins: Culture Pulse Checks",
-    description: "Bi-weekly briefings with key executives and people leaders to check the signals — reviewing adoption, flagging resistance, and switching tracks if anything needs refining.",
+    title: "Chrysalis Check-Ins",
+    description: "Bi-weekly pulse checks with key executives and people leaders — reviewing adoption, flagging resistance, and adjusting the programme if anything needs refining.",
   },
   {
     number: "06",
-    title: "Pulling Into the Terminus: Capability Sign-Off",
-    description: "With every module delivered, we conduct a thorough end-of-line review with leadership to achieve programme sign-off and bring the engagement to a clean stop.",
+    title: "Emergence: Wings Unfold",
+    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off — the new capability fully formed.",
   },
   {
     number: "07",
-    title: "Return Journey: The Retention Review",
-    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture — and still running like clockwork.",
+    title: "Taking Flight: The Retention Review",
+    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture — and still flying strong.",
+  }
+]
+
+const lawSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Naming the Shackles",
+    description: "A senior legal professional pulls into your organisation and, working with leadership, identifies exactly which legal and operational burdens are holding you back.",
+  },
+  {
+    number: "02",
+    title: "Drafting the Release",
+    description: "Each professional works with department heads to engineer a detailed plan of actions to remove constraints and reduce risk.",
+  },
+  {
+    number: "03",
+    title: "Breaking Ground: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the release process begins.",
+  },
+  {
+    number: "04",
+    title: "Cutting the Chains: Programme Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every governance and compliance deliverable is firing cleanly.",
+  },
+  {
+    number: "05",
+    title: "Liberty Check-Ins",
+    description: "Bi-weekly briefings with key executives to check progress — reviewing risk, flagging exposure, and adjusting course if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Standing Unshackled: Sign-Off",
+    description: "With every task delivered, we conduct a thorough review with leadership to achieve sign-off — the organisation free and clear.",
+  },
+  {
+    number: "07",
+    title: "Freedom Held: The Compliance Review",
+    description: "A six, 12 or 18 month return trip to make sure the organisation is still standing free of the burdens we removed.",
+  }
+]
+
+const crmSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Planting the First Coin",
+    description: "A senior CRM professional pulls into your organisation and, working with leadership, identifies exactly where relationship value is being left on the table.",
+  },
+  {
+    number: "02",
+    title: "Compounding the Stack",
+    description: "Each professional works with sales and service managers to engineer a detailed plan for growing every customer relationship over time.",
+  },
+  {
+    number: "03",
+    title: "Seed Capital: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and territory assignments before the growth phase begins.",
+  },
+  {
+    number: "04",
+    title: "The Pile Grows: CRM Goes LIVE",
+    description: "Our experts guide teams through rollout, making sure every relationship-building deliverable is compounding as planned.",
+  },
+  {
+    number: "05",
+    title: "Counting the Coins",
+    description: "Bi-weekly briefings with leadership to check progress — reviewing retention, flagging churn risk, and adjusting course if needed.",
+  },
+  {
+    number: "06",
+    title: "Vault Sign-Off",
+    description: "With every deliverable complete, we conduct a thorough review with leadership to achieve programme sign-off.",
+  },
+  {
+    number: "07",
+    title: "Interest Accrued: The Growth Review",
+    description: "A six, 12 or 18 month return trip to make sure the relationship value is still compounding, quarter after quarter.",
+  }
+]
+
+const accountingSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Following the Trail",
+    description: "A senior accounting professional pulls into your organisation and, working with leadership, identifies exactly where value is going unaccounted for.",
+  },
+  {
+    number: "02",
+    title: "Mapping the Ledger",
+    description: "Each professional works with finance managers to engineer a detailed plan of investigation, reconciliation and control.",
+  },
+  {
+    number: "03",
+    title: "Opening the Books: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the investigation begins.",
+  },
+  {
+    number: "04",
+    title: "The Hunt Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every reconciliation and control deliverable is on the money.",
+  },
+  {
+    number: "05",
+    title: "Reconciliation Check-Ins",
+    description: "Bi-weekly briefings with leadership to check progress — reviewing findings, flagging discrepancies, and adjusting scope if needed.",
+  },
+  {
+    number: "06",
+    title: "Books Balanced: Sign-Off",
+    description: "With every account reconciled, we conduct a thorough review with leadership to achieve sign-off — the books finally balanced.",
+  },
+  {
+    number: "07",
+    title: "Found Money: The Recovery Review",
+    description: "A six, 12 or 18 month return trip to make sure the recovered value is still accounted for, properly and completely.",
+  }
+]
+
+const reinsuranceSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Mapping the Grid",
+    description: "A senior reinsurance professional pulls into your organisation and, working with leadership, identifies exactly where capital exposure needs protecting.",
+  },
+  {
+    number: "02",
+    title: "Reinforcing the Foundations",
+    description: "Each professional works with finance and risk managers to engineer a detailed plan for securing owner and investor capital.",
+  },
+  {
+    number: "03",
+    title: "Powering Up: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the protection plan goes live.",
+  },
+  {
+    number: "04",
+    title: "Full Power: Protection Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every protective deliverable is running at full, steady power.",
+  },
+  {
+    number: "05",
+    title: "Systems Check-Ins",
+    description: "Bi-weekly briefings with leadership to check the grid — reviewing exposure, flagging risk, and adjusting course if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Grid Secured: Sign-Off",
+    description: "With every safeguard in place, we conduct a thorough review with leadership to achieve programme sign-off.",
+  },
+  {
+    number: "07",
+    title: "Steady Current: The Resilience Review",
+    description: "A six, 12 or 18 month return trip to make sure capital is still safe, protected and running at full power.",
   }
 ]
 
@@ -173,11 +326,69 @@ const focusCopy = {
     theme: 'rail' as const,
   },
   hrd: {
-    tagline: "Our people-first power train pulls you into a paragon of cultural sublimity",
+    tagline: "From caterpillar cost-centre to butterfly bottom-line \u2014 a transformation you can watch unfold",
     steps: hrdSteps,
-    theme: 'rail' as const,
+    theme: 'metamorphosis' as const,
+  },
+  law: {
+    tagline: "Every organisation carries a little weight \u2014 our journey is about setting it free",
+    steps: lawSteps,
+    theme: 'liberation' as const,
+  },
+  crm: {
+    tagline: "Every relationship is a coin worth compounding \u2014 watch the pile grow",
+    steps: crmSteps,
+    theme: 'growth' as const,
+  },
+  accounting: {
+    tagline: "Somewhere in your books, money is waiting to be found \u2014 we go looking",
+    steps: accountingSteps,
+    theme: 'search' as const,
+  },
+  reinsurance: {
+    tagline: "Capital deserves a safe, steady current \u2014 protected and always running",
+    steps: reinsuranceSteps,
+    theme: 'power' as const,
   },
 } as const
+
+const themePalette: Record<string, { bg: string; tie: string; rail: string; icon: LucideIcon; iconColor: string }> = {
+  metamorphosis: {
+    bg: 'linear-gradient(to bottom, #0b2b26 0%, #123a32 20%, #0a2420 50%, #123a32 80%, #0b2b26 100%)',
+    tie: 'linear-gradient(to bottom, #1f5c4d, #123a32, #1f5c4d)',
+    rail: '#5fbf9f',
+    icon: Sparkles,
+    iconColor: '#5fbf9f',
+  },
+  liberation: {
+    bg: 'linear-gradient(to bottom, #14161c 0%, #1d2029 20%, #0f1116 50%, #1d2029 80%, #14161c 100%)',
+    tie: 'linear-gradient(to bottom, #3a3f4d, #22252e, #3a3f4d)',
+    rail: '#c79529',
+    icon: Unlock,
+    iconColor: '#c79529',
+  },
+  growth: {
+    bg: 'linear-gradient(to bottom, #2b2308 0%, #3a2e0d 20%, #201a06 50%, #3a2e0d 80%, #2b2308 100%)',
+    tie: 'linear-gradient(to bottom, #7a5c1e, #4a3812, #7a5c1e)',
+    rail: '#e8c766',
+    icon: Coins,
+    iconColor: '#e8c766',
+  },
+  search: {
+    bg: 'linear-gradient(to bottom, #0d1b2b 0%, #12253a 20%, #091420 50%, #12253a 80%, #0d1b2b 100%)',
+    tie: 'linear-gradient(to bottom, #2f4c66, #1a3247, #2f4c66)',
+    rail: '#7fb8e0',
+    icon: Search,
+    iconColor: '#7fb8e0',
+  },
+  power: {
+    bg: 'linear-gradient(to bottom, #1a1408 0%, #2b1f0d 20%, #120d05 50%, #2b1f0d 80%, #1a1408 100%)',
+    tie: 'linear-gradient(to bottom, #6b4a1f, #3d2a12, #6b4a1f)',
+    rail: '#0F52BA',
+    icon: ShieldCheck,
+    iconColor: '#6fa8e8',
+  },
+}
 
 export function About() {
   const { focus } = useFocus()
@@ -190,6 +401,8 @@ export function About() {
   const processSteps = active ? active.steps : railSteps
   const tagline = active ? active.tagline : "Our professional power train  pulls you into a paragon of corporate sublimity"
   const isSpace = active?.theme === 'space'
+  const palette = active ? themePalette[active.theme] : undefined
+  const PaletteIcon = palette?.icon
 
   useEffect(() => {
     // Start film animation after a 3 second pause
@@ -267,7 +480,7 @@ export function About() {
                style={{ 
                  background: isSpace
                    ? 'linear-gradient(to bottom, #05040f 0%, #0b0a1f 20%, #1c0333 50%, #0b0a1f 80%, #05040f 100%)'
-                   : 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)',
+                   : (palette?.bg ?? 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)'),
                  boxShadow: '0 25px 50px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.05)' 
                }}>
             
@@ -289,7 +502,7 @@ export function About() {
                   ) : (
                     <div key={`tie-${i}`} className="flex-shrink-0 w-12 h-full"
                          style={{ 
-                           background: 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
+                           background: palette?.tie ?? 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
                            boxShadow: 'inset 0 0 8px rgba(0,0,0,0.5), 2px 0 4px rgba(0,0,0,0.4)',
                            borderLeft: '1px solid rgba(0,0,0,0.4)',
                            borderRight: '1px solid rgba(0,0,0,0.4)'
@@ -304,6 +517,8 @@ export function About() {
               <div className="h-1.5" style={{
                 background: isSpace
                   ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : palette
+                  ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
                   : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
               }} />
@@ -312,6 +527,8 @@ export function About() {
               <div className="h-1.5" style={{
                 background: isSpace
                   ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : palette
+                  ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
                   : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
                 boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
               }} />
@@ -378,9 +595,17 @@ export function About() {
 
                         {/* Car number plate */}
                         <div className="absolute -top-2 -left-2 w-10 h-10 rounded-full flex items-center justify-center font-black text-sm z-20 border-2"
-                             style={{ background: '#1a1a1a', color: '#fafafa', borderColor: '#c79529', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
+                             style={{ background: '#1a1a1a', color: '#fafafa', borderColor: palette?.iconColor ?? '#c79529', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
                           {step.number}
                         </div>
+
+                        {/* Theme icon badge */}
+                        {PaletteIcon && (
+                          <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center z-20 border-2"
+                               style={{ background: '#1a1a1a', borderColor: palette.iconColor, boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
+                            <PaletteIcon className="w-4 h-4" style={{ color: palette.iconColor }} strokeWidth={2.5} />
+                          </div>
+                        )}
 
                         <div className="relative h-full px-8 py-5 flex flex-col justify-center">
                           <h3 className="font-black text-lg leading-tight mb-2" style={{ color: textColor }}>

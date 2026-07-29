@@ -11,47 +11,47 @@ export function Services() {
     {
       id: 'campaigns',
       title: "General & Commercial Litigation",
-      description: "Multi-platform video campaigns ready for every channel—YouTube, TikTok, Instagram, and beyond.",
+      description: "Sharp, decisive counsel on commercial disputes and litigation — protecting your position from first filing to final judgment.",
       color: 'accent-emerald',
       rotation: 'rotate-2',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&auto=format'
     },
     {
       id: 'brand-films',
-      title: "Brand Films & Stories", 
-      description: "Cinematic brand videos that capture your essence and connect with audiences on an emotional level.",
+      title: "Strategy & AI",
+      description: "Bold, board-level strategy that puts AI to work on your biggest ambitions — built to take your organisation to the moon.",
       color: 'accent-blue',
       rotation: '-rotate-1',
       image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=300&fit=crop&auto=format'
     },
     {
       id: 'trailers',
-      title: "Trailers & Promos",
-      description: "High-impact teasers that hook viewers instantly—perfect for launches, events, and announcements.",
+      title: "HR Development",
+      description: "Michele Sagan's Future of Work Solutions — future-proofing leadership, culture and human capital for what's coming next.",
       color: 'accent-purple',
       rotation: 'rotate-1',
       image: 'https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=300&fit=crop&auto=format'
     },
     {
       id: 'short-films',
-      title: "Short-Form Films",
-      description: "Festival-ready mini-movies up to 5 minutes—ideal for investors, events, and premium content.",
+      title: "Transformative Revenue Improvement",
+      description: "Hands-on sales and marketing recovery that lifts top-line and bottom-line results — fast, and built to last.",
       color: 'accent-emerald',
       rotation: '-rotate-2',
       image: 'https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=300&fit=crop&auto=format'
     },
     {
       id: 'animation',
-      title: "Animation & Motion",
-      description: "Stylized animated content that explains complex ideas without needing live actors.",
+      title: "Rigorous Reinsurance",
+      description: "Securing the most valuable reinsurer asset \u2014 owner/investor capital \u2014 with disciplined, protective rigour.",
       color: 'accent-blue',
       rotation: 'rotate-3',
       image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop&auto=format'
     },
     {
       id: 'social',
-      title: "Social Content",
-      description: "Thumb-stopping vertical videos delivered in batches to keep your feed consistently engaging.",
+      title: "Awesome Accounting",
+      description: "Comprehensive investigative accounting and capital control — finding the money others miss, and keeping it found.",
       color: 'accent-purple',
       rotation: '-rotate-1',
       image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=300&fit=crop&auto=format'
@@ -318,7 +318,7 @@ export function Services() {
                     
                     {/* Developer stamp */}
                     <div className="absolute bottom-2 right-2 text-xs text-gray-400 font-mono opacity-60">
-                      MOJJU LAB
+                      WOOWOO PBS
                     </div>
                   </div>
                 </div>
@@ -521,7 +521,7 @@ export function Services() {
                     <div className="absolute bottom-8 left-3 w-2 h-8 bg-yellow-100/20 rounded-full transform rotate-15" />
                     
                     <div className="absolute bottom-2 right-2 text-xs text-gray-400 font-mono opacity-60">
-                      MOJJU LAB
+                      WOOWOO PBS
                     </div>
                   </div>
                 </div>

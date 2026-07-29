@@ -1,18 +1,18 @@
 'use client'
 
 export function Footer() {
-  const aiTools = [
-    'Runway Gen-4',
-    'Kling 2', 
-    'Veo 3',
-    'Higgsfield AI',
-    'Hailuo Minimax 2',
-    'Midjourney',
-    'Leonardo AI',
-    'Krea AI',
-    'Runway',
-    'Suno AI',
-    'ElevenLabs'
+  const aiTools: { label: string; href?: string; wide?: boolean }[] = [
+    { label: 'Massive Mental HP' },
+    { label: '20+ years experience' },
+    { label: 'Github', href: 'https://github.com' },
+    { label: 'Supabase', href: 'https://supabase.com' },
+    { label: 'Appropriate AI' },
+    { label: 'Grit & Determination' },
+    { label: 'Cloudflare', href: 'https://www.cloudflare.com' },
+    { label: 'Tailor made results' },
+    { label: 'Stripe', href: 'https://stripe.com' },
+    { label: 'Unconditional Love' },
+    { label: 'The Mighty Claude by Anthropic', href: 'https://www.anthropic.com', wide: true },
   ]
 
   return (
@@ -23,11 +23,10 @@ export function Footer() {
           <div className="col-span-12 md:col-span-4">
             <div>
               <div className="font-bagel text-background text-3xl tracking-wider mb-4">
-                MOJJU
+                WooWoo PBS
               </div>
               <p className="text-background/70 leading-relaxed mb-6">
-                Revolutionizing video production with intelligent AI that understands 
-                creativity, storytelling, and human emotion.
+                Hardcore consulting & intelligent Strategic AI that takes the time to understand you, your business. Creating optimal human and organizational performance. Resultants, not consultants.
               </p>
               {/* Social Media Icons */}
               <div className="flex items-center space-x-6">
@@ -101,13 +100,25 @@ export function Footer() {
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {aiTools.map((tool, index) => (
-                  <div
-                    key={tool}
-                    className="text-background/80 hover:text-background gentle-animation text-sm font-medium"
-                  >
-                    {tool}
-                  </div>
+                {aiTools.map((tool) => (
+                  tool.href ? (
+                    <a
+                      key={tool.label}
+                      href={tool.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`text-background/80 hover:text-background gentle-animation text-sm font-medium underline underline-offset-4 ${tool.wide ? 'col-span-2' : ''}`}
+                    >
+                      {tool.label}
+                    </a>
+                  ) : (
+                    <div
+                      key={tool.label}
+                      className="text-background/80 hover:text-background gentle-animation text-sm font-medium"
+                    >
+                      {tool.label}
+                    </div>
+                  )
                 ))}
               </div>
             </div>
@@ -118,10 +129,10 @@ export function Footer() {
         <div className="border-t border-background/20 pt-8 mt-16">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="text-sm text-background/70 mb-4 md:mb-0">
-              © 2025 MOJJU. All rights reserved.
+              © 2025 WooWoo World Sdn. Bhd.. All rights reserved.
             </div>
             <div className="text-sm text-background/70">
-              2847 HIGHLAND AVE. SUITE 310 BIRMINGHAM 35205, AL, USA
+              SO-26-02, Menara 1, No. 3, Jalan Bangsar, KL Eco City, 59200 Kuala Lumpur, W.P. Kuala Lumpur
             </div>
           </div>
         </div>

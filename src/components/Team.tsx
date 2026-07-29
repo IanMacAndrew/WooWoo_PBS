@@ -3,105 +3,65 @@
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import marcusPhoto from '../assets/team-member-1.jpeg'
 import sofiaPhoto from '../assets/team-member-2.png'
-import jakePhoto from '../assets/team-member-3.png'
 import mayaPhoto from '../assets/team-member-4.png'
 import connorPhoto from '../assets/team-member-5.png'
 import zaraPhoto from '../assets/team-member-6.png'
-import leoPhoto from '../assets/team-member-7.png'
+import davidHoardPhoto from '../assets/david-hoard-photo.jpeg'
+import omarPhoto from '../assets/omar-photo.jpg'
 
 export function Team() {
   const wantedCriminals = [
     {
       name: "Nad 'The Counselor' Segaram",
-      crime: "ARMED CREATIVE ROBBERY",
       bounty: "$8,500",
-      description: "Notorious for taking a complex legal matter and reducing it to its simplest immutable, inarguable form. Approach with extreme caution — carries dangerous levels of legal knowledge and technical wisdom.",
+      description: "Renowned for reducing complex legal matters into their simplest, most defensible form. Approach with confidence — carries a serious level of legal knowledge and technical wisdom.",
       image: marcusPhoto,
       rotation: 'rotate-3',
-      mustacheStyle: "artistic"
     },
     {
-      name: "Sofia 'The Frame Thief'",
-      crime: "GRAND THEFT OF IMAGINATION",
-      bounty: "$6,200",
-      description: "Wanted for stealing impossible creative briefs and turning them into award-winning masterpieces. Armed with strategic thinking and dangerous levels of project management skills.",
+      name: "Michele 'The Future Framer'",
+      bounty: "$13,200",
+      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
       image: sofiaPhoto,
       rotation: 'rotate-2',
-      mustacheStyle: "handlebar"
     },
     {
-      name: "Jake 'The Render Rogue'",
-      crime: "MASTERMINDING TECHNICAL HEISTS",
-      bounty: "$11,800",
-      description: "Ringleader of rendering crimes, orchestrating elaborate computational operations. Wanted for leading sophisticated processing schemes that push hardware beyond its limits.",
-      image: jakePhoto,
+      name: "The Hoardman 'Strategic AI Guru'",
+      bounty: "$18,800",
+      description: "Two decades of strategy consulting across the globe, now condensed into an unstoppable AI transformation playbook. Wanted for turning boardroom ambition into real, delivered outcomes.",
+      image: davidHoardPhoto,
       rotation: 'rotate-2',
-      mustacheStyle: "thick"
     },
     {
-      name: "Maya 'The Code Crusher'",
-      crime: "DIGITAL WIZARDRY & ALGORITHM SORCERY",
-      bounty: "$9,300",
-      description: "Wanted for conjuring flawless code from chaotic requirements using forbidden programming magic. Known to transform complex problems into elegant solutions with mysterious technical powers.",
+      name: "Max 'The AI Maverick'",
+      bounty: "$3,330",
+      description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
       image: mayaPhoto,
       rotation: '-rotate-2',
-      mustacheStyle: "curly"
     },
     {
       name: "Colin 'The Profesor' Warner",
-      crime: "PRODUCTION WITH INTENT TO AMAZE",
       bounty: "$13,700",
-      description: "Mastermind behind revolutionary content creation operations. Wanted for disrupting traditional production methods and making competitors question their entire approach.",
+      description: "Mastermind behind rigorous investigative accounting and airtight capital control. Wanted for finding money nobody else could find.",
       image: connorPhoto,
       rotation: 'rotate-1',
-      mustacheStyle: "villainous"
     },
     {
-      name: "Zara 'The Motion Maverick'",
-      crime: "ANIMATION MANIPULATION & EFFECT FORGERY",
-      bounty: "$7,900",
-      description: "Notorious for crafting motion graphics so smooth they defy the laws of physics. Armed with After Effects mastery and a dangerous eye for kinetic perfection.",
+      name: "Grant 'Axe' Rawlinson",
+      bounty: "$11,300",
+      description: "World-class human-powered explorer and team decision-making coach — Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
       image: zaraPhoto,
       rotation: '-rotate-1',
-      mustacheStyle: "artistic"
     },
     {
-      name: "Leo 'The Effect Enforcer'",
-      crime: "WANDERING VFX SYNTHESIS SCHEMES",
+      name: "Omar the Magnificent",
       bounty: "$10,400",
-      description: "A nomadic visual effects outlaw who drifts from project to project, leaving behind a trail of jaw-dropping composites and impossible cinematic magic. Master of the digital realm.",
-      image: leoPhoto,
+      description: "Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia. Wanted for adding over RM2 Billion to organizations' top and bottom lines.",
+      image: omarPhoto,
       rotation: 'rotate-3',
-      mustacheStyle: "handlebar"
     }
   ]
 
-  const Mustache = ({ style, className }: { style: string, className?: string }) => {
-    const mustaches = {
-      handlebar: "M12 16c-2 0-3-1-4-1s-2 1-4 1c0-1 1-2 4-2s4 1 4 2z M12 16c2 0 3-1 4-1s2 1 4 1c0-1-1-2-4-2s-4 1-4 2z",
-      thick: "M6 16c0-1 2-2 6-2s6 1 6 2c0 1-2 1-6 1s-6 0-6-1z",
-      villainous: "M8 15c-1 0-2 1-2 2s1 1 2 0c1-1 2-1 4-1s3 0 4 1c1 1 2 0 2-1s-1-2-2-2c-2 0-4 1-8 1z",
-      curly: "M6 16c0-2 1-2 2-1s1 1 2 0 1-1 2 0 1-1 2 0 2-1 2 1c0 1-1 1-2 1s-2 0-4 0-4 0-4-1z",
-      artistic: "M7 15c-1 1-1 2 0 2s2-1 3-1h4c1 0 2 1 3 1s1-1 0-2c-1-1-2-1-5-1s-4 0-5 1z"
-    }
-    
-    return (
-      <svg 
-        className={`absolute ${className}`}
-        width="24" 
-        height="24" 
-        viewBox="0 0 24 24" 
-        fill="none"
-      >
-        <path 
-          d={mustaches[style as keyof typeof mustaches]} 
-          fill="#2D1810" 
-          stroke="#1A0F08" 
-          strokeWidth="0.5"
-        />
-      </svg>
-    )
-  }
 
   return (
     <div className="relative py-32 bg-background w-full" style={{ 
@@ -262,12 +222,6 @@ export function Team() {
                               
                               {/* Subtle modern overlay */}
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-100/10 to-transparent rounded-sm" />
-                              
-                              {/* Mustache */}
-                              <Mustache 
-                                style={criminal.mustacheStyle} 
-                                className="bottom-4 left-1/2 -translate-x-1/2 opacity-80" 
-                              />
                             </div>
 
                             {/* Details */}
@@ -350,12 +304,6 @@ export function Team() {
                               
                               {/* Subtle modern overlay */}
                               <div className="absolute inset-0 bg-gradient-to-t from-slate-100/10 to-transparent rounded-sm" />
-                              
-                              {/* Mustache */}
-                              <Mustache 
-                                style={criminal.mustacheStyle} 
-                                className="bottom-4 left-1/2 -translate-x-1/2 opacity-80" 
-                              />
                             </div>
 
                             {/* Details */}
