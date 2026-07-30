@@ -27,7 +27,8 @@ const formats = [
     text: 'Up to 7 hours, in person, going deep on implementing Strategic & Organisational AI tools for your specific role.',
     tagline: 'Paid \u00b7 early bird pricing available',
     infoHref: '#',
-    bookHref: '#',
+    bookHref: 'https://buy.stripe.com/aFa9AU6pVevMfD9fbXcbC0A',
+    banner: 'EXTRA 10% OFF \u2014 BOOK BY AUG 6!',
   },
   {
     icon: CalendarRange,
@@ -84,13 +85,21 @@ export function Portfolio() {
 
         {/* Formats Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          {formats.map(({ icon: Icon, title, text, tagline, infoHref, bookHref }) => (
+          {formats.map(({ icon: Icon, title, text, tagline, infoHref, bookHref, banner }) => (
             <div
               key={title}
-              className="rounded-2xl p-8 lg:p-10 gentle-animation hover:-translate-y-1"
+              className="relative rounded-2xl p-8 lg:p-10 gentle-animation hover:-translate-y-1 overflow-hidden"
               style={{ background: '#EFE3D2' }}
             >
-              <div className="flex items-start gap-6">
+              {banner && (
+                <div
+                  className="woowoo-neon-banner absolute top-0 left-0 right-0 text-center py-2 text-xs sm:text-sm font-black tracking-widest uppercase"
+                  style={{ background: '#1c0333' }}
+                >
+                  {banner}
+                </div>
+              )}
+              <div className={`flex items-start gap-6 ${banner ? 'mt-8' : ''}`}>
                 <div className="shrink-0 mt-1">
                   <Icon
                     className="w-8 h-8"
@@ -130,6 +139,23 @@ export function Portfolio() {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes woowooNeonFlicker {
+          0%, 19%, 21%, 23%, 54%, 56%, 100% {
+            color: #AAFF00;
+            text-shadow: 0 0 4px #AAFF00, 0 0 11px #AAFF00, 0 0 19px #AAFF00, 0 0 40px #c79529, 0 0 80px #c79529;
+          }
+          20%, 22%, 55% {
+            color: #6b8f00;
+            text-shadow: none;
+          }
+        }
+        .woowoo-neon-banner {
+          animation: woowooNeonFlicker 2.5s infinite;
+          letter-spacing: 0.15em;
+        }
+      `}</style>
     </section>
   )
 }
