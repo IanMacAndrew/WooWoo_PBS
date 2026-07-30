@@ -162,6 +162,18 @@ export function Portfolio() {
             <p className="text-center text-sm sm:text-base mb-6" style={{ color: '#E9ECF2' }}>
               For Eng Lian directors, senior management and workforce \u2014 and anyone contracting to work with Eng Lian, provided HRDC compliant. Up to 65% off, stacking with group size. Held at Sri Wangsaria, 2hr lunch break included.
             </p>
+            <div
+              className="max-w-md mx-auto mb-6 rounded-xl p-4 text-xs sm:text-sm leading-relaxed"
+              style={{ background: 'rgba(255,255,255,0.08)', color: '#E9ECF2', border: '1px solid rgba(199,149,41,0.4)' }}
+            >
+              <p className="font-bold mb-1" style={{ color: '#c79529' }}>How this works</p>
+              <p className="mb-2">
+                HRDC (Human Resources Development Corporation, Malaysia) claimable \u2014 your company can reclaim this training cost through HRDC if levy-registered and up to date on payments.
+              </p>
+              <p>
+                This pricing is exclusively for Eng Lian and its confirmed contracting companies. At checkout, please enter your sales rep's name under "Referred By" and your company name \u2014 this is how we verify eligibility and log referral commission.
+              </p>
+            </div>
             <div className="max-w-md mx-auto">
               <BookingWidget
                 currency="RM"
