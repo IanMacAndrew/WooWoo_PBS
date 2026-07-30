@@ -2,12 +2,12 @@
 
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import marcusPhoto from '../assets/team-member-1.jpeg'
-import sofiaPhoto from '../assets/team-member-2.png'
-import mayaPhoto from '../assets/team-member-4.png'
 import connorPhoto from '../assets/team-member-5.png'
-import zaraPhoto from '../assets/team-member-6.png'
 import davidHoardPhoto from '../assets/david-hoard-photo.jpeg'
 import omarPhoto from '../assets/omar-photo.jpg'
+import michelePhoto from '../assets/michele-photo.png'
+import grantPhoto from '../assets/grant-photo.jpeg'
+import maxPhoto from '../assets/max-photo.jpg'
 
 export function Team() {
   const wantedCriminals = [
@@ -22,7 +22,7 @@ export function Team() {
       name: "Michele 'The Future Framer'",
       bounty: "$13,200",
       description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
-      image: sofiaPhoto,
+      image: michelePhoto,
       rotation: 'rotate-2',
     },
     {
@@ -36,7 +36,7 @@ export function Team() {
       name: "Max 'The AI Maverick'",
       bounty: "$3,330",
       description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
-      image: mayaPhoto,
+      image: maxPhoto,
       rotation: '-rotate-2',
     },
     {
@@ -50,7 +50,8 @@ export function Team() {
       name: "Grant 'Axe' Rawlinson",
       bounty: "$11,300",
       description: "World-class human-powered explorer and team decision-making coach — Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
-      image: zaraPhoto,
+      image: grantPhoto,
+      website: 'https://www.powerful-humans.com',
       rotation: '-rotate-1',
     },
     {
@@ -227,6 +228,11 @@ export function Team() {
                             {/* Details */}
                             <div className="text-left space-y-2" style={{ fontFamily: 'serif' }}>
                               <div className="font-black text-lg text-black">{criminal.name}</div>
+                              {'website' in criminal && (criminal as any).website && (
+                                <a href={(criminal as any).website} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-blue-700 underline underline-offset-2">
+                                  Visit website
+                                </a>
+                              )}
                               <div className="font-bold text-red-600 text-base">BOUNTY: {criminal.bounty}</div>
                               <div className="text-sm text-gray-800 leading-relaxed bg-gray-50/50 p-3 border-l-2 border-black">
                                 {criminal.description}
@@ -309,6 +315,11 @@ export function Team() {
                             {/* Details */}
                             <div className="text-left space-y-2" style={{ fontFamily: 'serif' }}>
                               <div className="font-black text-lg text-black">{criminal.name}</div>
+                              {'website' in criminal && (criminal as any).website && (
+                                <a href={(criminal as any).website} target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-blue-700 underline underline-offset-2">
+                                  Visit website
+                                </a>
+                              )}
                               <div className="font-bold text-red-600 text-base">BOUNTY: {criminal.bounty}</div>
                               <div className="text-sm text-gray-800 leading-relaxed bg-gray-50/50 p-3 border-l-2 border-black">
                                 {criminal.description}
