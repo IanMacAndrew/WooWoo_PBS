@@ -29,7 +29,7 @@ const formats = [
     tagline: 'Paid \u00b7 early bird pricing available',
     infoHref: '#',
     bookHref: 'https://buy.stripe.com/aFa9AU6pVevMfD9fbXcbC0A',
-    banner: 'EXTRA 10% OFF \u2014 BOOK BY AUG 6!',
+    banner: 'EXTRA 10% OFF \u2014 UP TO 65-70% OFF TOTAL \u2014 BOOK BY AUG 6!',
     bookingBands: [
       { minQty: 1, maxQty: 3, pricePerPerson: 612.5, href: 'https://buy.stripe.com/aFa9AU6pVevMfD9fbXcbC0A' },
       { minQty: 4, maxQty: 10, pricePerPerson: 525, href: 'https://buy.stripe.com/14AeVe6pVevMbmT1l7cbC0B' },
@@ -147,55 +147,99 @@ export function Portfolio() {
           ))}
         </div>
 
-        {/* Eng Lian HRDC Discount */}
-        <div className="max-w-3xl mx-auto mt-16">
+        {/* One Day Strategic AI - HRDC Claimable */}
+        <div className="max-w-5xl mx-auto mt-16">
           <div
             className="relative rounded-2xl p-8 lg:p-10 overflow-hidden"
             style={{ background: '#1c0333' }}
           >
             <div className="woowoo-neon-banner text-center text-sm sm:text-base font-black tracking-widest uppercase mb-4">
-              Massively Discounted \u2014 Eng Lian & Partners Only
+              Up to 80% OFF \u2014 Eng Lian & Partners
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-center mb-3" style={{ color: '#fafafa' }}>
-              1-Day HRDC Claimable Class
+              One Day Strategic AI (HRDC Claimable)
             </h3>
             <p className="text-center text-sm sm:text-base mb-6" style={{ color: '#E9ECF2' }}>
-              For Eng Lian directors, senior management and workforce \u2014 and anyone contracting to work with Eng Lian, provided HRDC compliant. Up to 65% off, stacking with group size. Held at Sri Wangsaria, 2hr lunch break included.
+              Standard price RM1,750/person. Held at Sri Wangsaria \u2014 Sat 8am\u20134pm or Sun 1pm\u20139pm, 2hr lunch break. Lunch/dinner from Mr Wong's restaurant included, though not compulsory.
             </p>
             <div
-              className="max-w-md mx-auto mb-6 rounded-xl p-4 text-xs sm:text-sm leading-relaxed"
+              className="max-w-2xl mx-auto mb-8 rounded-xl p-4 text-xs sm:text-sm leading-relaxed"
               style={{ background: 'rgba(255,255,255,0.08)', color: '#E9ECF2', border: '1px solid rgba(199,149,41,0.4)' }}
             >
               <p className="font-bold mb-1" style={{ color: '#c79529' }}>How this works</p>
               <p className="mb-2">
-                HRDC (Human Resources Development Corporation, Malaysia) claimable \u2014 your company can reclaim this training cost through HRDC if levy-registered and up to date on payments.
+                HRDC (Human Resources Development Corporation, Malaysia) claimable \u2014 eligible companies can reclaim this training cost through HRDC in due course.
+              </p>
+              <p className="mb-2">
+                <strong>Eng Lian Board Members & Directors, C-Suite & Department Heads, and Employees & Contractors</strong> get 50% off standard. <strong>Everyone</strong> gets a group discount for booking from the same company: 5% for 2-4 people, 10% for 5-9, 15% for 10-19, 20% for 20+. A further 10% applies to bookings made before 8 August 2026. All discounts stack.
               </p>
               <p>
-                This pricing is exclusively for Eng Lian and its confirmed contracting companies. At checkout, please enter your sales rep's name under "Referred By" and your company name \u2014 this is how we verify eligibility and log referral commission.
+                At checkout, please enter your sales rep's name under "Referred By" (if applicable) and your company name.
               </p>
             </div>
-            <div className="max-w-md mx-auto">
-              <BookingWidget
-                currency="RM"
-                dateOptions={[
-                  {
-                    label: 'Sat 15 Aug (8am\u20134pm)',
-                    bands: [
-                      { minQty: 1, maxQty: 3, pricePerPerson: 787.5, href: 'https://buy.stripe.com/3cI14og0v3R89eLd3PcbC0u' },
-                      { minQty: 4, maxQty: 9, pricePerPerson: 700, href: 'https://buy.stripe.com/bJe6oI5lR0EW8aH7JvcbC0v' },
-                      { minQty: 10, maxQty: 30, pricePerPerson: 612.5, href: 'https://buy.stripe.com/bJedRacOjfzQ62ze7TcbC0w' },
-                    ],
-                  },
-                  {
-                    label: 'Sun 16 Aug (1pm\u20139pm)',
-                    bands: [
-                      { minQty: 1, maxQty: 3, pricePerPerson: 787.5, href: 'https://buy.stripe.com/14A3cw9C79bs3Ur5BncbC0x' },
-                      { minQty: 4, maxQty: 9, pricePerPerson: 700, href: 'https://buy.stripe.com/6oUaEY9C7fzQ76D3tfcbC0y' },
-                      { minQty: 10, maxQty: 30, pricePerPerson: 612.5, href: 'https://buy.stripe.com/fZu3cw29FgDU3UrfbXcbC0z' },
-                    ],
-                  },
-                ] as DateOption[]}
-              />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="text-center text-sm font-black uppercase tracking-wide mb-3" style={{ color: '#c79529' }}>
+                  Eng Lian, Partners & Contractors
+                </h4>
+                <BookingWidget
+                  currency="RM"
+                  dateOptions={[
+                    {
+                      label: 'Sat 15 Aug (8am\u20134pm)',
+                      bands: [
+                        { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/fZufZi8y34Vc8aHd3PcbC0H' },
+                        { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/9B6aEY9C73R88aH9RDcbC0I' },
+                        { minQty: 5, maxQty: 9, pricePerPerson: 525, href: 'https://buy.stripe.com/fZu4gA7tZbjA9eL1l7cbC0J' },
+                        { minQty: 10, maxQty: 19, pricePerPerson: 437.5, href: 'https://buy.stripe.com/00wfZi3dJafwbmTd3PcbC0K' },
+                        { minQty: 20, maxQty: 30, pricePerPerson: 350, href: 'https://buy.stripe.com/aFaaEYaGbcnE0IfbZLcbC0L' },
+                      ],
+                    },
+                    {
+                      label: 'Sun 16 Aug (1pm\u20139pm)',
+                      bands: [
+                        { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/5kQ7sM6pVfzQ4Yv3tfcbC0R' },
+                        { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/7sY5kE6pVdrI9eL0h3cbC0S' },
+                        { minQty: 5, maxQty: 9, pricePerPerson: 525, href: 'https://buy.stripe.com/aFa5kE7tZ3R81Mj2pbcbC0T' },
+                        { minQty: 10, maxQty: 19, pricePerPerson: 437.5, href: 'https://buy.stripe.com/00w6oIdSngDU0If5BncbC0U' },
+                        { minQty: 20, maxQty: 30, pricePerPerson: 350, href: 'https://buy.stripe.com/eVqdRaaGb4Vc9eL5BncbC0V' },
+                      ],
+                    },
+                  ] as DateOption[]}
+                />
+              </div>
+
+              <div>
+                <h4 className="text-center text-sm font-black uppercase tracking-wide mb-3" style={{ color: '#E9ECF2' }}>
+                  General Public
+                </h4>
+                <BookingWidget
+                  currency="RM"
+                  dateOptions={[
+                    {
+                      label: 'Sat 15 Aug (8am\u20134pm)',
+                      bands: [
+                        { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00weVe7tZgDUfD96FrcbC0C' },
+                        { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/dRm28s01x4Vcdv1fbXcbC0D' },
+                        { minQty: 5, maxQty: 9, pricePerPerson: 1400, href: 'https://buy.stripe.com/5kQfZi5lR73kaiPd3PcbC0E' },
+                        { minQty: 10, maxQty: 19, pricePerPerson: 1312.5, href: 'https://buy.stripe.com/5kQdRa15BgDUaiP9RDcbC0F' },
+                        { minQty: 20, maxQty: 30, pricePerPerson: 1225, href: 'https://buy.stripe.com/3cI14o7tZcnE76DaVHcbC0G' },
+                      ],
+                    },
+                    {
+                      label: 'Sun 16 Aug (1pm\u20139pm)',
+                      bands: [
+                        { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00wcN63dJ2N42Qn1l7cbC0M' },
+                        { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/4gM9AU7tZcnE76DbZLcbC0N' },
+                        { minQty: 5, maxQty: 9, pricePerPerson: 1400, href: 'https://buy.stripe.com/eVq7sMeWr5Zg3Urgg1cbC0O' },
+                        { minQty: 10, maxQty: 19, pricePerPerson: 1312.5, href: 'https://buy.stripe.com/14A5kEeWrafw4Yv4xjcbC0P' },
+                        { minQty: 20, maxQty: 30, pricePerPerson: 1225, href: 'https://buy.stripe.com/4gM28s15B0EWez50h3cbC0Q' },
+                      ],
+                    },
+                  ] as DateOption[]}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -212,10 +256,12 @@ export function Portfolio() {
             text-shadow: none;
           }
         }
-        .woowoo-neon-banner {
-          animation: woowooNeonFlicker 2.5s infinite;
-          letter-spacing: 0.15em;
-        }
+    .woowoo-neon-banner {
+      animation: woowooNeonFlicker 2.5s infinite;
+      letter-spacing: 0.08em;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
       `}</style>
     </section>
   )
