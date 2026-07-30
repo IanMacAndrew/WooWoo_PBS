@@ -42,7 +42,7 @@ export function Team() {
     {
       name: "Colin 'The Profesor' Warner",
       bounty: "$13,700",
-      description: "Mastermind behind rigorous investigative accounting and airtight capital control. Wanted for finding money nobody else could find.",
+      description: "20+ years as a Chartered Accountant and Interim Finance Director, untangling everything from a £1bn pension fund to school-trust budgets. Wanted for finding money nobody else could find.",
       image: connorPhoto,
       rotation: 'rotate-1',
     },
