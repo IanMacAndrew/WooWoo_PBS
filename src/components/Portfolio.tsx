@@ -28,11 +28,11 @@ const formats = [
     text: 'Up to 7 hours, in person, going deep on implementing Strategic & Organisational AI tools for your specific role.',
     tagline: 'Paid \u00b7 early bird pricing available',
     infoHref: '#',
-    bookHref: 'https://buy.stripe.com/aFa9AU6pVevMfD9fbXcbC0A',
-    banner: 'EXTRA 10% OFF \u2014 UP TO 65-70% OFF TOTAL \u2014 BOOK BY AUG 6!',
+    bookHref: 'https://buy.stripe.com/bJedRa4hNdrIcqX0h3cbC0W',
+    banner: 'GROUP + EARLY BIRD \u2014 UP TO 20% OFF \u2014 BOOK BY AUG 8!',
     bookingBands: [
-      { minQty: 1, maxQty: 3, pricePerPerson: 612.5, href: 'https://buy.stripe.com/aFa9AU6pVevMfD9fbXcbC0A' },
-      { minQty: 4, maxQty: 10, pricePerPerson: 525, href: 'https://buy.stripe.com/14AeVe6pVevMbmT1l7cbC0B' },
+      { minQty: 1, maxQty: 3, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/bJedRa4hNdrIcqX0h3cbC0W' },
+      { minQty: 4, maxQty: 10, pricePerPerson: 1400, href: 'https://buy.stripe.com/fZucN6dSn0EWdv13tfcbC0X' },
     ] as Band[],
   },
   {
