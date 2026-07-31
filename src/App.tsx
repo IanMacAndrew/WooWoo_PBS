@@ -10,6 +10,8 @@ import { Footer } from './components/Footer'
 import { FocusProfile } from './components/FocusProfile'
 import { FocusProvider } from './contexts/FocusContext'
 import { OnlineBriefingInfo } from './pages/OnlineBriefingInfo'
+import { PrivacyPolicy } from './pages/PrivacyPolicy'
+import { TermsOfService } from './pages/TermsOfService'
 
 function HomePage() {
   return (
@@ -50,6 +52,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/workshops/online-briefing" element={<OnlineBriefingInfo />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </BrowserRouter>
     </FocusProvider>

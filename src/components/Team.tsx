@@ -3,10 +3,10 @@
 import { ImageWithFallback } from './figma/ImageWithFallback'
 import marcusPhoto from '../assets/team-member-1.jpeg'
 import connorPhoto from '../assets/team-member-5.png'
-import davidHoardPhoto from '../assets/david-hoard-photo.jpeg'
-import omarPhoto from '../assets/omar-photo.jpg'
+import davidHoardPhoto from '../assets/david-hoard-photo-v2.png'
+import omarPhoto from '../assets/omar-photo-v2.png'
 import michelePhoto from '../assets/michele-photo.png'
-import grantPhoto from '../assets/grant-photo.jpeg'
+import grantPhoto from '../assets/grant-photo-v2.png'
 import maxPhoto from '../assets/max-photo.jpg'
 
 export function Team() {

@@ -3,8 +3,14 @@
 import { motion } from 'framer-motion'
 import { Volume2, VolumeX, Menu, X, ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect, useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import wooWooLogo from '@/assets/woowoo-icon.png'
 import { useFocus, Focus } from '@/contexts/FocusContext'
+
+const legalOptions = [
+  { label: 'Privacy Policy', href: '/legal/privacy-policy' },
+  { label: 'Terms of Service', href: '/legal/terms-of-service' },
+]
 
 const workOptions: { label: string; value: Focus }[] = [
   { label: 'Strategy', value: 'strategy' },
@@ -52,15 +58,21 @@ export function Hero() {
   const [isInView, setIsInView] = useState(true)
   const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false)
   const [isMobileWorkOpen, setIsMobileWorkOpen] = useState(false)
+  const [isLegalDropdownOpen, setIsLegalDropdownOpen] = useState(false)
+  const [isMobileLegalOpen, setIsMobileLegalOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const workDropdownRef = useRef<HTMLDivElement>(null)
+  const legalDropdownRef = useRef<HTMLDivElement>(null)
   const { setFocus } = useFocus()
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (workDropdownRef.current && !workDropdownRef.current.contains(e.target as Node)) {
         setIsWorkDropdownOpen(false)
+      }
+      if (legalDropdownRef.current && !legalDropdownRef.current.contains(e.target as Node)) {
+        setIsLegalDropdownOpen(false)
       }
     }
     document.addEventListener('mousedown', handleClickOutside)
@@ -317,6 +329,34 @@ export function Hero() {
               >
                 Contact
               </a>
+              <div className="relative" ref={legalDropdownRef}>
+                <button
+                  onClick={() => setIsLegalDropdownOpen((v) => !v)}
+                  className="flex items-center gap-1 text-white hover:text-white/80 font-medium gentle-animation hover:scale-105 cursor-pointer"
+                >
+                  Legal
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isLegalDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isLegalDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-3 w-48 rounded-xl bg-black/90 backdrop-blur-xl border border-white/10 overflow-hidden shadow-xl"
+                  >
+                    {legalOptions.map((opt) => (
+                      <Link
+                        key={opt.href}
+                        to={opt.href}
+                        onClick={() => setIsLegalDropdownOpen(false)}
+                        className="block px-5 py-3 text-white/90 hover:text-white hover:bg-white/10 font-medium text-sm gentle-animation cursor-pointer"
+                      >
+                        {opt.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
             </div>
 
             {/* Right Side - Video Controls + CTA + Mobile Menu */}
@@ -452,6 +492,29 @@ export function Hero() {
               >
                 Contact
               </a>
+              <div>
+                <button
+                  onClick={() => setIsMobileLegalOpen((v) => !v)}
+                  className="mobile-menu-link w-full flex items-center justify-between px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20 cursor-pointer"
+                >
+                  Legal
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileLegalOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileLegalOpen && (
+                  <div className="flex flex-col pl-4 mt-1">
+                    {legalOptions.map((opt) => (
+                      <Link
+                        key={opt.href}
+                        to={opt.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-left px-4 py-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg gentle-animation font-medium text-base active:bg-white/20 cursor-pointer"
+                      >
+                        {opt.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* Mobile CTA Button */}
