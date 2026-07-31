@@ -11,7 +11,7 @@ export function Services() {
     {
       id: 'campaigns',
       title: "General & Commercial Litigation",
-      description: "Sharp, decisive counsel on commercial disputes and litigation — protecting your position from first filing to final judgment.",
+      description: "Sharp, decisive counsel on commercial disputes and litigation protecting your position from first filing to final judgment.",
       color: 'accent-emerald',
       rotation: 'rotate-2',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&auto=format'
@@ -19,7 +19,7 @@ export function Services() {
     {
       id: 'brand-films',
       title: "Strategy & AI",
-      description: "Bold, board-level strategy that puts AI to work on your biggest ambitions — built to take your organisation to the moon.",
+      description: "Bold, board-level strategy that puts AI to work on your biggest ambitions built to take your organisation to the moon.",
       color: 'accent-blue',
       rotation: '-rotate-1',
       image: 'https://images.unsplash.com/photo-1440404653325-ab127d49abc1?w=400&h=300&fit=crop&auto=format'
@@ -27,7 +27,7 @@ export function Services() {
     {
       id: 'trailers',
       title: "HR Development",
-      description: "Michele Sagan's Future of Work Solutions — future-proofing leadership, culture and human capital for what's coming next.",
+      description: "Michele Sagan's Future of Work Solutions future-proofing leadership, culture and human capital for what's coming next.",
       color: 'accent-purple',
       rotation: 'rotate-1',
       image: 'https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?w=400&h=300&fit=crop&auto=format'
@@ -35,7 +35,7 @@ export function Services() {
     {
       id: 'short-films',
       title: "Transformative Revenue Improvement",
-      description: "Hands-on sales and marketing recovery that lifts top-line and bottom-line results — fast, and built to last.",
+      description: "Hands-on sales and marketing recovery that lifts top-line and bottom-line results fast, and built to last.",
       color: 'accent-emerald',
       rotation: '-rotate-2',
       image: 'https://images.unsplash.com/photo-1574267432553-4b4628081c31?w=400&h=300&fit=crop&auto=format'
@@ -43,7 +43,7 @@ export function Services() {
     {
       id: 'animation',
       title: "Rigorous Reinsurance",
-      description: "Securing the most valuable reinsurer asset \u2014 owner/investor capital \u2014 with disciplined, protective rigour.",
+      description: "Securing the most valuable reinsurer asset owner/investor capital with disciplined, protective rigour.",
       color: 'accent-blue',
       rotation: 'rotate-3',
       image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop&auto=format'
@@ -51,7 +51,7 @@ export function Services() {
     {
       id: 'social',
       title: "Awesome Accounting",
-      description: "Comprehensive investigative accounting and capital control — finding the money others miss, and keeping it found.",
+      description: "Comprehensive investigative accounting and capital control finding the money others miss, and keeping it found.",
       color: 'accent-purple',
       rotation: '-rotate-1',
       image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=400&h=300&fit=crop&auto=format'

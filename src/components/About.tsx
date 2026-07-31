@@ -29,12 +29,12 @@ const railSteps: ProcessStep[] = [
   {
     number: "04",
     title: "On the Main Line: Project Goes LIVE",
-    description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
+    description: "Our experts ride shotgun in the cab guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
   },
   {
     number: "05",
     title: "Signal Box Check-Ins",
-    description: "Bi-weekly briefings with key executives, officers and owners to check the signals — reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
+    description: "Bi-weekly briefings with key executives, officers and owners to check the signals reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
   },
   {
     number: "06",
@@ -44,7 +44,7 @@ const railSteps: ProcessStep[] = [
   {
     number: "07",
     title: "Return Journey: The Review",
-    description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture — and that organisational performance is still running like clockwork.",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture and that organisational performance is still running like clockwork.",
   }
 ]
 
@@ -52,7 +52,7 @@ const strategySteps: ProcessStep[] = [
   {
     number: "01",
     title: "Houston, We Have a Strategy",
-    description: "Our mission commander touches down with your leaders and shareholders to plot the coordinates — defining the outcomes and deliverables that will get your business to escape velocity.",
+    description: "Our mission commander touches down with your leaders and shareholders to plot the coordinates defining the outcomes and deliverables that will get your business to escape velocity.",
   },
   {
     number: "02",
@@ -67,12 +67,12 @@ const strategySteps: ProcessStep[] = [
   {
     number: "04",
     title: "Orbital Insertion: Strategy Goes LIVE",
-    description: "Our experts ride in the capsule with you — guiding crews, delivering training and making sure every roadmap deliverable is firing on all thrusters across the organisation.",
+    description: "Our experts ride in the capsule with you guiding crews, delivering training and making sure every roadmap deliverable is firing on all thrusters across the organisation.",
   },
   {
     number: "05",
     title: "Mission Control Check-Ins",
-    description: "Bi-weekly telemetry with key executives, officers and owners — reviewing trajectory, flagging anomalies, and correcting course if anything drifts off orbit.",
+    description: "Bi-weekly telemetry with key executives, officers and owners reviewing trajectory, flagging anomalies, and correcting course if anything drifts off orbit.",
   },
   {
     number: "06",
@@ -82,7 +82,7 @@ const strategySteps: ProcessStep[] = [
   {
     number: "07",
     title: "Return Trajectory: The Review",
-    description: "A six, 12 or 18 month return trip to make sure the outcomes are still in orbit — and that organisational performance hasn't drifted off course.",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are still in orbit and that organisational performance hasn't drifted off course.",
   }
 ]
 
@@ -105,12 +105,12 @@ const salesMarketingSteps: ProcessStep[] = [
   {
     number: "04",
     title: "On the Main Line: The Sales Engine Goes LIVE",
-    description: "Our experts ride shotgun in the cab — guiding reps, delivering training and making sure every campaign and target is firing on all cylinders.",
+    description: "Our experts ride shotgun in the cab guiding reps, delivering training and making sure every campaign and target is firing on all cylinders.",
   },
   {
     number: "05",
     title: "Signal Box Check-Ins: Pipeline Reviews",
-    description: "Bi-weekly briefings with sales and marketing leaders to check the signals — reviewing conversion, flagging blockers, and switching tracks if targets need refining.",
+    description: "Bi-weekly briefings with sales and marketing leaders to check the signals reviewing conversion, flagging blockers, and switching tracks if targets need refining.",
   },
   {
     number: "06",
@@ -120,7 +120,7 @@ const salesMarketingSteps: ProcessStep[] = [
   {
     number: "07",
     title: "Return Journey: The ROI Review",
-    description: "A six, 12 or 18 month return trip to make sure the revenue gains are firmly coupled to your organisation — and still running like clockwork.",
+    description: "A six, 12 or 18 month return trip to make sure the revenue gains are firmly coupled to your organisation and still running like clockwork.",
   }
 ]
 
@@ -148,17 +148,17 @@ const hrdSteps: ProcessStep[] = [
   {
     number: "05",
     title: "Chrysalis Check-Ins",
-    description: "Bi-weekly pulse checks with key executives and people leaders — reviewing adoption, flagging resistance, and adjusting the programme if anything needs refining.",
+    description: "Bi-weekly pulse checks with key executives and people leaders reviewing adoption, flagging resistance, and adjusting the programme if anything needs refining.",
   },
   {
     number: "06",
     title: "Emergence: Wings Unfold",
-    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off — the new capability fully formed.",
+    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off the new capability fully formed.",
   },
   {
     number: "07",
     title: "Taking Flight: The Retention Review",
-    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture — and still flying strong.",
+    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture and still flying strong.",
   }
 ]
 
@@ -186,12 +186,12 @@ const lawSteps: ProcessStep[] = [
   {
     number: "05",
     title: "Liberty Check-Ins",
-    description: "Bi-weekly briefings with key executives to check progress — reviewing risk, flagging exposure, and adjusting course if anything needs refining.",
+    description: "Bi-weekly briefings with key executives to check progress reviewing risk, flagging exposure, and adjusting course if anything needs refining.",
   },
   {
     number: "06",
     title: "Standing Unshackled: Sign-Off",
-    description: "With every task delivered, we conduct a thorough review with leadership to achieve sign-off — the organisation free and clear.",
+    description: "With every task delivered, we conduct a thorough review with leadership to achieve sign-off the organisation free and clear.",
   },
   {
     number: "07",
@@ -224,7 +224,7 @@ const crmSteps: ProcessStep[] = [
   {
     number: "05",
     title: "Counting the Coins",
-    description: "Bi-weekly briefings with leadership to check progress — reviewing retention, flagging churn risk, and adjusting course if needed.",
+    description: "Bi-weekly briefings with leadership to check progress reviewing retention, flagging churn risk, and adjusting course if needed.",
   },
   {
     number: "06",
@@ -262,12 +262,12 @@ const accountingSteps: ProcessStep[] = [
   {
     number: "05",
     title: "Reconciliation Check-Ins",
-    description: "Bi-weekly briefings with leadership to check progress — reviewing findings, flagging discrepancies, and adjusting scope if needed.",
+    description: "Bi-weekly briefings with leadership to check progress reviewing findings, flagging discrepancies, and adjusting scope if needed.",
   },
   {
     number: "06",
     title: "Books Balanced: Sign-Off",
-    description: "With every account reconciled, we conduct a thorough review with leadership to achieve sign-off — the books finally balanced.",
+    description: "With every account reconciled, we conduct a thorough review with leadership to achieve sign-off the books finally balanced.",
   },
   {
     number: "07",
@@ -300,7 +300,7 @@ const reinsuranceSteps: ProcessStep[] = [
   {
     number: "05",
     title: "Systems Check-Ins",
-    description: "Bi-weekly briefings with leadership to check the grid — reviewing exposure, flagging risk, and adjusting course if anything needs refining.",
+    description: "Bi-weekly briefings with leadership to check the grid reviewing exposure, flagging risk, and adjusting course if anything needs refining.",
   },
   {
     number: "06",
@@ -326,27 +326,27 @@ const focusCopy = {
     theme: 'rail' as const,
   },
   hrd: {
-    tagline: "From caterpillar cost-centre to butterfly bottom-line \u2014 a transformation you can watch unfold",
+    tagline: "From caterpillar cost-centre to butterfly bottom-line a transformation you can watch unfold",
     steps: hrdSteps,
     theme: 'metamorphosis' as const,
   },
   law: {
-    tagline: "Every organisation carries a little weight \u2014 our journey is about setting it free",
+    tagline: "Every organisation carries a little weight our journey is about setting it free",
     steps: lawSteps,
     theme: 'liberation' as const,
   },
   crm: {
-    tagline: "Every relationship is a coin worth compounding \u2014 watch the pile grow",
+    tagline: "Every relationship is a coin worth compounding watch the pile grow",
     steps: crmSteps,
     theme: 'growth' as const,
   },
   accounting: {
-    tagline: "Somewhere in your books, money is waiting to be found \u2014 we go looking",
+    tagline: "Somewhere in your books, money is waiting to be found we go looking",
     steps: accountingSteps,
     theme: 'search' as const,
   },
   reinsurance: {
-    tagline: "Capital deserves a safe, steady current \u2014 protected and always running",
+    tagline: "Capital deserves a safe, steady current protected and always running",
     steps: reinsuranceSteps,
     theme: 'power' as const,
   },
@@ -399,7 +399,7 @@ export function About() {
 
   const active = focus && focus in focusCopy ? focusCopy[focus as keyof typeof focusCopy] : null
   const processSteps = active ? active.steps : railSteps
-  const tagline = active ? active.tagline : "Our professional power train  pulls you into a paragon of corporate sublimity"
+  const tagline = active ? active.tagline : "Our professional power train pulls you into a paragon of corporate sublimity"
   const isSpace = active?.theme === 'space'
   const palette = active ? themePalette[active.theme] : undefined
   const PaletteIcon = palette?.icon
@@ -704,10 +704,10 @@ export function About() {
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 py-6">
                 {[
                   { n: "01", t: "Detailed Requirement Study", d: "We listen deeply, map and determine your outcomes aligned with your personal or corporate vision, before a single thought creates." },
-                  { n: "02", t: "Create", d: "Our professional co-creators craft bold, original master works with you — designed to deliver exceptional results." },
+                  { n: "02", t: "Create", d: "Our professional co-creators craft bold, original master works with you designed to deliver exceptional results." },
                   { n: "03", t: "Agree the Final Solution", d: "We collaborate with you to align every detail, ensuring the solution exceeds expectations before we proceed." },
                   { n: "04", t: "Refine", d: "Precision polish. Every element is stress-tested and elevated until excellence is the only outcome." },
-                  { n: "05", t: "Launch", d: "Confident deployment backed by rigorous QA — now we can loop back to make it even better." },
+                  { n: "05", t: "Launch", d: "Confident deployment backed by rigorous QA now we can loop back to make it even better." },
                 ].map((s) => (
                   <div key={s.n} className="relative bg-card rounded-lg p-5 pt-7 subtle-shadow">
                     <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full flex items-center justify-center font-black text-sm border-2"
@@ -765,7 +765,7 @@ export function About() {
 
               {/* Monitoring text */}
               <p className="text-center text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto mb-4 sm:mb-6">
-                Continuously monitored against the planned deliverables and outcomes — with corrective actions whenever the transformative journey calls for them.
+                Continuously monitored against the planned deliverables and outcomes with corrective actions whenever the transformative journey calls for them.
               </p>
 
               {/* Return loop */}

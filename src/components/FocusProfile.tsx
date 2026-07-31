@@ -11,7 +11,7 @@ const profiles = {
     role: 'AI Strategy Guru',
     tagline: 'Two decades of strategy consulting across the globe, now driving AI transformation from Kuala Lumpur.',
     bullets: [
-      'Director, Consulting at Ernst & Young since 2017 — leading strategy and transformation engagements across government, aviation, property, plantations, e-commerce and Smart Cities',
+      'Director, Consulting at Ernst & Young since 2017 leading strategy and transformation engagements across government, aviation, property, plantations, e-commerce and Smart Cities',
       'Developed Malaysia\u2019s National COVID-19 Recovery Plan and the Halal Industry Master Plan 2.0',
       'Prior strategy leadership at PwC, AWR Lloyd (Bangkok), Booz & Company (D\u00fcsseldorf & Bangkok), Hochtief Construction AG (Essen), and KPMG/BearingPoint',
       'MBA, London Business School (Corporate Finance) \u00b7 BA Economics & Political Science, University of Michigan',
@@ -27,7 +27,7 @@ const profiles = {
     role: 'Sales, Marketing & Troubleshooting Operations Recovery Consultant',
     tagline: 'Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia.',
     bullets: [
-      'Regional leadership across reinsurance, insuretech and outsourced BPO — including SYMBO Platform Holdings, Pana Harrison and HLAP Ltd.',
+      'Regional leadership across reinsurance, insuretech and outsourced BPO including SYMBO Platform Holdings, Pana Harrison and HLAP Ltd.',
       'Grew a jewellery retailer\u2019s revenue from RM 160 million to RM 200 million in under six months, adopting Isa Karim\u2019s amazing Strategic work',
       'Recovered Malaysia\u2019s first offshore outsourcing project and set up contact centres from 30 to 600+ seats across Asia',
       'Over RM2 Billion in top line, bottom line or cost down opportunities added to organizations\u2019 revenue and still counting',
@@ -53,7 +53,7 @@ const profiles = {
     eyebrow: 'Law Focus',
     icon: Gavel,
     name: 'Nad Segaram',
-    role: 'Consultant, Mazlan & Associates \u2014 General & Commercial Litigation',
+    role: 'Consultant, Mazlan & Associates General & Commercial Litigation',
     tagline: 'Leading dispute resolution counsel advising on complex commercial and employment litigation across Malaysia and internationally.',
     bullets: [
       'Consultant in Dispute Resolution at Mazlan & Associates',
@@ -61,7 +61,7 @@ const profiles = {
       'Active in the International Bar Association (IBA) and the Inter-Pacific Bar Association (IPBA)',
       'Based in Kuala Lumpur',
     ],
-    note: 'Draft profile built from public sources \u2014 please confirm details with Nad before this goes live.',
+    note: 'Draft profile built from public sources please confirm details with Nad before this goes live.',
     color: '#764A34',
   },
   crm: {
@@ -69,7 +69,7 @@ const profiles = {
     icon: Contact,
     name: 'Coming Soon',
     role: 'A relationship worth waiting for',
-    tagline: 'Something is quietly compounding in the background \u2014 a CRM focus built to turn every contact into a relationship that grows.',
+    tagline: 'Something is quietly compounding in the background a CRM focus built to turn every contact into a relationship that grows.',
     bullets: [],
     color: '#596A8B',
   },
@@ -78,7 +78,7 @@ const profiles = {
     icon: Calculator,
     name: 'Colin Warner',
     role: 'Chartered Accountant & Interim Finance Director',
-    tagline: '20+ years turning complex, under-reported finances into clear, decision-ready numbers \u2014 across education, membership bodies, trade unions and professional services.',
+    tagline: '20+ years turning complex, under-reported finances into clear, decision-ready numbers across education, membership bodies, trade unions and professional services.',
     bullets: [
       'Qualified Chartered Accountant with over 20 years of Financial Management at Finance Director / CFO level',
       'Interim CFO for Academies Enterprise Trust, a 57-school Multi-Academy Trust with \u00a3260m turnover, managing a 55-person finance team',
@@ -86,7 +86,7 @@ const profiles = {
       'Global Director of Finance at the Chartered Institute for Securities & Investment, leading a 10-person team across London and Sri Lanka',
       'Track record includes RADA, South West Academic Health Science Network, Rose Bruford College, the Royal Town Planning Institute, and Fipra International',
     ],
-    note: 'Bio built from Colin\u2019s shared background \u2014 pending his final sign-off before this goes live.',
+    note: 'Bio built from Colin\u2019s shared background pending his final sign-off before this goes live.',
     color: '#0F7B6C',
   },
   reinsurance: {
@@ -94,7 +94,7 @@ const profiles = {
     icon: ShieldCheck,
     name: 'Coming Soon',
     role: 'Something exciting is being reinsured as we speak',
-    tagline: 'Watch this space \u2014 a Reinsurance focus profile is on its way.',
+    tagline: 'Watch this space a Reinsurance focus profile is on its way.',
     bullets: [],
     note: 'Awaiting confirmation from the Leader before this section is built out.',
     color: '#AAFF00',

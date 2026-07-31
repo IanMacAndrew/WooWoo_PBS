@@ -17,7 +17,7 @@ const formats = [
   {
     icon: Radio,
     title: '1-2 Hour Online Briefing',
-    text: 'A free, focused introduction to Strategic Workplace AI — delivered remotely, tailored to your organisation or function.',
+    text: 'A free, focused introduction to Strategic Workplace AI delivered remotely, tailored to your organisation or function.',
     tagline: 'Free of charge \u00b7 online',
     infoHref: '#',
     bookHref: '#',
@@ -29,7 +29,7 @@ const formats = [
     tagline: 'Paid \u00b7 early bird pricing available',
     infoHref: '#',
     bookHref: 'https://buy.stripe.com/bJedRa4hNdrIcqX0h3cbC0W',
-    banner: 'GROUP + EARLY BIRD \u2014 UP TO 20% OFF \u2014 BOOK BY AUG 8!',
+    banner: 'GROUP + EARLY BIRD UP TO 20% OFF BOOK BY AUG 8!',
     bookingBands: [
       { minQty: 1, maxQty: 3, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/bJedRa4hNdrIcqX0h3cbC0W' },
       { minQty: 4, maxQty: 10, pricePerPerson: 1400, href: 'https://buy.stripe.com/fZucN6dSn0EWdv13tfcbC0X' },
@@ -38,7 +38,7 @@ const formats = [
   {
     icon: CalendarRange,
     title: 'Five-Weekend Masterclass',
-    text: 'Five consecutive weekends of hands-on AI transformation training — HRD Corp claimable, heavily discounted for groups.',
+    text: 'Five consecutive weekends of hands-on AI transformation training HRD Corp claimable, heavily discounted for groups.',
     tagline: 'HRD Corp Claimable',
     infoHref: '#',
     bookHref: '#',
@@ -46,7 +46,7 @@ const formats = [
   {
     icon: GraduationCap,
     title: 'Five-Day Bootcamp',
-    text: 'Five consecutive weekdays of intensive AI transformation training — HRD Corp claimable, heavily discounted for groups.',
+    text: 'Five consecutive weekdays of intensive AI transformation training HRD Corp claimable, heavily discounted for groups.',
     tagline: 'HRD Corp Claimable',
     infoHref: '#',
     bookHref: '#',
@@ -154,13 +154,13 @@ export function Portfolio() {
             style={{ background: '#1c0333' }}
           >
             <div className="woowoo-neon-banner text-center text-sm sm:text-base font-black tracking-widest uppercase mb-4">
-              Up to 80% OFF \u2014 Eng Lian & Partners
+              Up to 80% OFF Eng Lian & Partners
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-center mb-3" style={{ color: '#fafafa' }}>
               One Day Strategic AI (HRDC Claimable)
             </h3>
             <p className="text-center text-sm sm:text-base mb-6" style={{ color: '#E9ECF2' }}>
-              Standard price RM1,750/person. Held at Sri Wangsaria \u2014 Sat 8am\u20134pm or Sun 1pm\u20139pm, 2hr lunch break. Lunch/dinner from Mr Wong's restaurant included, though not compulsory.
+              Standard price RM1,750/person. Held at Sri Wangsaria: Sat 8am-4pm or Sun 1pm-9pm, 2hr lunch break. Lunch/dinner from Mr Wong's restaurant included, though not compulsory.
             </p>
             <div
               className="max-w-2xl mx-auto mb-8 rounded-xl p-4 text-xs sm:text-sm leading-relaxed"
@@ -168,7 +168,7 @@ export function Portfolio() {
             >
               <p className="font-bold mb-1" style={{ color: '#c79529' }}>How this works</p>
               <p className="mb-2">
-                HRDC (Human Resources Development Corporation, Malaysia) claimable \u2014 eligible companies can reclaim this training cost through HRDC in due course.
+                HRDC (Human Resources Development Corporation, Malaysia) claimable eligible companies can reclaim this training cost through HRDC in due course.
               </p>
               <p className="mb-2">
                 <strong>Eng Lian Board Members & Directors, C-Suite & Department Heads, and Employees & Contractors</strong> get 50% off standard. <strong>Everyone</strong> gets a group discount for booking from the same company: 5% for 2-4 people, 10% for 5-9, 15% for 10-19, 20% for 20+. A further 10% applies to bookings made before 8 August 2026. All discounts stack.
@@ -187,7 +187,7 @@ export function Portfolio() {
                   currency="RM"
                   dateOptions={[
                     {
-                      label: 'Sat 15 Aug (8am\u20134pm)',
+                      label: 'Sat 15 Aug (8am-4pm)',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/fZufZi8y34Vc8aHd3PcbC0H' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/9B6aEY9C73R88aH9RDcbC0I' },
@@ -197,7 +197,7 @@ export function Portfolio() {
                       ],
                     },
                     {
-                      label: 'Sun 16 Aug (1pm\u20139pm)',
+                      label: 'Sun 16 Aug (1pm-9pm)',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/5kQ7sM6pVfzQ4Yv3tfcbC0R' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/7sY5kE6pVdrI9eL0h3cbC0S' },
@@ -218,7 +218,7 @@ export function Portfolio() {
                   currency="RM"
                   dateOptions={[
                     {
-                      label: 'Sat 15 Aug (8am\u20134pm)',
+                      label: 'Sat 15 Aug (8am-4pm)',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00weVe7tZgDUfD96FrcbC0C' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/dRm28s01x4Vcdv1fbXcbC0D' },
@@ -228,7 +228,7 @@ export function Portfolio() {
                       ],
                     },
                     {
-                      label: 'Sun 16 Aug (1pm\u20139pm)',
+                      label: 'Sun 16 Aug (1pm-9pm)',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00wcN63dJ2N42Qn1l7cbC0M' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/4gM9AU7tZcnE76DbZLcbC0N' },

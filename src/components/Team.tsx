@@ -14,7 +14,7 @@ export function Team() {
     {
       name: "Nad 'The Counselor' Segaram",
       bounty: "$8,500",
-      description: "Renowned for reducing complex legal matters into their simplest, most defensible form. Approach with confidence — carries a serious level of legal knowledge and technical wisdom.",
+      description: "Renowned for reducing complex legal matters into their simplest, most defensible form. Approach with confidence carries a serious level of legal knowledge and technical wisdom.",
       image: marcusPhoto,
       rotation: 'rotate-3',
     },
@@ -49,7 +49,7 @@ export function Team() {
     {
       name: "Grant 'Axe' Rawlinson",
       bounty: "$11,300",
-      description: "World-class human-powered explorer and team decision-making coach — Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
+      description: "World-class human-powered explorer and team decision-making coach Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
       image: grantPhoto,
       website: 'https://www.powerful-humans.com',
       rotation: '-rotate-1',

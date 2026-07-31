@@ -13,7 +13,7 @@ export function Contact() {
       return
     }
     setIsSubmitting(true)
-    // Simulate submission — connect to a backend to actually send
+    // Simulate submission connect to a backend to actually send
     setTimeout(() => {
       toast({ title: 'Message sent!', description: "We'll get back to you soon." })
       setFormData({ name: '', email: '', message: '' })
