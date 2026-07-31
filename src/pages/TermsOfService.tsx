@@ -22,42 +22,66 @@ export function TermsOfService() {
 
       <h2>2. Cancellations & Refunds</h2>
       <p>
-        We know plans change. This section explains exactly where you stand, depending on how much of a discount you received and how close to the event you cancel.
+        We know plans change. This section explains exactly where you stand, depending on how much of a discount you received and how far in advance you cancel.
       </p>
 
-      <h3>2.1 Heavily Discounted Products (50% off or more)</h3>
+      <h3>2.1 Rolling Early-Notice Window (Automatic WooWoo Tokens)</h3>
       <div className="callout">
         <p>
-          Any product purchased at a discount of <strong>50% or more off the standard price</strong> is classified as a <strong>Heavily Discounted Product</strong>. Heavily Discounted Products are sold on a <strong>strict no-return, no-refund, no-exchange basis</strong>. This includes, but is not limited to, Eng Lian and partner-company pricing, and any stacked discount that reaches 50% or above.
+          Cancel <strong>14 or more days</strong> before the scheduled start of your workshop or event, and you'll automatically receive WooWoo Tokens, no case-by-case review needed, and regardless of how large a discount you received. This is the fastest, simplest way to change your booking, and applies even to Heavily Discounted Products.
+        </p>
+      </div>
+
+      <h3>2.2 Heavily Discounted Products (50% off or more)</h3>
+      <div className="callout">
+        <p>
+          Any product purchased at a discount of <strong>50% or more off the standard price</strong> is classified as a <strong>Heavily Discounted Product</strong>. Outside the 14-day automatic window in Section 2.1, Heavily Discounted Products are sold on a <strong>strict no-return, no-refund, no-exchange basis</strong>. This includes, but is not limited to, Eng Lian and partner-company pricing, and any stacked discount that reaches 50% or above.
         </p>
       </div>
       <p>
-        The only exception is set out in Section 2.3 below (Circumstances Beyond Your Control), which is applied at our sole discretion on a case-by-case basis, and even then, WooWoo Tokens (Section 3) are the default remedy rather than a cash refund.
+        The only further exception is set out in Section 2.4 below (Circumstances Beyond Your Control), applied at our sole discretion on a case-by-case basis.
       </p>
 
-      <h3>2.2 Standard Discount Products (under 50% off, including full price)</h3>
+      <h3>2.3 Standard Discount Products (under 50% off, including full price)</h3>
       <p>
-        For any booking discounted at less than 50% off (including bookings paid at full standard price):
+        For any booking discounted at less than 50% off (including bookings paid at full standard price), outside the 14-day automatic window in Section 2.1:
       </p>
       <ul>
-        <li>Cancellations made <strong>more than 72 hours</strong> before the scheduled start of the workshop or event may be eligible for WooWoo Tokens or, at our discretion, a refund.</li>
-        <li>Cancellations made <strong>72 hours or less</strong> before the scheduled start are <strong>non-refundable</strong>, as a firm rule. This is to protect places for a fully-booked cohort and to honour venue and catering commitments made on your behalf.</li>
+        <li>Cancellations made <strong>more than 72 hours</strong> before the scheduled start may be eligible for WooWoo Tokens or, where a cash refund is chosen, a resale-first refund (see Section 3.2).</li>
+        <li>Cancellations made <strong>72 hours or less</strong> before the scheduled start are <strong>non-refundable</strong>, as a firm rule. This protects places for a fully-booked cohort and honours venue and catering commitments made on your behalf.</li>
       </ul>
 
-      <h3>2.3 Circumstances Beyond Your Control</h3>
+      <h3>2.4 Circumstances Beyond Your Control</h3>
       <p>
-        If a delegate is genuinely unable to attend due to circumstances beyond their control (for example, serious illness, bereavement, a natural disaster, or a government-imposed restriction), WooWoo World may, at its sole discretion and on a case-by-case basis, consider a refund or, more commonly, conversion to WooWoo Tokens. This is a discretionary goodwill provision, not an entitlement, and does not override the strict no-return policy for Heavily Discounted Products as a right, though it may still be considered in genuinely exceptional cases.
+        If a delegate is genuinely unable to attend due to circumstances beyond their control (for example, serious illness, bereavement, a natural disaster, or a government-imposed restriction), WooWoo World may, at its sole discretion and on a case-by-case basis, consider a remedy outside the windows above, most commonly WooWoo Tokens. This is a discretionary goodwill provision, not an entitlement.
       </p>
 
-      <h3>2.4 No-Shows</h3>
+      <h3>2.5 No-Shows</h3>
       <p>
-        Delegates who do not attend without cancelling in advance are treated the same as attendees for billing purposes and are not entitled to any refund or Token conversion.
+        Delegates who do not attend without cancelling in advance are treated the same as attendees for billing purposes and are not entitled to any refund or Token conversion, regardless of the windows above.
+      </p>
+
+      <h3>2.6 Booking Protection (Optional Add-On)</h3>
+      <p>
+        Where offered at checkout, a Booking Protection add-on may be purchased alongside your booking to extend or upgrade the cancellation terms above. Full details are set out wherever Booking Protection is offered at the time of booking.
       </p>
 
       <h2>3. WooWoo Tokens</h2>
       <p>
-        Where a cancellation is eligible for a remedy under Section 2, <strong>WooWoo Tokens will always be offered first, before any cash refund is considered.</strong> A cash refund is only offered where WooWoo Tokens are declined and, even then, remains at our discretion for Standard Discount Products and is exceptional for Heavily Discounted Products.
+        Where a cancellation is eligible for a remedy under Section 2, <strong>WooWoo Tokens will always be offered first, before any cash refund is considered.</strong>
       </p>
+
+      <h3>3.1 Token Bonus</h3>
+      <p>
+        Choosing WooWoo Tokens over a cash refund is worth more: we credit <strong>110% of the eligible amount</strong> as Tokens. For example, an amount eligible for a RM1,000 refund becomes RM1,100 in Tokens if you choose Tokens instead.
+      </p>
+
+      <h3>3.2 Resale-First Cash Refunds</h3>
+      <p>
+        Where a cash refund is chosen instead of Tokens (available only under Section 2.3, and at our discretion under Section 2.4), we will first attempt to resell the vacated seat. A cash refund is only issued once the seat has been resold. Until then, WooWoo Tokens remain available immediately, without waiting for resale.
+      </p>
+
+      <h3>3.3 General Token Terms</h3>
       <ul>
         <li>WooWoo Tokens are a store credit, redeemable against any other WooWoo World product or course.</li>
         <li>WooWoo Tokens have no cash value and cannot be withdrawn or exchanged for money.</li>
