@@ -19,7 +19,7 @@ const formats = [
     title: '1-2 Hour Online Briefing',
     text: 'A free, focused introduction to Strategic Workplace AI delivered remotely, tailored to your organisation or function.',
     tagline: 'Free of charge \u00b7 online',
-    infoHref: '#',
+    infoHref: '/workshops/online-briefing',
     bookHref: '#',
   },
   {
