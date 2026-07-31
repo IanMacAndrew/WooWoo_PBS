@@ -174,7 +174,7 @@ export function Portfolio() {
                 <strong>Eng Lian Board Members & Directors, C-Suite & Department Heads, and Employees & Contractors</strong> get 50% off standard. <strong>Everyone</strong> gets a group discount for booking from the same company: 5% for 2-4 people, 10% for 5-9, 15% for 10-19, 20% for 20+. A further 10% applies to bookings made before 8 August 2026. All discounts stack.
               </p>
               <p>
-                At checkout, please enter your sales rep's name under "Referred By" (if applicable) and your company name.
+                At checkout, please enter your company name and industry/business type (so we can arrange workgroups by sector), plus your sales rep's name under "Referred By" if applicable.
               </p>
             </div>
 
