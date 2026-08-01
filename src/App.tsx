@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Hero } from './components/Hero'
 import { Portfolio } from './components/Portfolio'
 import { Awards } from './components/Awards'
@@ -6,14 +7,18 @@ import { Services } from './components/Services'
 import { Team } from './components/Team'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
+import { FocusProfile } from './components/FocusProfile'
+import { FocusProvider } from './contexts/FocusContext'
+import { OnlineBriefingInfo } from './pages/OnlineBriefingInfo'
 
-export default function App() {
+function HomePage() {
   return (
     <div className="min-h-screen bg-background text-foreground" style={{ overflow: 'visible' }}>
       <main className="relative" role="main" style={{ overflow: 'visible' }}>
         <section id="hero" aria-label="Hero section">
           <Hero />
         </section>
+        <FocusProfile />
         <section id="portfolio" aria-label="Portfolio section">
           <Portfolio />
         </section>
@@ -35,5 +40,18 @@ export default function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <FocusProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/workshops/online-briefing" element={<OnlineBriefingInfo />} />
+        </Routes>
+      </BrowserRouter>
+    </FocusProvider>
   )
 }

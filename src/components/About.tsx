@@ -1,58 +1,408 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import { useFocus } from '@/contexts/FocusContext'
+import { Sparkles, Unlock, Coins, Search, ShieldCheck, Rocket, TrainFront, type LucideIcon } from 'lucide-react'
 
+type ProcessStep = {
+  number: string
+  title: string
+  description: string
+}
+
+const railSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "All Aboard: Setting the Destination",
+    description: "A high level business professional pulls into your organisation and working with key leaders, usually driven by major shareholders, maps the journey to define outcomes and deliverables that will get your business where you want to go.",
+  },
+  {
+    number: "02",
+    title: "Laying the Tracks: The Roadmap",
+    description: "Each professional works with department heads and key managers to engineer a detailed plan of activities, actions and training to get the organization on track.",
+  },
+  {
+    number: "03",
+    title: "Full Steam Ahead: Project Launch",
+    description: "Organizational Leaders and project participants assemble for the kick-off whistle. Teams break out into dedicated carriages for detailed briefings and task assignments before we leave the station.",
+  },
+  {
+    number: "04",
+    title: "On the Main Line: Project Goes LIVE",
+    description: "Our experts ride shotgun in the cab guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
+  },
+  {
+    number: "05",
+    title: "Signal Box Check-Ins",
+    description: "Bi-weekly briefings with key executives, officers and owners to check the signals reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Pulling Into the Terminus",
+    description: "With every task delivered, we conduct a thorough end-of-line review with key executives and owners to achieve project sign-off and bring the engagement to a clean stop.",
+  },
+  {
+    number: "07",
+    title: "Return Journey: The Review",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture and that organisational performance is still running like clockwork.",
+  }
+]
+
+const strategySteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Houston, We Have a Strategy",
+    description: "Our mission commander touches down with your leaders and shareholders to plot the coordinates defining the outcomes and deliverables that will get your business to escape velocity.",
+  },
+  {
+    number: "02",
+    title: "Charting the Flight Plan",
+    description: "Each specialist works with department heads and key managers to engineer a detailed flight plan of activities, actions and training that keeps the mission on trajectory.",
+  },
+  {
+    number: "03",
+    title: "T-Minus: Launch Sequence",
+    description: "Leaders and crew assemble for countdown. Teams break out into mission pods for detailed briefings and task assignments before main engine start.",
+  },
+  {
+    number: "04",
+    title: "Orbital Insertion: Strategy Goes LIVE",
+    description: "Our experts ride in the capsule with you guiding crews, delivering training and making sure every roadmap deliverable is firing on all thrusters across the organisation.",
+  },
+  {
+    number: "05",
+    title: "Mission Control Check-Ins",
+    description: "Bi-weekly telemetry with key executives, officers and owners reviewing trajectory, flagging anomalies, and correcting course if anything drifts off orbit.",
+  },
+  {
+    number: "06",
+    title: "Touchdown: Sticking the Landing",
+    description: "With every task delivered, we conduct a thorough post-flight debrief with key executives and owners to achieve mission sign-off and a clean landing.",
+  },
+  {
+    number: "07",
+    title: "Return Trajectory: The Review",
+    description: "A six, 12 or 18 month return trip to make sure the outcomes are still in orbit and that organisational performance hasn't drifted off course.",
+  }
+]
+
+const salesMarketingSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "All Aboard: Setting the Sales Destination",
+    description: "A senior Sales & Marketing professional pulls into your organisation and, working with commercial leaders, maps the journey to the revenue outcomes you actually want to hit.",
+  },
+  {
+    number: "02",
+    title: "Laying the Pipeline Tracks",
+    description: "Each professional works with sales and marketing managers to engineer a detailed plan of campaigns, funnels and training to get the pipeline on track.",
+  },
+  {
+    number: "03",
+    title: "Full Steam Ahead: Campaign Launch",
+    description: "Leaders and teams assemble for the kick-off whistle. Departments break out into dedicated carriages for briefings and territory assignments before we leave the station.",
+  },
+  {
+    number: "04",
+    title: "On the Main Line: The Sales Engine Goes LIVE",
+    description: "Our experts ride shotgun in the cab guiding reps, delivering training and making sure every campaign and target is firing on all cylinders.",
+  },
+  {
+    number: "05",
+    title: "Signal Box Check-Ins: Pipeline Reviews",
+    description: "Bi-weekly briefings with sales and marketing leaders to check the signals reviewing conversion, flagging blockers, and switching tracks if targets need refining.",
+  },
+  {
+    number: "06",
+    title: "Pulling Into the Revenue Terminus",
+    description: "With every campaign delivered, we conduct a thorough end-of-line review with leadership to achieve sign-off on results and bring the engagement to a clean stop.",
+  },
+  {
+    number: "07",
+    title: "Return Journey: The ROI Review",
+    description: "A six, 12 or 18 month return trip to make sure the revenue gains are firmly coupled to your organisation and still running like clockwork.",
+  }
+]
+
+const hrdSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Egg to Appetite: Spotting the Need",
+    description: "A senior HR Development professional pulls into your organisation and, working with leadership, identifies exactly where culture and capability need to grow.",
+  },
+  {
+    number: "02",
+    title: "The Caterpillar Years: Building the Diet",
+    description: "Each professional works with department heads and people managers to engineer a detailed plan of development, training and change activity to feed real growth.",
+  },
+  {
+    number: "03",
+    title: "First Bite: Programme Launch",
+    description: "Leaders and participants assemble for the kick-off. Teams break out for briefings and role assignments before the transformation truly begins.",
+  },
+  {
+    number: "04",
+    title: "Spinning the Cocoon: Change Goes LIVE",
+    description: "Our experts guide teams through the change, delivering training and making sure every capability and culture deliverable is quietly taking shape.",
+  },
+  {
+    number: "05",
+    title: "Chrysalis Check-Ins",
+    description: "Bi-weekly pulse checks with key executives and people leaders reviewing adoption, flagging resistance, and adjusting the programme if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Emergence: Wings Unfold",
+    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off the new capability fully formed.",
+  },
+  {
+    number: "07",
+    title: "Taking Flight: The Retention Review",
+    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture and still flying strong.",
+  }
+]
+
+const lawSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Naming the Shackles",
+    description: "A senior legal professional pulls into your organisation and, working with leadership, identifies exactly which legal and operational burdens are holding you back.",
+  },
+  {
+    number: "02",
+    title: "Drafting the Release",
+    description: "Each professional works with department heads to engineer a detailed plan of actions to remove constraints and reduce risk.",
+  },
+  {
+    number: "03",
+    title: "Breaking Ground: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the release process begins.",
+  },
+  {
+    number: "04",
+    title: "Cutting the Chains: Programme Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every governance and compliance deliverable is firing cleanly.",
+  },
+  {
+    number: "05",
+    title: "Liberty Check-Ins",
+    description: "Bi-weekly briefings with key executives to check progress reviewing risk, flagging exposure, and adjusting course if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Standing Unshackled: Sign-Off",
+    description: "With every task delivered, we conduct a thorough review with leadership to achieve sign-off the organisation free and clear.",
+  },
+  {
+    number: "07",
+    title: "Freedom Held: The Compliance Review",
+    description: "A six, 12 or 18 month return trip to make sure the organisation is still standing free of the burdens we removed.",
+  }
+]
+
+const crmSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Planting the First Coin",
+    description: "A senior CRM professional pulls into your organisation and, working with leadership, identifies exactly where relationship value is being left on the table.",
+  },
+  {
+    number: "02",
+    title: "Compounding the Stack",
+    description: "Each professional works with sales and service managers to engineer a detailed plan for growing every customer relationship over time.",
+  },
+  {
+    number: "03",
+    title: "Seed Capital: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and territory assignments before the growth phase begins.",
+  },
+  {
+    number: "04",
+    title: "The Pile Grows: CRM Goes LIVE",
+    description: "Our experts guide teams through rollout, making sure every relationship-building deliverable is compounding as planned.",
+  },
+  {
+    number: "05",
+    title: "Counting the Coins",
+    description: "Bi-weekly briefings with leadership to check progress reviewing retention, flagging churn risk, and adjusting course if needed.",
+  },
+  {
+    number: "06",
+    title: "Vault Sign-Off",
+    description: "With every deliverable complete, we conduct a thorough review with leadership to achieve programme sign-off.",
+  },
+  {
+    number: "07",
+    title: "Interest Accrued: The Growth Review",
+    description: "A six, 12 or 18 month return trip to make sure the relationship value is still compounding, quarter after quarter.",
+  }
+]
+
+const accountingSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Following the Trail",
+    description: "A senior accounting professional pulls into your organisation and, working with leadership, identifies exactly where value is going unaccounted for.",
+  },
+  {
+    number: "02",
+    title: "Mapping the Ledger",
+    description: "Each professional works with finance managers to engineer a detailed plan of investigation, reconciliation and control.",
+  },
+  {
+    number: "03",
+    title: "Opening the Books: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the investigation begins.",
+  },
+  {
+    number: "04",
+    title: "The Hunt Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every reconciliation and control deliverable is on the money.",
+  },
+  {
+    number: "05",
+    title: "Reconciliation Check-Ins",
+    description: "Bi-weekly briefings with leadership to check progress reviewing findings, flagging discrepancies, and adjusting scope if needed.",
+  },
+  {
+    number: "06",
+    title: "Books Balanced: Sign-Off",
+    description: "With every account reconciled, we conduct a thorough review with leadership to achieve sign-off the books finally balanced.",
+  },
+  {
+    number: "07",
+    title: "Found Money: The Recovery Review",
+    description: "A six, 12 or 18 month return trip to make sure the recovered value is still accounted for, properly and completely.",
+  }
+]
+
+const reinsuranceSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Mapping the Grid",
+    description: "A senior reinsurance professional pulls into your organisation and, working with leadership, identifies exactly where capital exposure needs protecting.",
+  },
+  {
+    number: "02",
+    title: "Reinforcing the Foundations",
+    description: "Each professional works with finance and risk managers to engineer a detailed plan for securing owner and investor capital.",
+  },
+  {
+    number: "03",
+    title: "Powering Up: Programme Launch",
+    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the protection plan goes live.",
+  },
+  {
+    number: "04",
+    title: "Full Power: Protection Goes LIVE",
+    description: "Our experts guide teams through implementation, making sure every protective deliverable is running at full, steady power.",
+  },
+  {
+    number: "05",
+    title: "Systems Check-Ins",
+    description: "Bi-weekly briefings with leadership to check the grid reviewing exposure, flagging risk, and adjusting course if anything needs refining.",
+  },
+  {
+    number: "06",
+    title: "Grid Secured: Sign-Off",
+    description: "With every safeguard in place, we conduct a thorough review with leadership to achieve programme sign-off.",
+  },
+  {
+    number: "07",
+    title: "Steady Current: The Resilience Review",
+    description: "A six, 12 or 18 month return trip to make sure capital is still safe, protected and running at full power.",
+  }
+]
+
+const focusCopy = {
+  strategy: {
+    tagline: "Our strategic starship launches you into a paragon of corporate sublimity",
+    steps: strategySteps,
+    theme: 'space' as const,
+  },
+  'sales-marketing': {
+    tagline: "Our commercial power train pulls you into a paragon of revenue sublimity",
+    steps: salesMarketingSteps,
+    theme: 'rail' as const,
+  },
+  hrd: {
+    tagline: "From caterpillar cost-centre to butterfly bottom-line a transformation you can watch unfold",
+    steps: hrdSteps,
+    theme: 'metamorphosis' as const,
+  },
+  law: {
+    tagline: "Every organisation carries a little weight our journey is about setting it free",
+    steps: lawSteps,
+    theme: 'liberation' as const,
+  },
+  crm: {
+    tagline: "Every relationship is a coin worth compounding watch the pile grow",
+    steps: crmSteps,
+    theme: 'growth' as const,
+  },
+  accounting: {
+    tagline: "Somewhere in your books, money is waiting to be found we go looking",
+    steps: accountingSteps,
+    theme: 'search' as const,
+  },
+  reinsurance: {
+    tagline: "Capital deserves a safe, steady current protected and always running",
+    steps: reinsuranceSteps,
+    theme: 'power' as const,
+  },
+} as const
+
+const themePalette: Record<string, { bg: string; tie: string; rail: string; icon: LucideIcon; iconColor: string }> = {
+  metamorphosis: {
+    bg: 'linear-gradient(to bottom, #0b2b26 0%, #123a32 20%, #0a2420 50%, #123a32 80%, #0b2b26 100%)',
+    tie: 'linear-gradient(to bottom, #1f5c4d, #123a32, #1f5c4d)',
+    rail: '#5fbf9f',
+    icon: Sparkles,
+    iconColor: '#5fbf9f',
+  },
+  liberation: {
+    bg: 'linear-gradient(to bottom, #14161c 0%, #1d2029 20%, #0f1116 50%, #1d2029 80%, #14161c 100%)',
+    tie: 'linear-gradient(to bottom, #3a3f4d, #22252e, #3a3f4d)',
+    rail: '#c79529',
+    icon: Unlock,
+    iconColor: '#c79529',
+  },
+  growth: {
+    bg: 'linear-gradient(to bottom, #2b2308 0%, #3a2e0d 20%, #201a06 50%, #3a2e0d 80%, #2b2308 100%)',
+    tie: 'linear-gradient(to bottom, #7a5c1e, #4a3812, #7a5c1e)',
+    rail: '#e8c766',
+    icon: Coins,
+    iconColor: '#e8c766',
+  },
+  search: {
+    bg: 'linear-gradient(to bottom, #0d1b2b 0%, #12253a 20%, #091420 50%, #12253a 80%, #0d1b2b 100%)',
+    tie: 'linear-gradient(to bottom, #2f4c66, #1a3247, #2f4c66)',
+    rail: '#7fb8e0',
+    icon: Search,
+    iconColor: '#7fb8e0',
+  },
+  power: {
+    bg: 'linear-gradient(to bottom, #1a1408 0%, #2b1f0d 20%, #120d05 50%, #2b1f0d 80%, #1a1408 100%)',
+    tie: 'linear-gradient(to bottom, #6b4a1f, #3d2a12, #6b4a1f)',
+    rail: '#0F52BA',
+    icon: ShieldCheck,
+    iconColor: '#6fa8e8',
+  },
+}
 
 export function About() {
+  const { focus } = useFocus()
   const [activeFrame, setActiveFrame] = useState(-1)
   const [animationStarted, setAnimationStarted] = useState(false)
   const cycleRef = useRef<HTMLDivElement | null>(null)
   const [cycleInView, setCycleInView] = useState(false)
 
-  const processSteps = [
-    {
-      number: "01",
-      title: "All Aboard: Setting the Destination",
-      description: "A high level business professional pulls into your organisation and working with key leaders, usually driven by major shareholders, maps the journey to define outcomes and deliverables that will get your business where you want to go.",
-      color: "accent-blue"
-    },
-    {
-      number: "02",
-      title: "Laying the Tracks: The Roadmap",
-      description: "Each professional works with department heads and key managers to engineer a detailed plan of activities, actions and training to get the organization on track.",
-      color: "accent-emerald"
-    },
-    {
-      number: "03",
-      title: "Full Steam Ahead: Project Launch",
-      description: "Organizational Leaders and project participants assemble for the kick-off whistle. Teams break out into dedicated carriages for detailed briefings and task assignments before we leave the station.",
-      color: "accent-purple"
-    },
-    {
-      number: "04",
-      title: "On the Main Line: Project Goes LIVE",
-      description: "Our experts ride shotgun in the cab — guiding teams, delivering training and making sure every Roadmap outcome and deliverable is firing on all cylinders across the organisation.",
-      color: "accent-blue"
-    },
-    {
-      number: "05",
-      title: "Signal Box Check-Ins",
-      description: "Bi-weekly briefings with key executives, officers and owners to check the signals — reviewing progress, flagging challenges, and switching tracks if anything needs refining.",
-      color: "accent-purple"
-    },
-    {
-      number: "06",
-      title: "Pulling Into the Terminus",
-      description: "With every task delivered, we conduct a thorough end-of-line review with key executives and owners to achieve project sign-off and bring the engagement to a clean stop.",
-      color: "accent-blue"
-    },
-    {
-      number: "07",
-      title: "Return Journey: The Review",
-      description: "A six, 12 or 18 month return trip to make sure the outcomes are firmly coupled to your company culture — and that organisational performance is still running like clockwork.",
-      color: "accent-emerald"
-    }
-  ]
+  const active = focus && focus in focusCopy ? focusCopy[focus as keyof typeof focusCopy] : null
+  const processSteps = active ? active.steps : railSteps
+  const tagline = active ? active.tagline : "Our professional power train pulls you into a paragon of corporate sublimity"
+  const isSpace = active?.theme === 'space'
+  const palette = active ? themePalette[active.theme] : undefined
+  const PaletteIcon = palette?.icon
 
   useEffect(() => {
     // Start film animation after a 3 second pause
@@ -65,7 +415,8 @@ export function About() {
         }, index * 2000 + 1000) // Ultra slow: Start after 24s, then every 72s
       })
     }, 3000) // 3 second pause after section loads
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focus])
 
   useEffect(() => {
     const el = cycleRef.current
@@ -117,43 +468,70 @@ export function About() {
           </h2>
           
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Our professional power train  pulls you into a paragon of corporate sublimity
+            {tagline}
           </p>
         </div>
 
         {/* Film Strip Container */}
         <div className="relative max-w-7xl mx-auto">
           
-          {/* Railway Track Background */}
+          {/* Railway Track / Starfield Background */}
           <div className="relative rounded-xl overflow-hidden"
                style={{ 
-                 background: 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)',
+                 background: isSpace
+                   ? 'linear-gradient(to bottom, #05040f 0%, #0b0a1f 20%, #1c0333 50%, #0b0a1f 80%, #05040f 100%)'
+                   : (palette?.bg ?? 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)'),
                  boxShadow: '0 25px 50px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.05)' 
                }}>
             
-            {/* Railway Ties (sleepers) - scrolling */}
+            {/* Railway Ties (sleepers) / Starfield dots - scrolling */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <div className={`flex items-center h-full ${
                 animationStarted ? 'perforations-scroll-animation' : ''
-              }`} style={{ width: '200%', gap: '32px', paddingLeft: '16px' }}>
-                {[...Array(60)].map((_, i) => (
-                  <div key={`tie-${i}`} className="flex-shrink-0 w-12 h-full"
-                       style={{ 
-                         background: 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
-                         boxShadow: 'inset 0 0 8px rgba(0,0,0,0.5), 2px 0 4px rgba(0,0,0,0.4)',
-                         borderLeft: '1px solid rgba(0,0,0,0.4)',
-                         borderRight: '1px solid rgba(0,0,0,0.4)'
-                       }} />
+              }`} style={{ width: '200%', gap: isSpace ? '18px' : '32px', paddingLeft: '16px' }}>
+                {[...Array(isSpace ? 90 : 60)].map((_, i) => (
+                  isSpace ? (
+                    <div key={`star-${i}`} className="flex-shrink-0 rounded-full"
+                         style={{
+                           width: i % 3 === 0 ? '4px' : '2px',
+                           height: i % 3 === 0 ? '4px' : '2px',
+                           background: '#c79529',
+                           opacity: 0.25 + (i % 5) * 0.12,
+                           boxShadow: '0 0 6px rgba(199,149,41,0.6)',
+                         }} />
+                  ) : (
+                    <div key={`tie-${i}`} className="flex-shrink-0 w-12 h-full"
+                         style={{ 
+                           background: palette?.tie ?? 'linear-gradient(to bottom, #5c3a1f, #3d2611, #5c3a1f)',
+                           boxShadow: 'inset 0 0 8px rgba(0,0,0,0.5), 2px 0 4px rgba(0,0,0,0.4)',
+                           borderLeft: '1px solid rgba(0,0,0,0.4)',
+                           borderRight: '1px solid rgba(0,0,0,0.4)'
+                         }} />
+                  )
                 ))}
               </div>
             </div>
 
-            {/* Steel Rails - top and bottom (static) */}
+            {/* Steel Rails (rail theme) / Light streaks (space theme) - top and bottom (static) */}
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ top: '28%' }}>
-              <div className="h-1.5" style={{ background: 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />
+              <div className="h-1.5" style={{
+                background: isSpace
+                  ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : palette
+                  ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
+                  : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+              }} />
             </div>
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ bottom: '28%' }}>
-              <div className="h-1.5" style={{ background: 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />
+              <div className="h-1.5" style={{
+                background: isSpace
+                  ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
+                  : palette
+                  ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
+                  : 'linear-gradient(to bottom, #8a8a8a, #d4d4d4 50%, #5a5a5a)',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.5)'
+              }} />
             </div>
 
             {/* Film Frames Container - Scrolling Animation */}
@@ -170,30 +548,43 @@ export function About() {
                   const index = idx % processSteps.length;
                   return (
                     <div key={`car-${idx}`} className="relative flex-shrink-0 w-80 h-52 flex items-center">
-                      {/* Couplers */}
-                      <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
-                      <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                      {/* Couplers (rail) / Thruster glow (space) */}
+                      {isSpace ? (
+                        <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full z-0"
+                             style={{ background: '#c79529', boxShadow: '0 0 10px 3px rgba(199,149,41,0.7)' }} />
+                      ) : (
+                        <>
+                          <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                          <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-3 h-2 bg-gray-700 rounded-sm z-0" />
+                        </>
+                      )}
                       
-                      {/* Bogies (wheel trucks) - top */}
-                      <div className="absolute top-0 left-8 right-8 flex justify-between px-4 z-10">
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
-                      </div>
-                      <div className="absolute bottom-0 left-8 right-8 flex justify-between px-4 z-10">
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
-                        <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
-                      </div>
+                      {/* Bogies (wheel trucks) - hidden in space theme */}
+                      {!isSpace && (
+                        <>
+                          <div className="absolute top-0 left-8 right-8 flex justify-between px-4 z-10">
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
+                          </div>
+                          <div className="absolute bottom-0 left-8 right-8 flex justify-between px-4 z-10">
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
+                            <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 -1px 2px rgba(0,0,0,0.6)' }} />
+                          </div>
+                        </>
+                      )}
 
-                      {/* Car body (top-down view) */}
+                      {/* Car / Capsule body (top-down view) */}
                       <div
                         className={`relative mx-2 my-4 w-full h-44 ${
                           activeFrame >= index ? 'ring-2 ring-offset-2 ring-offset-transparent' : ''
                         }`}
                         style={{
                           background: `linear-gradient(180deg, ${bodyColor} 0%, ${bodyColor}dd 35%, ${bodyColor}aa 50%, ${bodyColor}dd 65%, ${bodyColor} 100%)`,
-                          borderRadius: '24px',
-                          border: '2px solid rgba(0,0,0,0.4)',
-                          boxShadow: '0 12px 24px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255,255,255,0.15), inset 0 -2px 8px rgba(0,0,0,0.3)',
+                          borderRadius: isSpace ? '9999px 9999px 24px 24px' : '24px',
+                          border: isSpace ? '2px solid rgba(199,149,41,0.5)' : '2px solid rgba(0,0,0,0.4)',
+                          boxShadow: isSpace
+                            ? '0 12px 24px rgba(0,0,0,0.6), 0 0 30px rgba(199,149,41,0.15), inset 0 2px 8px rgba(255,255,255,0.15)'
+                            : '0 12px 24px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255,255,255,0.15), inset 0 -2px 8px rgba(0,0,0,0.3)',
                           color: textColor,
                         }}
                       >
@@ -204,9 +595,17 @@ export function About() {
 
                         {/* Car number plate */}
                         <div className="absolute -top-2 -left-2 w-10 h-10 rounded-full flex items-center justify-center font-black text-sm z-20 border-2"
-                             style={{ background: '#1a1a1a', color: '#fafafa', borderColor: '#c79529', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
+                             style={{ background: '#1a1a1a', color: '#fafafa', borderColor: palette?.iconColor ?? '#c79529', boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
                           {step.number}
                         </div>
+
+                        {/* Theme icon badge */}
+                        {PaletteIcon && (
+                          <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full flex items-center justify-center z-20 border-2"
+                               style={{ background: '#1a1a1a', borderColor: palette.iconColor, boxShadow: '0 4px 8px rgba(0,0,0,0.5)' }}>
+                            <PaletteIcon className="w-4 h-4" style={{ color: palette.iconColor }} strokeWidth={2.5} />
+                          </div>
+                        )}
 
                         <div className="relative h-full px-8 py-5 flex flex-col justify-center">
                           <h3 className="font-black text-lg leading-tight mb-2" style={{ color: textColor }}>
@@ -217,7 +616,7 @@ export function About() {
                           </p>
                         </div>
 
-                        {/* Rivets */}
+                        {/* Rivets / Portholes */}
                         <div className="absolute left-2 top-4 bottom-4 flex flex-col justify-between opacity-50">
                           {[...Array(4)].map((_, i) => (<div key={i} className="w-1 h-1 rounded-full" style={{ background: textColor }} />))}
                         </div>
@@ -305,10 +704,10 @@ export function About() {
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 py-6">
                 {[
                   { n: "01", t: "Detailed Requirement Study", d: "We listen deeply, map and determine your outcomes aligned with your personal or corporate vision, before a single thought creates." },
-                  { n: "02", t: "Create", d: "Our professional co-creators craft bold, original master works with you — designed to deliver exceptional results." },
+                  { n: "02", t: "Create", d: "Our professional co-creators craft bold, original master works with you designed to deliver exceptional results." },
                   { n: "03", t: "Agree the Final Solution", d: "We collaborate with you to align every detail, ensuring the solution exceeds expectations before we proceed." },
                   { n: "04", t: "Refine", d: "Precision polish. Every element is stress-tested and elevated until excellence is the only outcome." },
-                  { n: "05", t: "Launch", d: "Confident deployment backed by rigorous QA — now we can loop back to make it even better." },
+                  { n: "05", t: "Launch", d: "Confident deployment backed by rigorous QA now we can loop back to make it even better." },
                 ].map((s) => (
                   <div key={s.n} className="relative bg-card rounded-lg p-5 pt-7 subtle-shadow">
                     <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full flex items-center justify-center font-black text-sm border-2"
@@ -366,7 +765,7 @@ export function About() {
 
               {/* Monitoring text */}
               <p className="text-center text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto mb-4 sm:mb-6">
-                Continuously monitored against the planned deliverables and outcomes — with corrective actions whenever the transformative journey calls for them.
+                Continuously monitored against the planned deliverables and outcomes with corrective actions whenever the transformative journey calls for them.
               </p>
 
               {/* Return loop */}

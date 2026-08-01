@@ -1,9 +1,26 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Volume2, VolumeX, Menu, X } from 'lucide-react'
+import { Volume2, VolumeX, Menu, X, ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect, useMemo } from 'react'
 import wooWooLogo from '@/assets/woowoo-icon.png'
+import { useFocus, Focus } from '@/contexts/FocusContext'
+
+const workOptions: { label: string; value: Focus }[] = [
+  { label: 'Strategy', value: 'strategy' },
+  { label: 'Sales & Marketing', value: 'sales-marketing' },
+  { label: 'HR Development', value: 'hrd' },
+  { label: 'Law', value: 'law' },
+  { label: 'CRM', value: 'crm' },
+  { label: 'Accounting', value: 'accounting' },
+  { label: 'Reinsurance', value: 'reinsurance' },
+]
+
+function goToFocusProfile() {
+  setTimeout(() => {
+    document.getElementById('focus-profile')?.scrollIntoView({ behavior: 'smooth' })
+  }, 50)
+}
 
 // Detect browsers that should prefer MP4 (Safari iOS/macOS, older Edge, Chinese browsers
 // built on Tencent X5, UC, QQ, 360). Returns true when MP4 should load first.
@@ -33,8 +50,22 @@ export function Hero() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVideoReady, setIsVideoReady] = useState(false)
   const [isInView, setIsInView] = useState(true)
+  const [isWorkDropdownOpen, setIsWorkDropdownOpen] = useState(false)
+  const [isMobileWorkOpen, setIsMobileWorkOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const workDropdownRef = useRef<HTMLDivElement>(null)
+  const { setFocus } = useFocus()
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (workDropdownRef.current && !workDropdownRef.current.contains(e.target as Node)) {
+        setIsWorkDropdownOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const mp4First = useMemo(() => preferMp4(), [])
   const poster = useMemo(() => pickPoster(), [])
@@ -231,12 +262,37 @@ export function Hero() {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <a 
-                href="#portfolio" 
-                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
-              >
-                Work
-              </a>
+              <div className="relative" ref={workDropdownRef}>
+                <button
+                  onClick={() => setIsWorkDropdownOpen((v) => !v)}
+                  className="flex items-center gap-1 text-white hover:text-white/80 font-medium gentle-animation hover:scale-105 cursor-pointer"
+                >
+                  Work
+                  <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isWorkDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isWorkDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-3 w-56 rounded-xl bg-black/90 backdrop-blur-xl border border-white/10 overflow-hidden shadow-xl"
+                  >
+                    {workOptions.map((opt) => (
+                      <button
+                        key={opt.value}
+                        onClick={() => {
+                          setFocus(opt.value)
+                          setIsWorkDropdownOpen(false)
+                          goToFocusProfile()
+                        }}
+                        className="w-full text-left px-5 py-3 text-white/90 hover:text-white hover:bg-white/10 font-medium text-sm gentle-animation cursor-pointer"
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </div>
               <a 
                 href="#about" 
                 className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
@@ -342,13 +398,32 @@ export function Hero() {
           <div className="flex flex-col px-6 pb-6 h-full">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-4 text-white">
-              <a 
-                href="#portfolio" 
-                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Work
-              </a>
+              <div>
+                <button
+                  onClick={() => setIsMobileWorkOpen((v) => !v)}
+                  className="mobile-menu-link w-full flex items-center justify-between px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20 cursor-pointer"
+                >
+                  Work
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isMobileWorkOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isMobileWorkOpen && (
+                  <div className="flex flex-col pl-4 mt-1">
+                    {workOptions.map((opt) => (
+                      <button
+                        key={opt.value}
+                        onClick={() => {
+                          setFocus(opt.value)
+                          setIsMobileMenuOpen(false)
+                          goToFocusProfile()
+                        }}
+                        className="text-left px-4 py-2.5 text-white/80 hover:text-white hover:bg-white/10 rounded-lg gentle-animation font-medium text-base active:bg-white/20 cursor-pointer"
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               <a 
                 href="#about" 
                 className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
