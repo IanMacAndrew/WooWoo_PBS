@@ -63,7 +63,15 @@ export function TermsOfService() {
 
       <h3>2.6 Booking Protection (Optional Add-On)</h3>
       <p>
-        Where offered at checkout, a Booking Protection add-on may be purchased alongside your booking to extend or upgrade the cancellation terms above. Full details are set out wherever Booking Protection is offered at the time of booking.
+        Where offered at checkout, you may add <strong>Booking Protection</strong> alongside your booking for a fee of <strong>8% of the ticket price</strong> (calculated per seat, so a group booking's protection cost scales with the number of seats protected).
+      </p>
+      <p>Booking Protection upgrades your cancellation terms by one tier:</p>
+      <ul>
+        <li>On a <strong>Heavily Discounted Product</strong>, it moves your booking into the same terms as a Standard Discount Product, giving you the 72-hour cash-refund-eligibility window (Section 2.3) that the strict no-return policy would otherwise deny entirely.</li>
+        <li>On a <strong>Standard Discount Product</strong>, it removes the 72-hour cutoff entirely, letting you cancel for WooWoo Tokens or a resale-first refund right up until the event starts.</li>
+      </ul>
+      <p>
+        Booking Protection does not cover no-shows under any circumstances (Section 2.5 still applies in full), and the Booking Protection fee itself is non-refundable, regardless of whether you go on to use it.
       </p>
 
       <h2>3. WooWoo Tokens</h2>
