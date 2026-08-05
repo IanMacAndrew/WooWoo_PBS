@@ -127,9 +127,10 @@ export function Footer() {
 
         {/* Bottom Bar - Simplified */}
         <div className="border-t border-background/20 pt-8 mt-16">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-sm text-background/70 mb-4 md:mb-0">
-              © 2025 WooWoo World Sdn. Bhd.. All rights reserved.
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div className="text-sm text-background/70">
+              <div>© 2025 WooWoo World Sdn. Bhd.. All rights reserved.</div>
+              <div className="text-background/50 text-xs mt-1">Company No.: 202501029350 (1630762) (1630762-X)</div>
             </div>
             <div className="text-sm text-background/70">
               SO-26-02, Menara 1, No. 3, Jalan Bangsar, KL Eco City, 59200 Kuala Lumpur, W.P. Kuala Lumpur
