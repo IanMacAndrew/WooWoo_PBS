@@ -37,7 +37,7 @@ const formats = [
   },
   {
     icon: CalendarRange,
-    title: 'Five-Weekend Masterclass',
+    title: 'Strategic AI Sales & Marketing Masterclass',
     text: 'Five consecutive weekends of hands-on AI transformation training HRD Corp claimable, heavily discounted for groups.',
     tagline: 'HRD Corp Claimable',
     infoHref: '#',
@@ -45,7 +45,7 @@ const formats = [
   },
   {
     icon: GraduationCap,
-    title: 'Five-Day Bootcamp',
+    title: 'Strategic AI Sales & Marketing Bootcamp',
     text: 'Five consecutive weekdays of intensive AI transformation training HRD Corp claimable, heavily discounted for groups.',
     tagline: 'HRD Corp Claimable',
     infoHref: '#',
@@ -157,10 +157,10 @@ export function Portfolio() {
               Up to 80% OFF Eng Lian & Partners
             </div>
             <h3 className="text-2xl sm:text-3xl font-black text-center mb-3" style={{ color: '#fafafa' }}>
-              One Day Strategic AI (HRDC Claimable)
+              Strategic AI Sales & Marketing Deep Dive (HRDC Claimable)
             </h3>
             <p className="text-center text-sm sm:text-base mb-6" style={{ color: '#E9ECF2' }}>
-              Standard price RM1,750/person. Held at Sri Wangsaria: Sat 8am-4pm or Sun 1pm-9pm, 2hr lunch break. Lunch/dinner from Mr Wong's restaurant included, though not compulsory.
+              Standard price RM1,750/person. Held at Sri Wangsaria, date to be confirmed: Saturday 8:30am-4:30pm (2hr lunch break) or Sunday 1pm-9pm (2hr tea break). Lunch/dinner from Mr Wong's restaurant included, though not compulsory.
             </p>
             <div
               className="max-w-2xl mx-auto mb-8 rounded-xl p-4 text-xs sm:text-sm leading-relaxed"
@@ -187,7 +187,8 @@ export function Portfolio() {
                   currency="RM"
                   dateOptions={[
                     {
-                      label: 'Sat 15 Aug (8am-4pm)',
+                      label: 'Saturday',
+                      hours: '8:30am-4:30pm \u00b7 2hr lunch break \u00b7 date to be confirmed',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/fZufZi8y34Vc8aHd3PcbC0H' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/9B6aEY9C73R88aH9RDcbC0I' },
@@ -197,7 +198,8 @@ export function Portfolio() {
                       ],
                     },
                     {
-                      label: 'Sun 16 Aug (1pm-9pm)',
+                      label: 'Sunday',
+                      hours: '1pm-9pm \u00b7 2hr tea break \u00b7 date to be confirmed',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 700, href: 'https://buy.stripe.com/5kQ7sM6pVfzQ4Yv3tfcbC0R' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 612.5, href: 'https://buy.stripe.com/7sY5kE6pVdrI9eL0h3cbC0S' },
@@ -218,7 +220,8 @@ export function Portfolio() {
                   currency="RM"
                   dateOptions={[
                     {
-                      label: 'Sat 15 Aug (8am-4pm)',
+                      label: 'Saturday',
+                      hours: '8:30am-4:30pm \u00b7 2hr lunch break \u00b7 date to be confirmed',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00weVe7tZgDUfD96FrcbC0C' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/dRm28s01x4Vcdv1fbXcbC0D' },
@@ -228,7 +231,8 @@ export function Portfolio() {
                       ],
                     },
                     {
-                      label: 'Sun 16 Aug (1pm-9pm)',
+                      label: 'Sunday',
+                      hours: '1pm-9pm \u00b7 2hr tea break \u00b7 date to be confirmed',
                       bands: [
                         { minQty: 1, maxQty: 1, pricePerPerson: 1575, href: 'https://buy.stripe.com/00wcN63dJ2N42Qn1l7cbC0M' },
                         { minQty: 2, maxQty: 4, pricePerPerson: 1487.5, href: 'https://buy.stripe.com/4gM9AU7tZcnE76DbZLcbC0N' },

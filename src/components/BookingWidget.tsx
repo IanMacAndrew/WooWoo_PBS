@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 export type Band = { minQty: number; maxQty: number; pricePerPerson: number; href: string }
-export type DateOption = { label: string; bands: Band[] }
+export type DateOption = { label: string; hours?: string; bands: Band[] }
 
 export function BookingWidget({
   dateOptions,
@@ -40,6 +40,11 @@ export function BookingWidget({
             </button>
           ))}
         </div>
+      )}
+      {options[dateIndex]?.hours && (
+        <p className="text-xs font-semibold mb-3" style={{ color: '#4a4a4a' }}>
+          {options[dateIndex].hours}
+        </p>
       )}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-2">
