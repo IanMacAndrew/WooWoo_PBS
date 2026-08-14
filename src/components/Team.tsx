@@ -6,17 +6,10 @@ import davidHoardPhoto from '../assets/david-hoard-photo-v2.jpg'
 import omarPhoto from '../assets/omar-photo-v2.jpg'
 import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
-import maxPhoto from '../assets/max-photo.jpg'
+import maxPhoto from '../assets/max-photo-v2.png'
 
 export function Team() {
   const wantedCriminals = [
-    {
-      name: "Michele 'The Future Framer'",
-      bounty: "$13,200",
-      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
-      image: futureFramerPhoto,
-      rotation: 'rotate-2',
-    },
     {
       name: "The Hoardman 'Strategic AI Guru'",
       bounty: "$18,800",
@@ -25,11 +18,11 @@ export function Team() {
       rotation: 'rotate-2',
     },
     {
-      name: "Max 'The AI Maverick'",
-      bounty: "$3,330",
-      description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
-      image: maxPhoto,
-      rotation: '-rotate-2',
+      name: "Michele 'The Future Framer'",
+      bounty: "$13,200",
+      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
+      image: futureFramerPhoto,
+      rotation: 'rotate-2',
     },
     {
       name: "Colin 'The Profesor' Warner",
@@ -37,6 +30,13 @@ export function Team() {
       description: "20+ years as a Chartered Accountant and Interim Finance Director, untangling everything from a £1bn pension fund to school-trust budgets. Wanted for finding money nobody else could find.",
       image: connorPhoto,
       rotation: 'rotate-1',
+    },
+    {
+      name: "Max 'The AI Maverick'",
+      bounty: "$7,677",
+      description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
+      image: maxPhoto,
+      rotation: '-rotate-2',
     },
     {
       name: "Grant 'Axe' Rawlinson",
