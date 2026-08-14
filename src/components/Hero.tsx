@@ -13,13 +13,9 @@ const legalOptions = [
 ]
 
 const workOptions: { label: string; value: Focus }[] = [
-  { label: 'Strategy', value: 'strategy' },
   { label: 'Sales & Marketing', value: 'sales-marketing' },
   { label: 'HR Development', value: 'hrd' },
-  { label: 'Law', value: 'law' },
-  { label: 'CRM', value: 'crm' },
-  { label: 'Accounting', value: 'accounting' },
-  { label: 'Reinsurance', value: 'reinsurance' },
+  { label: 'Resilience', value: 'resilience' },
 ]
 
 function goToFocusProfile() {
