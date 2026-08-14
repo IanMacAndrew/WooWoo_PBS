@@ -97,8 +97,8 @@ export function Footer() {
               
               {/* AI Tools Description */}
               <p className="text-background/70 text-base mb-8 leading-relaxed">
-                We leverage the latest AI technology to deliver cutting-edge video production. 
-                Our toolkit combines the best generative AI models for video, audio, and visual content creation.
+                We leverage the latest AI technology to deliver cutting-edge performance improvement. 
+                Giving you the toolkit to optimize your business for your organization.
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

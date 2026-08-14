@@ -1,28 +1,20 @@
 'use client'
 
 import { ImageWithFallback } from './figma/ImageWithFallback'
-import marcusPhoto from '../assets/team-member-1.jpeg'
 import connorPhoto from '../assets/team-member-5.png'
 import davidHoardPhoto from '../assets/david-hoard-photo-v2.jpg'
 import omarPhoto from '../assets/omar-photo-v2.jpg'
-import michelePhoto from '../assets/michele-photo.jpg'
+import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
 import maxPhoto from '../assets/max-photo.jpg'
 
 export function Team() {
   const wantedCriminals = [
     {
-      name: "Nad 'The Counselor' Segaram",
-      bounty: "$8,500",
-      description: "Renowned for reducing complex legal matters into their simplest, most defensible form. Approach with confidence carries a serious level of legal knowledge and technical wisdom.",
-      image: marcusPhoto,
-      rotation: 'rotate-3',
-    },
-    {
       name: "Michele 'The Future Framer'",
       bounty: "$13,200",
       description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
-      image: michelePhoto,
+      image: futureFramerPhoto,
       rotation: 'rotate-2',
     },
     {
