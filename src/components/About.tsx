@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { useFocus } from '@/contexts/FocusContext'
-import { Sparkles, Unlock, Coins, Search, ShieldCheck, Rocket, TrainFront, type LucideIcon } from 'lucide-react'
+import { Sparkles, Unlock, Coins, Search, ShieldCheck, Rocket, TrainFront, Wind, Anchor, type LucideIcon } from 'lucide-react'
 
 type ProcessStep = {
   number: string
@@ -89,76 +89,76 @@ const strategySteps: ProcessStep[] = [
 const salesMarketingSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "All Aboard: Setting the Sales Destination",
-    description: "A senior Sales & Marketing professional pulls into your organisation and, working with commercial leaders, maps the journey to the revenue outcomes you actually want to hit.",
+    title: "Casting Off the Mooring Lines",
+    description: "A senior Sales & Marketing professional pulls into your organisation and, working with commercial leaders, charts the flight path to the revenue altitude you actually want to reach.",
   },
   {
     number: "02",
-    title: "Laying the Pipeline Tracks",
-    description: "Each professional works with sales and marketing managers to engineer a detailed plan of campaigns, funnels and training to get the pipeline on track.",
+    title: "Filling the Envelope: The Campaign Gas",
+    description: "Each professional works with sales and marketing managers to engineer a detailed plan of campaigns, funnels and training that gets the Zephyr properly inflated and ready to lift.",
   },
   {
     number: "03",
-    title: "Full Steam Ahead: Campaign Launch",
-    description: "Leaders and teams assemble for the kick-off whistle. Departments break out into dedicated carriages for briefings and territory assignments before we leave the station.",
+    title: "Full Throttle: Gondola Launch",
+    description: "Leaders and teams assemble on the gondola for the kick-off. Departments break out into dedicated cabins for briefings and territory assignments before we slip the mast.",
   },
   {
     number: "04",
-    title: "On the Main Line: The Sales Engine Goes LIVE",
-    description: "Our experts ride shotgun in the cab guiding reps, delivering training and making sure every campaign and target is firing on all cylinders.",
+    title: "Cruising Altitude: The Sales Engine Goes LIVE",
+    description: "Our experts ride in the cockpit guiding reps, delivering training and making sure every campaign and target is firing on all propellers.",
   },
   {
     number: "05",
-    title: "Signal Box Check-Ins: Pipeline Reviews",
-    description: "Bi-weekly briefings with sales and marketing leaders to check the signals reviewing conversion, flagging blockers, and switching tracks if targets need refining.",
+    title: "Bridge Check-Ins: Reading the Winds",
+    description: "Bi-weekly briefings with sales and marketing leaders to check the instruments, reviewing conversion, flagging headwinds, and correcting heading if targets drift off course.",
   },
   {
     number: "06",
-    title: "Pulling Into the Revenue Terminus",
-    description: "With every campaign delivered, we conduct a thorough end-of-line review with leadership to achieve sign-off on results and bring the engagement to a clean stop.",
+    title: "Coming In to Dock: Revenue Landing",
+    description: "With every campaign delivered, we conduct a thorough end-of-flight review with leadership to achieve sign-off on results and bring the airship gently to mast.",
   },
   {
     number: "07",
-    title: "Return Journey: The ROI Review",
-    description: "A six, 12 or 18 month return trip to make sure the revenue gains are firmly coupled to your organisation and still running like clockwork.",
+    title: "Return Flight: The Windward Review",
+    description: "A six, 12 or 18 month return flight to make sure the revenue gains are firmly tethered to your organisation and still riding a favourable wind.",
   }
 ]
 
 const hrdSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Egg to Appetite: Spotting the Need",
-    description: "A senior HR Development professional pulls into your organisation and, working with leadership, identifies exactly where culture and capability need to grow.",
+    title: "All Aboard: Setting Sail",
+    description: "A senior HR Development professional pulls into your organisation and, working with leadership, charts exactly which ports of call your people and culture need to visit.",
   },
   {
     number: "02",
-    title: "The Caterpillar Years: Building the Diet",
-    description: "Each professional works with department heads and people managers to engineer a detailed plan of development, training and change activity to feed real growth.",
+    title: "Charting the Ports of Call",
+    description: "Each professional works with department heads and people managers to engineer a detailed itinerary of development, training and change activity for the voyage ahead.",
   },
   {
     number: "03",
-    title: "First Bite: Programme Launch",
-    description: "Leaders and participants assemble for the kick-off. Teams break out for briefings and role assignments before the transformation truly begins.",
+    title: "Casting Off: Voyage Launch",
+    description: "Leaders and participants assemble on deck for the send-off. Teams break out into cabins for briefings and role assignments before we clear the harbour.",
   },
   {
     number: "04",
-    title: "Spinning the Cocoon: Change Goes LIVE",
-    description: "Our experts guide teams through the change, delivering training and making sure every capability and culture deliverable is quietly taking shape.",
+    title: "Full Speed Ahead: Change Goes LIVE",
+    description: "Our experts guide teams from the bridge, delivering training and making sure every capability and culture deliverable is sailing smoothly at cruising speed.",
   },
   {
     number: "05",
-    title: "Chrysalis Check-Ins",
-    description: "Bi-weekly pulse checks with key executives and people leaders reviewing adoption, flagging resistance, and adjusting the programme if anything needs refining.",
+    title: "Bridge Check-Ins: Navigating the Course",
+    description: "Bi-weekly briefings with key executives and people leaders reviewing adoption, flagging choppy waters, and correcting heading if anything needs refining.",
   },
   {
     number: "06",
-    title: "Emergence: Wings Unfold",
-    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off the new capability fully formed.",
+    title: "Making Port: Sign-Off",
+    description: "With every module delivered, we conduct a thorough review with leadership to achieve programme sign-off, the new capability safely docked and disembarked.",
   },
   {
     number: "07",
-    title: "Taking Flight: The Retention Review",
-    description: "A six, 12 or 18 month return trip to make sure the people outcomes are firmly coupled to your culture and still flying strong.",
+    title: "Return Voyage: The Anchor Review",
+    description: "A six, 12 or 18 month return voyage to make sure the people outcomes are still firmly anchored to your culture and holding steady.",
   }
 ]
 
@@ -321,14 +321,14 @@ const focusCopy = {
     theme: 'space' as const,
   },
   'sales-marketing': {
-    tagline: "Our commercial power train pulls you into a paragon of revenue sublimity",
+    tagline: "Our Huge Zephyr airship carries you into a paragon of revenue sublimity",
     steps: salesMarketingSteps,
-    theme: 'rail' as const,
+    theme: 'airship' as const,
   },
   hrd: {
-    tagline: "From caterpillar cost-centre to butterfly bottom-line a transformation you can watch unfold",
+    tagline: "Our flagship cruise sails you into a paragon of cultural sublimity",
     steps: hrdSteps,
-    theme: 'metamorphosis' as const,
+    theme: 'cruise' as const,
   },
   law: {
     tagline: "Every organisation carries a little weight our journey is about setting it free",
@@ -353,6 +353,20 @@ const focusCopy = {
 } as const
 
 const themePalette: Record<string, { bg: string; tie: string; rail: string; icon: LucideIcon; iconColor: string }> = {
+  airship: {
+    bg: 'linear-gradient(to bottom, #1a1030 0%, #3a2456 20%, #120a24 50%, #3a2456 80%, #1a1030 100%)',
+    tie: 'linear-gradient(to bottom, #5c4080, #3a2456, #5c4080)',
+    rail: '#e8b34d',
+    icon: Wind,
+    iconColor: '#e8b34d',
+  },
+  cruise: {
+    bg: 'linear-gradient(to bottom, #041c24 0%, #0a3040 20%, #021016 50%, #0a3040 80%, #041c24 100%)',
+    tie: 'linear-gradient(to bottom, #145066, #0a3040, #145066)',
+    rail: '#5fd4d4',
+    icon: Anchor,
+    iconColor: '#5fd4d4',
+  },
   metamorphosis: {
     bg: 'linear-gradient(to bottom, #0b2b26 0%, #123a32 20%, #0a2420 50%, #123a32 80%, #0b2b26 100%)',
     tie: 'linear-gradient(to bottom, #1f5c4d, #123a32, #1f5c4d)',

@@ -3,13 +3,14 @@ import { Hero } from './components/Hero'
 import { Portfolio } from './components/Portfolio'
 import { Awards } from './components/Awards'
 import { About } from './components/About'
-import { Services } from './components/Services'
 import { Team } from './components/Team'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { FocusProfile } from './components/FocusProfile'
 import { FocusProvider } from './contexts/FocusContext'
 import { OnlineBriefingInfo } from './pages/OnlineBriefingInfo'
+import { PrivacyPolicy } from './pages/PrivacyPolicy'
+import { TermsOfService } from './pages/TermsOfService'
 
 function HomePage() {
   return (
@@ -27,9 +28,6 @@ function HomePage() {
         </section>
         <section id="about" aria-label="About section">
           <About />
-        </section>
-        <section id="services" aria-label="Services section">
-          <Services />
         </section>
         <section id="team" aria-label="Team section" style={{ overflow: 'visible', height: 'auto', minHeight: '0', maxHeight: 'none' }}>
           <Team />
@@ -50,6 +48,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/workshops/online-briefing" element={<OnlineBriefingInfo />} />
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/terms-of-service" element={<TermsOfService />} />
         </Routes>
       </BrowserRouter>
     </FocusProvider>

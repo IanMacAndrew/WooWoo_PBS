@@ -1,30 +1,15 @@
 'use client'
 
 import { ImageWithFallback } from './figma/ImageWithFallback'
-import marcusPhoto from '../assets/team-member-1.jpeg'
 import connorPhoto from '../assets/team-member-5.png'
-import davidHoardPhoto from '../assets/david-hoard-photo.jpeg'
-import omarPhoto from '../assets/omar-photo.jpg'
-import michelePhoto from '../assets/michele-photo.png'
-import grantPhoto from '../assets/grant-photo.jpeg'
-import maxPhoto from '../assets/max-photo.jpg'
+import davidHoardPhoto from '../assets/david-hoard-photo-v2.jpg'
+import omarPhoto from '../assets/omar-photo-v2.jpg'
+import futureFramerPhoto from '../assets/future-framer.jpg'
+import grantPhoto from '../assets/grant-photo-v2.jpg'
+import maxPhoto from '../assets/max-photo-v2.png'
 
 export function Team() {
   const wantedCriminals = [
-    {
-      name: "Nad 'The Counselor' Segaram",
-      bounty: "$8,500",
-      description: "Renowned for reducing complex legal matters into their simplest, most defensible form. Approach with confidence carries a serious level of legal knowledge and technical wisdom.",
-      image: marcusPhoto,
-      rotation: 'rotate-3',
-    },
-    {
-      name: "Michele 'The Future Framer'",
-      bounty: "$13,200",
-      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
-      image: michelePhoto,
-      rotation: 'rotate-2',
-    },
     {
       name: "The Hoardman 'Strategic AI Guru'",
       bounty: "$18,800",
@@ -33,11 +18,11 @@ export function Team() {
       rotation: 'rotate-2',
     },
     {
-      name: "Max 'The AI Maverick'",
-      bounty: "$3,330",
-      description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
-      image: maxPhoto,
-      rotation: '-rotate-2',
+      name: "Michele 'The Future Framer'",
+      bounty: "$13,200",
+      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
+      image: futureFramerPhoto,
+      rotation: 'rotate-2',
     },
     {
       name: "Colin 'The Profesor' Warner",
@@ -45,6 +30,13 @@ export function Team() {
       description: "20+ years as a Chartered Accountant and Interim Finance Director, untangling everything from a £1bn pension fund to school-trust budgets. Wanted for finding money nobody else could find.",
       image: connorPhoto,
       rotation: 'rotate-1',
+    },
+    {
+      name: "Max 'The AI Maverick'",
+      bounty: "$7,677",
+      description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
+      image: maxPhoto,
+      rotation: '-rotate-2',
     },
     {
       name: "Grant 'Axe' Rawlinson",
@@ -65,11 +57,12 @@ export function Team() {
 
 
   return (
-    <div className="relative py-32 bg-background w-full" style={{ 
+    <div className="relative py-32 w-full" style={{ 
       overflow: 'visible', 
       height: 'auto', 
       minHeight: '0', 
-      maxHeight: 'none' 
+      maxHeight: 'none',
+      background: '#1c0333'
     }}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12" style={{ 
         overflow: 'visible', 
@@ -82,18 +75,18 @@ export function Team() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-3 h-3 bg-accent-emerald rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-muted-foreground">
+            <span className="text-sm font-semibold" style={{ color: '#c79529' }}>
               Meet the Outlaws
             </span>
             <div className="w-3 h-3 bg-accent-blue rounded-full animate-pulse" />
           </div>
           
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-foreground">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8" style={{ color: '#fafafa' }}>
             <span className="block mb-2">These people are</span>
-            <span className="block text-foreground">WANTED</span>
+            <span className="block" style={{ color: '#fafafa' }}>WANTED</span>
           </h2>
           
-          <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl lg:text-3xl max-w-4xl mx-auto leading-relaxed" style={{ color: '#E9ECF2' }}>
             Highly skilled and professionally exceptional
           </p>
         </div>

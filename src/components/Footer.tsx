@@ -1,5 +1,7 @@
 'use client'
 
+import { Link } from 'react-router-dom'
+
 export function Footer() {
   const aiTools: { label: string; href?: string; wide?: boolean }[] = [
     { label: 'Massive Mental HP' },
@@ -95,8 +97,8 @@ export function Footer() {
               
               {/* AI Tools Description */}
               <p className="text-background/70 text-base mb-8 leading-relaxed">
-                We leverage the latest AI technology to deliver cutting-edge video production. 
-                Our toolkit combines the best generative AI models for video, audio, and visual content creation.
+                We leverage the latest AI technology to deliver cutting-edge performance improvement. 
+                Giving you the toolkit to optimize your business for your organization.
               </p>
               
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -131,6 +133,14 @@ export function Footer() {
             <div className="text-sm text-background/70">
               <div>© 2025 WooWoo World Sdn. Bhd.. All rights reserved.</div>
               <div className="text-background/50 text-xs mt-1">Company No.: 202501029350 (1630762) (1630762-X)</div>
+            </div>
+            <div className="flex items-center gap-4 text-sm">
+              <Link to="/legal/privacy-policy" className="text-background/70 hover:text-background underline underline-offset-4">
+                Privacy Policy
+              </Link>
+              <Link to="/legal/terms-of-service" className="text-background/70 hover:text-background underline underline-offset-4">
+                Terms of Service
+              </Link>
             </div>
             <div className="text-sm text-background/70">
               SO-26-02, Menara 1, No. 3, Jalan Bangsar, KL Eco City, 59200 Kuala Lumpur, W.P. Kuala Lumpur
