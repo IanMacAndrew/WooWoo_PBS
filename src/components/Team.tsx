@@ -6,7 +6,7 @@ import davidHoardPhoto from '../assets/david-hoard-photo-v2.jpg'
 import omarPhoto from '../assets/omar-photo-v2.jpg'
 import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
-import maxPhoto from '../assets/max-photo-v2.png'
+import maxPhoto from '../assets/max-photo-v2.jpg'
 
 export function Team() {
   const wantedCriminals = [

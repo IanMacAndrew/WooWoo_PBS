@@ -28,7 +28,7 @@ export function Footer() {
                 WooWoo PBS
               </div>
               <p className="text-background/70 leading-relaxed mb-6">
-                Hardcore consulting & intelligent Strategic AI that takes the time to understand you, your business. Creating optimal human and organizational performance. Resultants, not consultants.
+                Hardcore consulting & intelligent Strategic AI that takes the time to understand you and your business. Resultants, not consultants.
               </p>
               {/* Social Media Icons */}
               <div className="flex items-center space-x-6">
