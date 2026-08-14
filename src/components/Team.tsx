@@ -65,11 +65,12 @@ export function Team() {
 
 
   return (
-    <div className="relative py-32 bg-background w-full" style={{ 
+    <div className="relative py-32 w-full" style={{ 
       overflow: 'visible', 
       height: 'auto', 
       minHeight: '0', 
-      maxHeight: 'none' 
+      maxHeight: 'none',
+      background: '#1c0333'
     }}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-12" style={{ 
         overflow: 'visible', 
@@ -82,18 +83,18 @@ export function Team() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="w-3 h-3 bg-accent-emerald rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-muted-foreground">
+            <span className="text-sm font-semibold" style={{ color: '#c79529' }}>
               Meet the Outlaws
             </span>
             <div className="w-3 h-3 bg-accent-blue rounded-full animate-pulse" />
           </div>
           
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 text-foreground">
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8" style={{ color: '#fafafa' }}>
             <span className="block mb-2">These people are</span>
-            <span className="block text-foreground">WANTED</span>
+            <span className="block" style={{ color: '#fafafa' }}>WANTED</span>
           </h2>
           
-          <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-2xl lg:text-3xl max-w-4xl mx-auto leading-relaxed" style={{ color: '#E9ECF2' }}>
             Highly skilled and professionally exceptional
           </p>
         </div>
