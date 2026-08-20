@@ -319,6 +319,14 @@ export function Hero() {
               >
                 Contact
               </a>
+              <a 
+                href="https://book.woowoo.world/sign-up" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
+              >
+                Sales Rewards
+              </a>
               <div className="relative" ref={legalDropdownRef}>
                 <button
                   onClick={() => setIsLegalDropdownOpen((v) => !v)}
@@ -474,6 +482,15 @@ export function Hero() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
+              </a>
+              <a 
+                href="https://book.woowoo.world/sign-up" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sales Rewards
               </a>
               <div>
                 <button
