@@ -99,6 +99,8 @@ const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = 
     icon: ShieldCheck,
     color: '#4A5A6A',
     people: [
+      hoardman,
+      maxTheAiMaverick,
       {
         name: 'The Axeman',
         role: 'Resilience Focus',
@@ -106,8 +108,6 @@ const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = 
         bullets: [],
         note: 'Bio pending from The Axeman before this goes live.',
       },
-      maxTheAiMaverick,
-      hoardman,
     ],
   },
 }
