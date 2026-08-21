@@ -132,7 +132,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div className="text-sm text-background/70">
               <div>© 2025 WooWoo World Sdn. Bhd.. All rights reserved.</div>
-              <div className="text-background/50 text-xs mt-1">Company No.: 202501029350 (1630762) (1630762-X)</div>
+              <div className="text-background/50 text-xs mt-1">Company No.: 202501029350 (1630762-X)</div>
             </div>
             <div className="flex items-center gap-4 text-sm">
               <Link to="/legal/privacy-policy" className="text-background/70 hover:text-background underline underline-offset-4">

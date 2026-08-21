@@ -42,10 +42,10 @@ export function Portfolio() {
               By Invitation
             </span>
             <h3 className="text-3xl sm:text-4xl font-black mb-4" style={{ color: '#fafafa' }}>
-              Four ways to bring Strategic AI Transformation into your organisation.
+              Five ways to bring Strategic AI Transformation into your organisation.
             </h3>
             <p className="text-base sm:text-lg leading-relaxed mb-8" style={{ color: '#E9ECF2' }}>
-              Briefings, Deep Dives, Masterclasses and Bootcamps, all dates, pricing and HRD
+              Briefings, Deep Dives, Deeper Dives, Masterclasses and Bootcamps, all dates, pricing and HRD
               Corp claim details are live on our booking site.
             </p>
             <a

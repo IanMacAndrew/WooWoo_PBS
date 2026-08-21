@@ -1,5 +1,6 @@
 'use client'
 
+import { Fragment } from 'react'
 import { useFocus } from '@/contexts/FocusContext'
 import { TrendingUp, Users2, ShieldCheck, type LucideIcon } from 'lucide-react'
 
@@ -12,6 +13,7 @@ interface Person {
   link?: string
   linkLabel?: string
   note?: string
+  placeholder?: boolean
 }
 
 interface FocusPage {
@@ -19,7 +21,7 @@ interface FocusPage {
   eyebrow: string
   icon: LucideIcon
   color: string
-  people: [Person, Person]
+  people: Person[]
 }
 
 // The Hoardman's CV excerpt is shared across every section — he appears
@@ -38,49 +40,58 @@ const hoardman: Person = {
   note: 'Pending confirmation from The Hoardman on CV summary approval.',
 }
 
+// Max also appears wherever her hands-on AI implementation and training
+// background fits — shared here the same way Hoardman is.
+const maxTheAiMaverick: Person = {
+  name: 'Max Rempillo',
+  nameSuffix: '"The AI Maverick"',
+  role: 'AI Systems Builder & Trainer',
+  tagline: 'Builds and teaches the AI systems that turn strategy into daily practice.',
+  bullets: [
+    'Lead Instructor, Claude Code Bootcamp at Clay Bootcamp, training teams to ship real AI-powered workflows',
+    'Independent AI/RevOps Systems Builder \u2014 AI implementation, workflow automation (n8n, Make, Zapier) and CRM systems (HubSpot, ActiveCampaign, ClickUp, Attio)',
+    'Prior growth-marketing leadership at Mindvalley, ORA and AIESEC Hong Kong, plus chatbot marketing at School of Bots',
+    'Native English & Filipino \u00b7 professional Cantonese \u00b7 proficient Mandarin and French',
+  ],
+  link: 'https://linkedin.com/in/maxrempillo',
+  linkLabel: 'Connect with Max',
+}
+
+const omar: Person = {
+  name: 'Ian MacAndrew',
+  nameSuffix: '"Omar the Magnificent"',
+  role: 'Sales, Marketing & Troubleshooting Operations Recovery Consultant',
+  tagline: 'Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia.',
+  bullets: [
+    'Regional leadership across reinsurance, insuretech and outsourced BPO including SYMBO Platform Holdings, Pana Harrison and HLAP Ltd.',
+    'Grew a jewellery retailer\u2019s revenue from RM 160 million to RM 200 million in under six months, adopting Isa Karim\u2019s amazing Strategic work',
+    'Recovered Malaysia\u2019s first offshore outsourcing project and set up contact centres from 30 to 600+ seats across Asia',
+    'Over RM2 Billion in top line, bottom line or cost down opportunities added to organizations\u2019 revenue and still counting',
+  ],
+}
+
+const comingSoon: Person = {
+  name: 'Coming Soon',
+  role: '',
+  tagline: 'A new HR Development specialist will be announced here soon.',
+  bullets: [],
+  placeholder: true,
+}
+
 const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = {
   'sales-marketing': {
     title: 'Strategy Led AI Sales & Marketing',
     eyebrow: 'Sales & Marketing Focus',
     icon: TrendingUp,
     color: '#c79529',
-    people: [
-      {
-        name: 'Ian MacAndrew',
-        nameSuffix: '(Omar)',
-        role: 'Sales, Marketing & Troubleshooting Operations Recovery Consultant',
-        tagline: 'Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia.',
-        bullets: [
-          'Regional leadership across reinsurance, insuretech and outsourced BPO including SYMBO Platform Holdings, Pana Harrison and HLAP Ltd.',
-          'Grew a jewellery retailer\u2019s revenue from RM 160 million to RM 200 million in under six months, adopting Isa Karim\u2019s amazing Strategic work',
-          'Recovered Malaysia\u2019s first offshore outsourcing project and set up contact centres from 30 to 600+ seats across Asia',
-          'Over RM2 Billion in top line, bottom line or cost down opportunities added to organizations\u2019 revenue and still counting',
-        ],
-      },
-      hoardman,
-    ],
+    people: [hoardman, maxTheAiMaverick, omar],
   },
   hrd: {
     title: 'Strategy Led AI HRD',
     eyebrow: 'HR Development Focus',
     icon: Users2,
     color: '#0F52BA',
-    people: [
-      {
-        name: 'Dr Michele Sagan',
-        role: 'Leadership, Change Management & Human Capital Development',
-        tagline: '25 years of leadership and management expertise across the UK and Malaysia.',
-        bullets: [
-          'Held key positions at Asia School of Business / MIT Sloan, UBS, HSBC, and CIMB',
-          'Specialist insight into the future of work, strategic thought, change management, and human capital development',
-          'Brings critical, real-world leadership perspective to organisational HRD programmes',
-        ],
-        note: 'Pending sign-off from Dr Sagan before this goes live.',
-        link: 'https://www.michelesagan.com/',
-        linkLabel: 'More about Dr Sagan',
-      },
-      hoardman,
-    ],
+    people: [hoardman, maxTheAiMaverick, comingSoon],
   },
   resilience: {
     title: 'Strategy Led AI Resilience',
@@ -101,6 +112,21 @@ const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = 
 }
 
 function PersonCard({ person, color }: { person: Person; color: string }) {
+  if (person.placeholder) {
+    return (
+      <div className="flex-1 min-w-0 flex flex-col items-center justify-center text-center py-10">
+        <div
+          className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+          style={{ background: `${color}20`, border: `1px solid ${color}40` }}
+        >
+          <span className="text-2xl font-black" style={{ color }}>+</span>
+        </div>
+        <h3 className="text-xl font-black mb-2 text-foreground">{person.name}</h3>
+        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">{person.tagline}</p>
+      </div>
+    )
+  }
+
   return (
     <div className="flex-1 min-w-0">
       <h3 className="text-2xl sm:text-3xl font-black mb-1 text-foreground">
@@ -180,11 +206,18 @@ export function FocusProfile() {
               border: `1px solid ${page.color}30`,
             }}
           >
-            <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
-              <PersonCard person={page.people[0]} color={page.color} />
-              <div className="hidden lg:block w-px bg-border shrink-0" />
-              <div className="block lg:hidden h-px bg-border" />
-              <PersonCard person={page.people[1]} color={page.color} />
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-8">
+              {page.people.map((person, i) => (
+                <Fragment key={person.name}>
+                  {i > 0 && (
+                    <>
+                      <div className="hidden lg:block w-px bg-border shrink-0" />
+                      <div className="block lg:hidden h-px bg-border" />
+                    </>
+                  )}
+                  <PersonCard person={person} color={page.color} />
+                </Fragment>
+              ))}
             </div>
           </div>
         </div>
