@@ -135,6 +135,12 @@ export function Footer() {
               <div className="text-background/50 text-xs mt-1">Company No.: 202501029350 (1630762-X)</div>
             </div>
             <div className="flex items-center gap-4 text-sm">
+              <a href="https://book.woowoo.world" className="text-background/70 hover:text-background underline underline-offset-4">
+                Book a session
+              </a>
+              <a href="https://book.woowoo.world/leaderboard" className="text-background/70 hover:text-background underline underline-offset-4">
+                Sales leaderboard
+              </a>
               <Link to="/legal/privacy-policy" className="text-background/70 hover:text-background underline underline-offset-4">
                 Privacy Policy
               </Link>
