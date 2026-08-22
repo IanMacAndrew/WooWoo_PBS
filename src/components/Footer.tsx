@@ -141,6 +141,9 @@ export function Footer() {
               <a href="https://book.woowoo.world/leaderboard" className="text-background/70 hover:text-background underline underline-offset-4">
                 Sales leaderboard
               </a>
+              <a href="https://book.woowoo.world/refer" className="text-background/70 hover:text-background underline underline-offset-4">
+                Refer a contact
+              </a>
               <Link to="/legal/privacy-policy" className="text-background/70 hover:text-background underline underline-offset-4">
                 Privacy Policy
               </Link>
