@@ -8,7 +8,7 @@ import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
 import maxPhoto from '../assets/max-photo-v2.jpg'
 import philFinleyPhoto from '../assets/phil-finley-photo-pending.png'
-import alexTanPhoto from '../assets/alex-tan-photo-pending.png'
+import alexTanPhoto from '../assets/alex-tan-photo.jpeg'
 
 export function Team() {
   const wantedCriminals = [
