@@ -7,6 +7,8 @@ import omarPhoto from '../assets/omar-photo-v2.jpg'
 import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
 import maxPhoto from '../assets/max-photo-v2.jpg'
+import philFinleyPhoto from '../assets/phil-finley-photo-pending.png'
+import alexTanPhoto from '../assets/alex-tan-photo-pending.png'
 
 export function Team() {
   const wantedCriminals = [
@@ -52,6 +54,20 @@ export function Team() {
       description: "Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia. Wanted for adding over RM2 Billion to organizations' top and bottom lines.",
       image: omarPhoto,
       rotation: 'rotate-3',
+    },
+    {
+      name: "Phil Finley 'The Terminator'",
+      bounty: "$15,900",
+      description: "Phil is a 45 year reinsurance veteran. Known as \"The Terminator\", for his unrelenting ability to keep going and doing what's required. Phil is now Semi Retired and passes time with his loved ones and family in Houston and Bangkok. Phil is cool AF and Hard as Nails. He also plays Golf.",
+      image: philFinleyPhoto,
+      rotation: 'rotate-1',
+    },
+    {
+      name: "Alex Tan 'The Forensic Fox'",
+      bounty: "$12,600",
+      description: "Partner, Deals Forensics at PwC Malaysia. Wanted for tracing hidden risk, uncovering fraud, and turning the Fraud Diamond framework into board-level clarity, out of Kuala Lumpur.",
+      image: alexTanPhoto,
+      rotation: '-rotate-1',
     }
   ]
 
@@ -237,14 +253,14 @@ export function Team() {
                     ))}
                   </div>
                   
-                  {/* Second row - 3 posters centered */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-5xl mx-auto" style={{ 
+                  {/* Second row - remaining posters */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8" style={{ 
                     overflow: 'visible', 
                     height: 'auto', 
                     minHeight: '0', 
                     maxHeight: 'none' 
                   }}>
-                    {wantedCriminals.slice(4, 7).map((criminal, index) => (
+                    {wantedCriminals.slice(4).map((criminal, index) => (
                       <div
                         key={criminal.name}
                         className={`group transform ${criminal.rotation} hover:rotate-0 transition-all duration-500 hover:scale-105 hover:z-20`}

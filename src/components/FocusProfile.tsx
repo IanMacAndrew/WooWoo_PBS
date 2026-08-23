@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react'
 import { useFocus } from '@/contexts/FocusContext'
-import { TrendingUp, Users2, ShieldCheck, type LucideIcon } from 'lucide-react'
+import { TrendingUp, Users2, ShieldCheck, Umbrella, Calculator, type LucideIcon } from 'lucide-react'
 
 interface Person {
   name: string
@@ -78,7 +78,23 @@ const comingSoon: Person = {
   placeholder: true,
 }
 
-const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = {
+const reinsuranceComingSoon: Person = {
+  name: 'Coming Soon',
+  role: '',
+  tagline: '45 Year Reinsurance Veteran, to be announced soon.',
+  bullets: [],
+  placeholder: true,
+}
+
+const accountingComingSoon: Person = {
+  name: 'Coming Soon',
+  role: '',
+  tagline: '40 Year Accounts Veteran, to be announced soon.',
+  bullets: [],
+  placeholder: true,
+}
+
+const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience' | 'reinsurance' | 'accounting', FocusPage> = {
   'sales-marketing': {
     title: 'Strategy Led AI Sales & Marketing',
     eyebrow: 'Sales & Marketing Focus',
@@ -109,6 +125,20 @@ const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience', FocusPage> = 
         note: 'Bio pending from The Axeman before this goes live.',
       },
     ],
+  },
+  reinsurance: {
+    title: 'Strategy Led AI Reinsurance',
+    eyebrow: 'Reinsurance Focus',
+    icon: Umbrella,
+    color: '#7A4A9A',
+    people: [hoardman, maxTheAiMaverick, reinsuranceComingSoon],
+  },
+  accounting: {
+    title: 'Strategy Led AI Accounting',
+    eyebrow: 'Accounting Focus',
+    icon: Calculator,
+    color: '#1F7A5C',
+    people: [hoardman, maxTheAiMaverick, accountingComingSoon],
   },
 }
 

@@ -16,6 +16,8 @@ const workOptions: { label: string; value: Focus }[] = [
   { label: 'Sales & Marketing', value: 'sales-marketing' },
   { label: 'HR Development', value: 'hrd' },
   { label: 'Resilience', value: 'resilience' },
+  { label: 'Reinsurance', value: 'reinsurance' },
+  { label: 'Accounting', value: 'accounting' },
 ]
 
 function goToFocusProfile() {
