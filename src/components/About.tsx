@@ -279,38 +279,38 @@ const accountingSteps: ProcessStep[] = [
 const reinsuranceSteps: ProcessStep[] = [
   {
     number: "01",
-    title: "Mapping the Grid",
-    description: "A senior reinsurance professional pulls into your organisation and, working with leadership, identifies exactly where capital exposure needs protecting.",
+    title: "All aboard: Setting the Destination",
+    description: "A high Level Business Professional pulls into your organisation and working with the Leadership teams, fully asses the Risks.",
   },
   {
     number: "02",
-    title: "Reinforcing the Foundations",
-    description: "Each professional works with finance and risk managers to engineer a detailed plan for securing owner and investor capital.",
+    title: "Laying the Tracks: The Roadmap",
+    description: "A full Risk Plan is developed, detailing activities, actions, training and everything to ensure your organisation stays on track.",
   },
   {
     number: "03",
-    title: "Powering Up: Programme Launch",
-    description: "Leaders and teams assemble for the kick-off. Departments break out for briefings and assignments before the protection plan goes live.",
+    title: "Full Steam Ahead: Program Details Defined",
+    description: "Refine; Review; Improve. Any modifications, changes in risk profile, acquisitions etc., are adjusted into the program.",
   },
   {
     number: "04",
-    title: "Full Power: Protection Goes LIVE",
-    description: "Our experts guide teams through implementation, making sure every protective deliverable is running at full, steady power.",
+    title: "Full Power: Protection Goes Wide",
+    description: "Deploy surveyors to assess risk and review major assets.",
   },
   {
     number: "05",
-    title: "Systems Check-Ins",
-    description: "Bi-weekly briefings with leadership to check the grid reviewing exposure, flagging risk, and adjusting course if anything needs refining.",
+    title: "Signal Box: Sign-Off",
+    description: "Review the exposure, adjusting what needs refining and ensuring that coverage expands where required.",
   },
   {
     number: "06",
-    title: "Grid Secured: Sign-Off",
-    description: "With every safeguard in place, we conduct a thorough review with leadership to achieve programme sign-off.",
+    title: "Pulling Into the Terminus",
+    description: "At four to six months before major, complex, technical renewals we commit all available markets",
   },
   {
     number: "07",
-    title: "Steady Current: The Resilience Review",
-    description: "A six, 12 or 18 month return trip to make sure capital is still safe, protected and running at full power.",
+    title: "Why You Need Us",
+    description: "Something Went BOOM!: We Get Claim Paid FAST",
   }
 ]
 
