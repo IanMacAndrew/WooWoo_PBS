@@ -280,7 +280,7 @@ const reinsuranceSteps: ProcessStep[] = [
   {
     number: "01",
     title: "All aboard: Setting the Destination",
-    description: "A high Level Business Professional pulls into your organisation and working with the Leadership teams, fully asses the Risks.",
+    description: "A high Level Business Professional pulls into your organisation and working with the Leadership teams, fully assess the Risks.",
   },
   {
     number: "02",
@@ -321,9 +321,9 @@ const focusCopy = {
     theme: 'space' as const,
   },
   'sales-marketing': {
-    tagline: "Our Huge Zephyr airship carries you into a paragon of revenue sublimity",
+    tagline: "Our Sales & Marketing starship launches you into a paragon of revenue sublimity",
     steps: salesMarketingSteps,
-    theme: 'airship' as const,
+    theme: 'space' as const,
   },
   hrd: {
     tagline: "Our flagship cruise sails you into a paragon of cultural sublimity",
