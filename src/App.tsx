@@ -23,11 +23,11 @@ function HomePage() {
         <section id="portfolio" aria-label="Portfolio section">
           <Portfolio />
         </section>
-        <section id="about" aria-label="About section">
-          <About />
-        </section>
         <section id="team" aria-label="Team section" style={{ overflow: 'visible', height: 'auto', minHeight: '0', maxHeight: 'none' }}>
           <Team />
+        </section>
+        <section id="about" aria-label="About section">
+          <About />
         </section>
         <section id="contact" aria-label="Contact section">
           <Contact />
