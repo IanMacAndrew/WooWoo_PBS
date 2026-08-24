@@ -321,9 +321,9 @@ const focusCopy = {
     theme: 'space' as const,
   },
   'sales-marketing': {
-    tagline: "Our Sales & Marketing starship launches you into a paragon of revenue sublimity",
+    tagline: "Our Zephyr airship, sailing among the stars, carries you into a paragon of revenue sublimity",
     steps: salesMarketingSteps,
-    theme: 'space' as const,
+    theme: 'zeppelin' as const,
   },
   hrd: {
     tagline: "Our flagship cruise sails you into a paragon of cultural sublimity",
@@ -402,6 +402,15 @@ const themePalette: Record<string, { bg: string; tie: string; rail: string; icon
     icon: ShieldCheck,
     iconColor: '#6fa8e8',
   },
+  zeppelin: {
+    // Shares the space-sky background (see useStarSky in About()) but keeps
+    // its own icon/rail colour for the theme-icon badge and rail-line tint.
+    bg: 'linear-gradient(to bottom, #05040f 0%, #0b0a1f 20%, #1c0333 50%, #0b0a1f 80%, #05040f 100%)',
+    tie: 'linear-gradient(to bottom, #5c4080, #3a2456, #5c4080)',
+    rail: '#c79529',
+    icon: Wind,
+    iconColor: '#c79529',
+  },
 }
 
 export function About() {
@@ -415,6 +424,8 @@ export function About() {
   const processSteps = active ? active.steps : railSteps
   const tagline = active ? active.tagline : "Our professional power train pulls you into a paragon of corporate sublimity"
   const isSpace = active?.theme === 'space'
+  const isZeppelin = active?.theme === 'zeppelin'
+  const useStarSky = isSpace || isZeppelin // the starfield background Ian loves, shared by both
   const palette = active ? themePalette[active.theme] : undefined
   const PaletteIcon = palette?.icon
 
@@ -492,7 +503,7 @@ export function About() {
           {/* Railway Track / Starfield Background */}
           <div className="relative rounded-xl overflow-hidden"
                style={{ 
-                 background: isSpace
+                 background: useStarSky
                    ? 'linear-gradient(to bottom, #05040f 0%, #0b0a1f 20%, #1c0333 50%, #0b0a1f 80%, #05040f 100%)'
                    : (palette?.bg ?? 'linear-gradient(to bottom, #3a2a1a 0%, #4a3220 20%, #2d1f12 50%, #4a3220 80%, #3a2a1a 100%)'),
                  boxShadow: '0 25px 50px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.05)' 
@@ -502,9 +513,9 @@ export function About() {
             <div className="absolute inset-0 z-0 overflow-hidden">
               <div className={`flex items-center h-full ${
                 animationStarted ? 'perforations-scroll-animation' : ''
-              }`} style={{ width: '200%', gap: isSpace ? '18px' : '32px', paddingLeft: '16px' }}>
-                {[...Array(isSpace ? 90 : 60)].map((_, i) => (
-                  isSpace ? (
+              }`} style={{ width: '200%', gap: useStarSky ? '18px' : '32px', paddingLeft: '16px' }}>
+                {[...Array(useStarSky ? 90 : 60)].map((_, i) => (
+                  useStarSky ? (
                     <div key={`star-${i}`} className="flex-shrink-0 rounded-full"
                          style={{
                            width: i % 3 === 0 ? '4px' : '2px',
@@ -526,10 +537,10 @@ export function About() {
               </div>
             </div>
 
-            {/* Steel Rails (rail theme) / Light streaks (space theme) - top and bottom (static) */}
+            {/* Steel Rails (rail theme) / Light streaks (space & zeppelin themes) - top and bottom (static) */}
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ top: '28%' }}>
               <div className="h-1.5" style={{
-                background: isSpace
+                background: useStarSky
                   ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
                   : palette
                   ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
@@ -539,7 +550,7 @@ export function About() {
             </div>
             <div className="absolute left-0 right-0 z-10 pointer-events-none" style={{ bottom: '28%' }}>
               <div className="h-1.5" style={{
-                background: isSpace
+                background: useStarSky
                   ? 'linear-gradient(to right, transparent, #c79529aa 50%, transparent)'
                   : palette
                   ? `linear-gradient(to right, transparent, ${palette.rail}aa 50%, transparent)`
@@ -562,8 +573,8 @@ export function About() {
                   const index = idx % processSteps.length;
                   return (
                     <div key={`car-${idx}`} className="relative flex-shrink-0 w-80 h-52 flex items-center">
-                      {/* Couplers (rail) / Thruster glow (space) */}
-                      {isSpace ? (
+                      {/* Couplers (rail) / Thruster or mooring glow (space & zeppelin) */}
+                      {useStarSky ? (
                         <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full z-0"
                              style={{ background: '#c79529', boxShadow: '0 0 10px 3px rgba(199,149,41,0.7)' }} />
                       ) : (
@@ -573,8 +584,8 @@ export function About() {
                         </>
                       )}
                       
-                      {/* Bogies (wheel trucks) - hidden in space theme */}
-                      {!isSpace && (
+                      {/* Bogies (wheel trucks) - hidden in space & zeppelin themes */}
+                      {!useStarSky && (
                         <>
                           <div className="absolute top-0 left-8 right-8 flex justify-between px-4 z-10">
                             <div className="w-10 h-3 bg-gray-900 rounded-sm border border-gray-600" style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.6)' }} />
@@ -587,16 +598,21 @@ export function About() {
                         </>
                       )}
 
-                      {/* Car / Capsule body (top-down view) */}
+                      {/* Car / Capsule / Zeppelin body (top-down view) */}
                       <div
                         className={`relative mx-2 my-4 w-full h-44 ${
                           activeFrame >= index ? 'ring-2 ring-offset-2 ring-offset-transparent' : ''
                         }`}
                         style={{
                           background: `linear-gradient(180deg, ${bodyColor} 0%, ${bodyColor}dd 35%, ${bodyColor}aa 50%, ${bodyColor}dd 65%, ${bodyColor} 100%)`,
-                          borderRadius: isSpace ? '9999px 9999px 24px 24px' : '24px',
-                          border: isSpace ? '2px solid rgba(199,149,41,0.5)' : '2px solid rgba(0,0,0,0.4)',
-                          boxShadow: isSpace
+                          // Rocket capsule (rounded nose only) for space; full stadium/pill
+                          // shape for zeppelin -- on a wide-short card this tapers both ends
+                          // into an airship-like outline, per Ian's request to swap the
+                          // "space semi circles" for a Zeppelin silhouette while keeping the
+                          // starfield background he liked.
+                          borderRadius: isSpace ? '9999px 9999px 24px 24px' : isZeppelin ? '9999px' : '24px',
+                          border: useStarSky ? '2px solid rgba(199,149,41,0.5)' : '2px solid rgba(0,0,0,0.4)',
+                          boxShadow: useStarSky
                             ? '0 12px 24px rgba(0,0,0,0.6), 0 0 30px rgba(199,149,41,0.15), inset 0 2px 8px rgba(255,255,255,0.15)'
                             : '0 12px 24px rgba(0,0,0,0.5), inset 0 2px 8px rgba(255,255,255,0.15), inset 0 -2px 8px rgba(0,0,0,0.3)',
                           color: textColor,

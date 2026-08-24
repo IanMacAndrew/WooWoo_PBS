@@ -23,9 +23,6 @@ function HomePage() {
         <section id="portfolio" aria-label="Portfolio section">
           <Portfolio />
         </section>
-        <section id="awards" aria-label="Awards section">
-          <Awards />
-        </section>
         <section id="about" aria-label="About section">
           <About />
         </section>
@@ -34,6 +31,9 @@ function HomePage() {
         </section>
         <section id="contact" aria-label="Contact section">
           <Contact />
+        </section>
+        <section id="awards" aria-label="Awards section">
+          <Awards />
         </section>
       </main>
       <Footer />

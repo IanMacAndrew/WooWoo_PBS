@@ -1,48 +1,48 @@
 'use client'
 
 import { ImageWithFallback } from './figma/ImageWithFallback'
-import connorPhoto from '../assets/team-member-5.png'
 import davidHoardPhoto from '../assets/david-hoard-photo-v2.jpg'
 import omarPhoto from '../assets/omar-photo-v2.jpg'
 import futureFramerPhoto from '../assets/future-framer.jpg'
 import grantPhoto from '../assets/grant-photo-v2.jpg'
 import maxPhoto from '../assets/max-photo-v2.jpg'
-import philFinleyPhoto from '../assets/phil-finley-photo.jpg'
-import alexTanPhoto from '../assets/alex-tan-photo.jpeg'
+import colinPhoto from '../assets/colin-photo-noir.jpg'
+import philFinleyPhoto from '../assets/phil-finley-photo-noir.jpg'
+import alexTanPhoto from '../assets/alex-tan-photo-noir.jpg'
 
 export function Team() {
   const wantedCriminals = [
     {
       name: "The Hoardman 'Strategic AI Guru'",
-      bounty: "$18,800",
+      bounty: "$37,600",
       description: "Two decades of strategy consulting across the globe, now condensed into an unstoppable AI transformation playbook. Wanted for turning boardroom ambition into real, delivered outcomes.",
       image: davidHoardPhoto,
       rotation: 'rotate-2',
     },
     {
       name: "Michele 'The Future Framer'",
-      bounty: "$13,200",
+      bounty: "$26,400",
       description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
       image: futureFramerPhoto,
       rotation: 'rotate-2',
     },
     {
       name: "Colin 'The Profesor' Warner",
-      bounty: "$13,700",
+      bounty: "$27,400",
       description: "20+ years as a Chartered Accountant and Interim Finance Director, untangling everything from a £1bn pension fund to school-trust budgets. Wanted for finding money nobody else could find.",
-      image: connorPhoto,
+      image: colinPhoto,
       rotation: 'rotate-1',
     },
     {
       name: "Max 'The AI Maverick'",
-      bounty: "$7,677",
+      bounty: "$23,031",
       description: "Known for engineering AI systems, subagents and automations that simply work. Wanted for making complex workflows look effortless.",
       image: maxPhoto,
       rotation: '-rotate-2',
     },
     {
       name: "Grant 'Axe' Rawlinson",
-      bounty: "$11,300",
+      bounty: "$22,600",
       description: "World-class human-powered explorer and team decision-making coach Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
       image: grantPhoto,
       website: 'https://www.powerful-humans.com',
@@ -50,21 +50,21 @@ export function Team() {
     },
     {
       name: "Omar the Magnificent",
-      bounty: "$10,400",
+      bounty: "$20,800",
       description: "Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia. Wanted for adding over RM2 Billion to organizations' top and bottom lines.",
       image: omarPhoto,
       rotation: 'rotate-3',
     },
     {
       name: "Phil Finley 'The Terminator'",
-      bounty: "$15,900",
+      bounty: "$31,800",
       description: "Phil is a 45 year reinsurance veteran. Known as \"The Terminator\", for his unrelenting ability to keep going and doing what's required. Phil is now Semi Retired and passes time with his loved ones and family in Houston and Bangkok. Phil is cool AF and Hard as Nails. He also plays Golf.",
       image: philFinleyPhoto,
       rotation: 'rotate-1',
     },
     {
       name: "Alex Tan 'The Forensic Fox'",
-      bounty: "$12,600",
+      bounty: "$25,200",
       description: "Partner, Deals Forensics at PwC Malaysia. Wanted for tracing hidden risk, uncovering fraud, and turning the Fraud Diamond framework into board-level clarity, out of Kuala Lumpur.",
       image: alexTanPhoto,
       rotation: '-rotate-1',
