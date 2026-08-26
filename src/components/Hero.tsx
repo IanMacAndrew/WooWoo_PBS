@@ -530,8 +530,8 @@ export function Hero() {
       >
         <div className="max-w-[20rem] sm:max-w-2xl lg:max-w-3xl xl:max-w-5xl pr-4">
           <h1 className="text-[1.75rem] sm:text-[3rem] lg:text-[4rem] xl:text-[5.25rem] font-black leading-[1.05] tracking-tight text-white">
-            <span className="block font-extrabold text-6xl">AI Engineered for Your Role,</span>
-            <span className="block font-extrabold text-8xl">Tailored for Your Business</span>
+            <span className="block font-extrabold text-6xl">Strategy Led AI, Engineered for Your Role,</span>
+            <span className="block font-extrabold text-8xl">Tailored to Your Business</span>
           </h1>
         </div>
       </motion.div>
