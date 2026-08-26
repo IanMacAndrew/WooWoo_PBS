@@ -58,8 +58,8 @@ const maxTheAiMaverick: Person = {
 }
 
 const omar: Person = {
-  name: 'Ian MacAndrew',
-  nameSuffix: '"Omar the Magnificent"',
+  name: 'Omar',
+  nameSuffix: '"Results" MacAndrew',
   role: 'Sales, Marketing & Troubleshooting Operations Recovery Consultant',
   tagline: 'Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia.',
   bullets: [
