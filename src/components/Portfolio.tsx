@@ -174,7 +174,7 @@ export function Portfolio() {
 
         {/* FIVE-BOX CTA -> book.woowoo.world */}
         <div className="max-w-6xl mx-auto">
-          <div className="format-scroll flex gap-4 overflow-x-auto px-1 pb-4 -mx-1 sm:mx-0 sm:px-0 sm:pb-0">
+          <div className="format-scroll flex gap-4 overflow-x-auto pt-4 px-1 pb-4 -mx-1 sm:mx-0 sm:px-0 sm:pt-0 sm:pb-0">
             {formats.map((f) => (
               <FormatCardEl key={f.anchor} f={f} />
             ))}
