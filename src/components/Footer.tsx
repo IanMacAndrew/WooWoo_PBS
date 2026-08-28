@@ -22,12 +22,12 @@ export function Footer() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-12 gap-12">
           {/* Logo and Description */}
-          <div className="col-span-12 md:col-span-4">
+          <div className="col-span-12 md:col-span-4 min-w-0">
             <div>
               <div className="font-bagel text-background text-3xl tracking-wider mb-4">
                 WooWoo PBS
               </div>
-              <p className="text-background/70 leading-relaxed mb-6">
+              <p className="text-background/70 leading-relaxed mb-6 break-words">
                 Hardcore consulting & intelligent Strategic AI that takes the time to understand you and your business. Resultants, not consultants.
               </p>
               {/* Social Media Icons */}
@@ -91,17 +91,17 @@ export function Footer() {
           </div>
 
           {/* Tools We Use Section */}
-          <div className="col-span-12 md:col-span-8">
+          <div className="col-span-12 md:col-span-8 min-w-0">
             <div>
               <h4 className="font-black text-2xl text-background mb-4">TOOLS WE USE</h4>
               
               {/* AI Tools Description */}
-              <p className="text-background/70 text-base mb-8 leading-relaxed">
+              <p className="text-background/70 text-base mb-8 leading-relaxed break-words">
                 We leverage the latest AI technology to deliver cutting-edge performance improvement. 
                 Giving you the toolkit to optimize your business for your organization.
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 min-w-0">
                 {aiTools.map((tool) => (
                   tool.href ? (
                     <a
@@ -109,14 +109,14 @@ export function Footer() {
                       href={tool.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`text-background/80 hover:text-background gentle-animation text-sm font-medium underline underline-offset-4 ${tool.wide ? 'col-span-2' : ''}`}
+                      className={`text-background/80 hover:text-background gentle-animation text-sm font-medium underline underline-offset-4 break-words min-w-0 ${tool.wide ? 'col-span-2' : ''}`}
                     >
                       {tool.label}
                     </a>
                   ) : (
                     <div
                       key={tool.label}
-                      className="text-background/80 hover:text-background gentle-animation text-sm font-medium"
+                      className="text-background/80 hover:text-background gentle-animation text-sm font-medium break-words min-w-0"
                     >
                       {tool.label}
                     </div>
@@ -151,7 +151,7 @@ export function Footer() {
                 Terms of Service
               </Link>
             </div>
-            <div className="text-sm text-background/70">
+            <div className="text-sm text-background/70 break-words">
               SO-26-02, Menara 1, No. 3, Jalan Bangsar, KL Eco City, 59200 Kuala Lumpur, W.P. Kuala Lumpur
             </div>
           </div>

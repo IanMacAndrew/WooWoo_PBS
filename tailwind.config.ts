@@ -7,7 +7,7 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: 'calc(var(--spacing) * 4)', // 1rem with 14px base = 14px padding
+      padding: '1rem', // was calc(var(--spacing) * 4) — --spacing was never defined anywhere, making that calc() invalid
       screens: {
         sm: '40rem',
         md: '48rem', 
