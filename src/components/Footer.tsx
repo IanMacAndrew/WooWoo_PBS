@@ -20,9 +20,9 @@ export function Footer() {
   return (
     <footer className="relative py-20 bg-foreground text-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-12 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           {/* Logo and Description */}
-          <div className="col-span-12 md:col-span-4 min-w-0">
+          <div className="col-span-12 md:col-span-4 min-w-0 w-full">
             <div>
               <div className="font-bagel text-background text-3xl tracking-wider mb-4">
                 WooWoo PBS
@@ -91,7 +91,7 @@ export function Footer() {
           </div>
 
           {/* Tools We Use Section */}
-          <div className="col-span-12 md:col-span-8 min-w-0">
+          <div className="col-span-12 md:col-span-8 min-w-0 w-full">
             <div>
               <h4 className="font-black text-2xl text-background mb-4">TOOLS WE USE</h4>
               
@@ -101,7 +101,7 @@ export function Footer() {
                 Giving you the toolkit to optimize your business for your organization.
               </p>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 min-w-0">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-6 min-w-0 w-full">
                 {aiTools.map((tool) => (
                   tool.href ? (
                     <a
