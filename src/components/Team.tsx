@@ -42,7 +42,7 @@ export function Team() {
     },
     {
       name: "Grant 'Axe' Rawlinson",
-      bounty: "$22,600",
+      bounty: "$32,888",
       description: "World-class human-powered explorer and team decision-making coach Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
       image: grantPhoto,
       website: 'https://www.powerful-humans.com',
