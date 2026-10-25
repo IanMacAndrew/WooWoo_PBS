@@ -50,7 +50,7 @@ export function Team() {
     },
     {
       name: "Omar \"Results\" MacAndrew",
-      bounty: "$20,800",
+      bounty: "$38,828",
       description: "Almost three decades turning underperforming sales operations into growth stories, worldwide and now in Malaysia. Wanted for adding over RM2 Billion to organizations' top and bottom lines.",
       image: omarPhoto,
       rotation: 'rotate-3',
