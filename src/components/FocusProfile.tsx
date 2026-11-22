@@ -30,14 +30,13 @@ interface FocusPage {
 const hoardman: Person = {
   name: 'The Hoardman',
   role: 'AI Strategy Guru',
-  tagline: 'Two decades of strategy consulting across the globe, now driving AI transformation from Kuala Lumpur.',
+  tagline: 'Two decades of government and boardroom strategy across Southeast Asia and Europe, now driving AI transformation from Kuala Lumpur.',
   bullets: [
-    'Director, Consulting at Ernst & Young since 2017 leading strategy and transformation engagements across government, aviation, property, plantations, e-commerce and Smart Cities',
-    'Developed Malaysia\u2019s National COVID-19 Recovery Plan and the Halal Industry Master Plan 2.0',
+    'Director, Consulting at Ernst & Young since 2017 (promoted to Director in 2021), leading strategy and transformation engagements for governments and blue-chip corporates',
+    'Authored Malaysia\u2019s Halal Industry Master Plan 2.0 and directed development of Malaysia\u2019s National COVID-19 Recovery Plan',
     'Prior strategy leadership at PwC, AWR Lloyd (Bangkok), Booz & Company (D\u00fcsseldorf & Bangkok), Hochtief Construction AG (Essen), and KPMG/BearingPoint',
-    'MBA, London Business School (Corporate Finance) \u00b7 BA Economics & Political Science, University of Michigan',
+    'MBA (Corporate Finance), London Business School \u00b7 BA Economics & Political Science, University of Michigan',
   ],
-  note: 'Pending confirmation from The Hoardman on CV summary approval.',
 }
 
 // Max also appears wherever her hands-on AI implementation and training
@@ -118,11 +117,18 @@ const focusPages: Record<'sales-marketing' | 'hrd' | 'resilience' | 'reinsurance
       hoardman,
       maxTheAiMaverick,
       {
-        name: 'The Axeman',
-        role: 'Resilience Focus',
-        tagline: 'Bio pending.',
-        bullets: [],
-        note: 'Bio pending from The Axeman before this goes live.',
+        name: 'Grant',
+        nameSuffix: '"Axe" Rawlinson',
+        role: 'Human-Powered Explorer & Resilience Coach',
+        tagline: 'New Zealand-born explorer, leadership coach and speaker who builds teams that perform when the stakes are highest.',
+        bullets: [
+          'Founder of Powerful Humans and Managing Director at Explore Performance (Singapore), running programmes on resilience, risk management and The Explorer\u2019s Mindset',
+          'Over 50 human-powered expeditions across five continents, including Mount Everest via the North Ridge',
+          '2025 world record for the fastest human-powered Tasman Sea crossing (22 days, 4 hours, 40 minutes)',
+          'Author of From Peak to Peak \u00b7 former Chair/Co-Chair, Royal Geographical Society (Singapore) \u00b7 former Regional Sales Manager, Subsea at Kongsberg Maritime',
+        ],
+        link: 'https://www.powerful-humans.com',
+        linkLabel: 'Visit Powerful Humans',
       },
     ],
   },

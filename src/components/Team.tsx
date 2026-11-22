@@ -15,21 +15,21 @@ export function Team() {
     {
       name: "The Hoardman 'Strategic AI Guru'",
       bounty: "$37,600",
-      description: "Two decades of strategy consulting across the globe, now condensed into an unstoppable AI transformation playbook. Wanted for turning boardroom ambition into real, delivered outcomes.",
+      description: "Two decades of government and boardroom strategy across Southeast Asia and Europe, now condensed into an AI transformation playbook. Wanted for authoring Malaysia's Halal Industry Master Plan 2.0 and turning boardroom ambition into delivered outcomes.",
       image: davidHoardPhoto,
       rotation: 'rotate-2',
     },
     {
       name: "Michele 'The Future Framer'",
       bounty: "$26,400",
-      description: "Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Armed with 25 years of leadership expertise across the UK and Malaysia.",
+      description: "Banker turned human capital strategist, with a PhD in the Future of Work and author of Future Shaping (Penguin Random House). Wanted for reframing tired workplace thinking into bold, future-ready people strategy. Malaysian HR Icon and Insight250 Top 250 Global Thought Leader.",
       image: futureFramerPhoto,
       rotation: 'rotate-2',
     },
     {
       name: "Colin 'The Profesor' Warner",
       bounty: "$27,400",
-      description: "20+ years as a Chartered Accountant and Interim Finance Director, untangling everything from a £1bn pension fund to school-trust budgets. Wanted for finding money nobody else could find.",
+      description: "London-based Chartered Accountant, Finance Director, CFO and COO with 20+ years across consultancies, universities, membership bodies and even a trade union. Wanted for recovering money most accountants simply cannot find.",
       image: colinPhoto,
       rotation: 'rotate-1',
     },
@@ -43,7 +43,7 @@ export function Team() {
     {
       name: "Grant 'Axe' Rawlinson",
       bounty: "$32,888",
-      description: "World-class human-powered explorer and team decision-making coach Everest summiteer and Tasman Sea row record holder. Wanted for building powerful teams that perform when the stakes are highest.",
+      description: "Human-powered explorer, leadership coach and author of From Peak to Peak. Everest summiteer with 50+ expeditions, and 2025 world-record holder for the fastest human-powered Tasman Sea crossing. Wanted for building powerful teams that perform when the stakes are highest.",
       image: grantPhoto,
       website: 'https://www.powerful-humans.com',
       rotation: '-rotate-1',
