@@ -272,6 +272,12 @@ export function Hero() {
 
             {/* Navigation Menu */}
             <div className="hidden md:flex items-center space-x-8">
+              <a
+                href="https://industries.woowooworld.co"
+                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
+              >
+                Industries
+              </a>
               <div className="relative" ref={workDropdownRef}>
                 <button
                   onClick={() => setIsWorkDropdownOpen((v) => !v)}
@@ -430,6 +436,13 @@ export function Hero() {
           <div className="flex flex-col px-6 pb-6 h-full">
             {/* Mobile Navigation Links */}
             <div className="flex flex-col space-y-4 text-white">
+              <a
+                href="https://industries.woowooworld.co"
+                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Industries
+              </a>
               <div>
                 <button
                   onClick={() => setIsMobileWorkOpen((v) => !v)}
